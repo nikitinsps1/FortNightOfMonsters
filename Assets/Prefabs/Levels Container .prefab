@@ -1,0 +1,1756 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1097930236072222396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7724409084518822784}
+  - component: {fileID: 307561199341749815}
+  m_Layer: 0
+  m_Name: Level  (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7724409084518822784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097930236072222396}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307561199341749815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097930236072222396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439
+    \u0442\u0432\u043E\u0439 \u0434\u0435\u043D\u044C \u043F\u0440\u0435\u0431\u044B\u0432\u0430\u043D\u0438\u044F
+    \u0432 \u0444\u043E\u0440\u0442\u0435. \u0421\u0435\u0433\u043E\u0434\u043D\u044F
+    \u0432 \u043A\u043E\u043D\u0446\u0435 \u0434\u043D\u044F \u043F\u0440\u0438\u043B\u0435\u0442\u0438\u0442
+    \u0432\u0435\u0440\u0442\u043E\u043B\u0435\u0442, \u0434\u043E\u0441\u0442\u0430\u0432\u0438\u0442
+    \u0442\u0435\u0445 \u043A\u0442\u043E \u0442\u0435\u0431\u044F \u0441\u043C\u0435\u043D\u0438\u0442,
+    \u0430 \u0442\u0435\u0431\u044F \u0443\u0432\u0435\u0437\u0435\u0442 \u043E\u0431\u0440\u0430\u0442\u043D\u043E
+    \u043D\u0430 \u0431\u0430\u0437\u0443!  \u0413\u043B\u0430\u0432\u043D\u043E\u0435
+    \u043F\u0440\u043E\u0434\u0435\u0440\u0436\u0438\u0441\u044C!"
+  _leftBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 2
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 2
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 2
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 20
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 4
+  _reward: 1000
+--- !u!1 &1521869101436559310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5626870222374481704}
+  - component: {fileID: 6806936940707936797}
+  m_Layer: 0
+  m_Name: Level  (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &5626870222374481704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521869101436559310}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6806936940707936797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521869101436559310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
+    \u0432 \u0444\u043E\u0440\u0442 \"\u041A\u043E\u0448\u043C\u0430\u0440 \u041C\u043E\u043D\u0441\u0442\u0440\u043E\u0432!\"
+    \u0412\u044B \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+    \u0440\u0443\u0431\u0435\u0436 \u043D\u0430 \u043F\u0443\u0442\u0438 \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432
+    \u0438\u0437 \u043F\u0443\u0441\u0442\u043E\u0448\u0435\u0439! \u0414\u043B\u044F
+    \u043D\u0430\u0447\u0430\u043B\u0430 \u0440\u0435\u043A\u043E\u043C\u043D\u0434\u0443\u0435\u043C
+    \u043D\u0430\u043D\u044F\u0442\u044C \u043E\u0445\u0440\u0430\u043D\u0438\u043A\u0430
+    \u0443 \u043E\u0434\u043D\u043E\u0439 \u0438\u0437 \u0431\u0430\u0440\u0440\u0438\u043A\u0430\u0434.
+    (\u0432\u0441\u0442\u0430\u043D\u044C\u0442\u0435 \u0432 \u043A\u0440\u0443\u0433
+    \u0434\u043B\u044F \u044D\u0442\u043E\u0433\u043E) \u0418 \u043A\u0430\u043A
+    \u0431\u0443\u0434\u0435\u0442\u0435 \u0433\u043E\u0442\u043E\u0432\u044B - \u043D\u0430\u0436\u043C\u0438\u0442\u0435
+    \u043A\u043D\u043E\u043F\u043A\u0443 \"\u043D\u0430\u0447\u0430\u0442\u044C \u043D\u0430\u0448\u0435\u0441\u0442\u0432\u0438\u0435\""
+  _leftBarrierWaves:
+  - _zombies: 5
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 7
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 5
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 7
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 3
+  _reward: 50
+--- !u!1 &2193188612179915374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7268554965964087280}
+  - component: {fileID: 4376287958647577977}
+  m_Layer: 0
+  m_Name: Level  (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7268554965964087280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193188612179915374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4376287958647577977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193188612179915374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u041D\u0430 \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0435
+    \u043E\u0433\u0440\u043E\u043C\u043D\u0430\u044F \u0442\u043E\u043B\u043F\u0430
+    \u0437\u043E\u043C\u0431\u0438-\u043A\u0430\u043C\u0438\u043A\u0430\u0434\u0437\u0435.
+    \u0413\u043E\u0442\u043E\u0432\u044C\u0442\u0435\u0441\u044C \u0441\u0442\u0440\u0435\u043B\u044F\u0442\u044C
+    \u043C\u0435\u0442\u043A\u043E \u0438 \u0431\u044B\u0441\u0442\u0440\u043E!"
+  _leftBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 5
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 3
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 4
+  _reward: 100
+--- !u!1 &2588941431791823658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062377083846635596}
+  - component: {fileID: 3468976702759097697}
+  m_Layer: 0
+  m_Name: Level  (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2062377083846635596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588941431791823658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3468976702759097697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588941431791823658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u0412\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
+    \u043F\u043E\u0440\u0430\u0431\u043E\u0442\u0430\u043B\u0438! \u041D\u043E \u0441\u0435\u0433\u043E\u0434\u043D\u044F
+    \u043F\u0440\u0438\u0434\u0435\u0442 \u0435\u0449\u0435 \u0431\u043E\u043B\u044C\u0448\u0435
+    \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432! \u041F\u043E\u044D\u0442\u043E\u043C\u0443
+    \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
+    \u0432\u0441\u0435 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0435 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F
+    \u0438 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u0438\u0442\u044C\u0441\u044F
+    (\u043F\u043E\u043C\u0438\u043C\u043E \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F
+    \u0431\u0430\u0440\u0440\u0438\u043A\u0430\u0434,  \u0435\u0441\u0442\u044C \u043F\u0440\u043E\u043A\u0430\u0447\u043A\u0430
+    \u0433\u0435\u0440\u043E\u044F \u0438 \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+    - \u0432\u044B\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044F \u0443 \u0432\u0445\u043E\u0434\u0430
+    \u0432 \u0434\u043E\u043C"
+  _leftBarrierWaves:
+  - _zombies: 10
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 8
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 7
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 8
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 7
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 6
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 2
+  _reward: 50
+--- !u!1 &3130910367269094933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7256089696810040417}
+  - component: {fileID: 6865330009099099789}
+  m_Layer: 0
+  m_Name: Level  (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7256089696810040417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130910367269094933}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6865330009099099789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130910367269094933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u041D\u0430\u0448\u0438 \u0440\u0430\u0437\u0432\u0435\u0434\u0447\u0438\u043A\u0438
+    \u043F\u0435\u0440\u0435\u0434\u0430\u044E\u0442, \u0447\u0442\u043E \u043D\u0435\u043F\u043E\u0434\u0430\u043B\u0435\u043A\u0443
+    \u043E\u0442 \u0432\u0430\u0441 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
+    \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u0430\u044F \u0430\u0440\u043C\u0438\u044F
+    \u043A\u0438\u0431\u043E\u0440\u0433\u043E\u0432! \u0418\u0445 \u043D\u0435 \u0442\u0430\u043A
+    \u043C\u043D\u043E\u0433\u043E, \u043D\u043E \u043E\u043D\u0438 \u043A\u0440\u0430\u0439\u043D\u0435
+    \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u044B \u043A \u0430\u0442\u0430\u043A\u0430\u043C.
+    \u0411\u0443\u0434\u044C\u0442\u0435 \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u044B!"
+  _leftBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 7
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 6
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 4
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 3
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 6
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 5
+  _reward: 100
+--- !u!1 &4174403925264498358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8128585406249288776}
+  - component: {fileID: 9131272908687668880}
+  - component: {fileID: 1815999380656501984}
+  - component: {fileID: 2163889740077980869}
+  - component: {fileID: 7458810648475002726}
+  m_Layer: 0
+  m_Name: Level  (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &8128585406249288776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174403925264498358}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9131272908687668880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174403925264498358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u0443 \u0432\u0430\u0441
+    \u0431\u0443\u0434\u0435\u0442 \u0441\u0430\u043C\u044B\u0439 \u0441\u043B\u043E\u0436\u043D\u044B\u0439
+    \u0434\u0435\u043D\u044C \u0438\u0437 \u0432\u0441\u0435\u0445 , \u0447\u0442\u043E
+    \u0443 \u0432\u0430\u0441 \u0431\u044B\u043B\u0438. \u0423 \u0432\u0445\u043E\u0434\u0430
+    \u0441\u0442\u043E\u0438\u0442 \u0442\u043E\u0440\u0433\u043E\u0432\u0435\u0446.
+    \u041A\u0440\u0430\u0439\u043D\u0435 \u0440\u0435\u043A\u043E\u043C\u0435\u0434\u0443\u0435\u043C
+    \u043A\u0443\u043F\u0438\u0442\u044C \u0443 \u043D\u0435\u0433\u043E \u0442\u043E,
+    \u0447\u0442\u043E \u043E\u043D \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442.
+    \u042D\u0442\u043E \u043E\u0447\u0435\u043D\u044C \u0432\u0430\u043C \u043F\u043E\u043C\u043E\u0436\u0435\u0442.
+    \u0423\u0434\u0430\u0447\u0438. \u0424\u0438\u043D\u0430\u043B \u0431\u043B\u0438\u0437\u043E\u043A"
+  _leftBarrierWaves:
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 1
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 1
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 1
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 1
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 1
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 1
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 14
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 14
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 14
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 14
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 14
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 14
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 5
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 1
+  _reward: 100
+--- !u!114 &1815999380656501984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174403925264498358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a89e029c743cd429bb4ef8b39e1775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startSpeech: "\u041F\u0440\u0435\u0434\u043B\u0433\u0430\u044E \u0442\u0435\u0431\u0435
+    \u0441\u0430\u043C\u043E\u0435 \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u043E\u0435
+    \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u043E \u0434\u043B\u044F \u0431\u043E\u0440\u044C\u0431\u044B
+    \u0441 \u043C\u043E\u043D\u0441\u0442\u0440\u0430\u043C\u0438! \u041E\u0433\u043D\u0435\u043C\u0435\u0442!
+    \u0412\u0441\u0435\u0433\u043E \u0437\u0430 300 \u043C\u043E\u043D\u0435\u0442!"
+  _character: {fileID: 5655391264478873518, guid: 99f94a0c5da89dd4692bbe1fa712e1f6,
+    type: 3}
+  _requiredCharisma: 3
+  _confirm:
+    <TextAfter>k__BackingField: "\u0414\u0435\u0440\u0436\u0438 \u0438 \u0443\u0434\u0430\u0447\u0438!
+      \u041E\u043D \u0442\u0435\u0431\u0435 \u043F\u043E\u043D\u0430\u0434\u043E\u0431\u0438\u0442\u0441\u044F!"
+    <DialogAction>k__BackingField: {fileID: 7458810648475002726}
+  _cancel:
+    <TextAfter>k__BackingField: "\u041A\u0430\u043A \u0437\u043D\u0430\u0435\u0448\u044C"
+    <DialogAction>k__BackingField: {fileID: 0}
+  _charisma:
+    <TextAfter>k__BackingField: "\u041C\u043E\u043D\u0441\u0442\u0440\u043E\u0432
+      \u0438 \u0432\u043F\u0440\u0430\u0432\u0434\u0443 \u0442\u0430\u043A \u043C\u043D\u043E\u0433\u043E?
+      \u0422\u043E\u0433\u0434\u0430 \u0434\u0435\u0440\u0436\u0438, \u0447\u0442\u043E\u0431\u044B
+      \u043E\u043D\u0438 \u043D\u0435 \u0434\u043E\u0431\u0440\u0430\u043B\u0438\u0441\u044C
+      \u0434\u043E \u043D\u0430\u0441 \u0432\u0441\u0435\u0437!"
+    <DialogAction>k__BackingField: {fileID: 2163889740077980869}
+--- !u!114 &2163889740077980869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174403925264498358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3da6d03628b7a458b332e1b5741c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: 4
+  _cost: 0
+--- !u!114 &7458810648475002726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174403925264498358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3da6d03628b7a458b332e1b5741c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: 4
+  _cost: 300
+--- !u!1 &4396110602066567075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4708322242432852560}
+  - component: {fileID: 6801465991940078927}
+  - component: {fileID: 3951913745760168146}
+  - component: {fileID: 8901722146018499270}
+  - component: {fileID: 4237757386406090352}
+  m_Layer: 0
+  m_Name: Level  (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &4708322242432852560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396110602066567075}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6801465991940078927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396110602066567075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u0443 \u0432\u0430\u0441
+    \u0433\u043E\u0441\u0442\u044C! \u0416\u0434\u0435\u0442 \u0443 \u0432\u0445\u043E\u0434\u0430
+    \u0432 \u0444\u043E\u0440\u0442.  \u0423\u0437\u043D\u0430\u0439\u0442\u0435
+    \u0447\u0435\u0433\u043E \u043E\u043D \u0445\u043E\u0447\u0435\u0442. \u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u044E
+    \u0437\u0430\u0440\u0430\u043D\u0435\u0435 \u043F\u0440\u043E\u043A\u0430\u0447\u0430\u0442\u044C
+    \u043D\u0430\u0432\u044B\u043A \u043E\u0431\u0449\u0435\u043D\u0438\u044F (\u0441\u043F\u0440\u0430\u0432\u0430
+    \u043E\u0442 \u0432\u0445\u043E\u0434\u0430 \u0432 \u0434\u043E\u043C)"
+  _leftBarrierWaves:
+  - _zombies: 10
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 7
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 10
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 6
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 7
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 9
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 3
+  _reward: 50
+--- !u!114 &3951913745760168146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396110602066567075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a89e029c743cd429bb4ef8b39e1775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startSpeech: "\u0423 \u043C\u0435\u043D\u044F \u043A \u0442\u0435\u0431\u0435
+    \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435. \u0422\u044B
+    \u043F\u043B\u0430\u0442\u0438\u0448\u044C \u043C\u043D\u0435 50 \u043C\u043E\u043D\u0435\u0442,
+    \u0430 \u043C\u044B \u0432\u0430\u0441 \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0435\u043C.
+    \u0418\u0434\u0435\u0442?"
+  _character: {fileID: 5655391264478873518, guid: 5a0989a000b130744bfeec0437d57923,
+    type: 3}
+  _requiredCharisma: 0
+  _confirm:
+    <TextAfter>k__BackingField: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446. \u0420\u0430\u0437\u0443\u043C\u043D\u043E\u0435
+      \u0440\u0435\u0448\u0435\u043D\u0438\u0435. \u0423\u0434\u0430\u0447\u0438
+      \u0432 \u043E\u0431\u043E\u0440\u043E\u043D\u0435 \u043E\u0442 \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432.
+      \u0425\u0430."
+    <DialogAction>k__BackingField: {fileID: 4237757386406090352}
+  _cancel:
+    <TextAfter>k__BackingField: "\u041D\u0443 \u0434\u0435\u0440\u0436\u0438\u0441\u044C
+      (\u0431\u0435\u0433\u0438\u0442\u0435 \u043A \u0431\u0430\u0440\u0440\u0438\u043A\u0430\u0434\u0430\u043C,
+      \u0431\u0430\u043D\u0434\u0438\u0442\u044B \u0430\u0442\u0430\u043A\u0443\u044E\u0442!)"
+    <DialogAction>k__BackingField: {fileID: 8901722146018499270}
+  _charisma:
+    <TextAfter>k__BackingField: "\u0413\u043E\u0432\u043E\u0440\u0438\u0448\u044C
+      \u0434\u0435\u043D\u0435\u0433 \u043D\u0435\u0442? \u041D\u0443 \u043B\u0430\u0434\u043D\u043E\u044E 
+      \u041F\u0440\u0438\u0434\u0435\u043C \u0447\u0435\u0440\u0435\u0437 \u043F\u0430\u0440\u0443
+      \u0434\u043D\u0435\u0439"
+    <DialogAction>k__BackingField: {fileID: 0}
+--- !u!114 &8901722146018499270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396110602066567075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb16d128cf3b2b847981eaf81e8e5584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _direction: 0
+  _waveEnemies:
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 3
+    _banditMelee: 10
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 5
+    _banditMelee: 12
+  _textTask: "\u041F\u043E\u0431\u0435\u0434\u0438\u0442\u0435 \u0431\u0430\u043D\u0434\u0438\u0442\u043E\u0432!"
+--- !u!114 &4237757386406090352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396110602066567075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b777f4ff1e03a6b4eb3c865ed0d88d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: -50
+--- !u!1 &4798994207527895537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2974234702998734846}
+  - component: {fileID: 3710729448476889924}
+  m_Layer: 0
+  m_Name: Level  (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2974234702998734846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798994207527895537}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3710729448476889924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798994207527895537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u041C\u043E\u043D\u0441\u0442\u0440\u044B \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0442
+    \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u044F\u0442\u044C\u0441\u044F. \u0421\u0435\u0433\u043E\u0434\u043D\u044F
+    \u0431\u0443\u0434\u0435\u0442 \u043E\u0447\u0435\u043D\u044C \u0431\u043E\u043B\u044C\u0448\u0430\u044F
+    \u0432\u043E\u043B\u043D\u0430!"
+  _leftBarrierWaves:
+  - _zombies: 10
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 0
+    _spiders: 2
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 5
+    _kamikazes: 0
+    _spiders: 5
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 10
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 4
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 10
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 10
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 10
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 10
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 10
+    _kamikazes: 1
+    _spiders: 2
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 1
+  _reward: 100
+--- !u!1 &5147227522232758570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4068909783168207931}
+  - component: {fileID: 170914686063851014}
+  - component: {fileID: 5562230933452765197}
+  - component: {fileID: 8507552532321438701}
+  - component: {fileID: 8129470718676564703}
+  m_Layer: 0
+  m_Name: Level  (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &4068909783168207931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147227522232758570}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &170914686063851014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147227522232758570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u0432\u0430\u0441
+    \u0441\u043D\u043E\u0432\u0430 \u043F\u043E\u0441\u0435\u0442\u0438\u043B\u0438
+    \u0433\u043E\u0441\u0442\u0438. \u041D\u043E \u043F\u043E\u0445\u043E\u0436\u0435
+    \u043D\u0430 \u044D\u0442\u043E\u0442 \u0440\u0430\u0437, \u0441 \u0434\u043E\u0431\u0440\u044B\u043C\u0438
+    \u043D\u0430\u043C\u0435\u0440\u0435\u043D\u0438\u044F\u043C\u0438"
+  _leftBarrierWaves:
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 14
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 14
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 6
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 8
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 2
+  _reward: 75
+--- !u!114 &5562230933452765197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147227522232758570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a89e029c743cd429bb4ef8b39e1775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startSpeech: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u0432\u043F\u0443\u0441\u0442\u0438\u0442\u0435
+    \u043C\u0435\u043D\u044F \u043F\u0435\u0440\u0435\u043D\u043E\u0447\u0435\u0432\u0430\u0442\u044C!
+    \u042F \u0434\u0430\u0436\u0435 \u0437\u0430\u043F\u043B\u0430\u0447\u0443! \u0423
+    \u043C\u0435\u043D\u044F \u0435\u0441\u0442\u044C 50 \u043C\u043E\u043D\u0435\u0442!"
+  _character: {fileID: 5655391264478873518, guid: 99f94a0c5da89dd4692bbe1fa712e1f6,
+    type: 3}
+  _requiredCharisma: 2
+  _confirm:
+    <TextAfter>k__BackingField: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E! \u0414\u0435\u0440\u0436\u0438\u0442\u0435
+      \u0434\u0435\u043D\u044C\u0433\u0438!"
+    <DialogAction>k__BackingField: {fileID: 8507552532321438701}
+  _cancel:
+    <TextAfter>k__BackingField: "\u0417\u0430 \u0447\u0442\u043E \u0442\u044B \u0442\u0430\u043A
+      \u0441\u043E \u043C\u043D\u043E\u0439!?"
+    <DialogAction>k__BackingField: {fileID: 0}
+  _charisma:
+    <TextAfter>k__BackingField: "\u041D\u0443\u0436\u043D\u043E \u0431\u043E\u043B\u044C\u0448\u0435
+      \u0434\u0435\u043D\u0435\u0433? \u0425\u043E\u0440\u043E\u0448\u043E, \u0434\u0435\u0440\u0436\u0438
+      150 \u043C\u043E\u043D\u0435\u0442"
+    <DialogAction>k__BackingField: {fileID: 8129470718676564703}
+--- !u!114 &8507552532321438701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147227522232758570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b777f4ff1e03a6b4eb3c865ed0d88d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: 50
+--- !u!114 &8129470718676564703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5147227522232758570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b777f4ff1e03a6b4eb3c865ed0d88d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: 100
+--- !u!1 &5353221318629957585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261821959253326152}
+  - component: {fileID: 9195578338970520053}
+  m_Layer: 0
+  m_Name: 'Levels Container '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1261821959253326152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353221318629957585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5626870222374481704}
+  - {fileID: 2062377083846635596}
+  - {fileID: 4708322242432852560}
+  - {fileID: 1852212572004281663}
+  - {fileID: 4068909783168207931}
+  - {fileID: 1464152321301128604}
+  - {fileID: 2974234702998734846}
+  - {fileID: 3471052482083789699}
+  - {fileID: 7268554965964087280}
+  - {fileID: 7256089696810040417}
+  - {fileID: 8128585406249288776}
+  - {fileID: 7724409084518822784}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9195578338970520053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353221318629957585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8da3b017777ed04b94246014ca3454b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelsSettings:
+  - {fileID: 6806936940707936797}
+  - {fileID: 3468976702759097697}
+  - {fileID: 6801465991940078927}
+  - {fileID: 8820974555510531912}
+  - {fileID: 170914686063851014}
+  - {fileID: 9180355396629021612}
+  - {fileID: 3710729448476889924}
+  - {fileID: 5224579694815599216}
+  - {fileID: 4376287958647577977}
+  - {fileID: 6865330009099099789}
+  - {fileID: 9131272908687668880}
+  - {fileID: 307561199341749815}
+--- !u!1 &5423116859376572836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464152321301128604}
+  - component: {fileID: 9180355396629021612}
+  m_Layer: 0
+  m_Name: Level  (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1464152321301128604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423116859376572836}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9180355396629021612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423116859376572836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u041D\u0430\u0448 \u043E\u0442\u0440\u044F\u0434 \u043D\u0430\u0448\u0435\u043B
+    \u043D\u0435\u043F\u043E\u0434\u0430\u043B\u0435\u043A\u0443 \u043E\u0433\u0440\u043E\u043C\u043D\u043E\u0435
+    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043F\u0430\u0443\u0442\u0438\u043D\u044B.
+    \u0421\u0435\u0433\u043E\u0434\u043D\u044F \u0431\u0443\u0434\u0435\u0442 \u043D\u0430\u0441\u0442\u0443\u043F\u043B\u0435\u043D\u0438\u0435
+    \u043F\u0430\u0443\u043A\u043E\u0432 (\u043E\u043D\u0438 \u0443\u043C\u0435\u044E\u0442
+    \u0441\u0442\u0440\u0435\u043B\u044F\u0442\u044C \u044F\u0434\u043E\u043C, \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0430\u0439\u0442\u0435
+    \u043A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E \u0443\u0432\u0438\u0434\u0438\u0442\u0435
+    \u0438\u0445!)"
+  _leftBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 5
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 5
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 7
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 5
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 6
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 6
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 6
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 7
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 5
+  _reward: 75
+--- !u!1 &7016839716319740736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3471052482083789699}
+  - component: {fileID: 5224579694815599216}
+  - component: {fileID: 1423107103124382638}
+  - component: {fileID: 2174744621628269365}
+  - component: {fileID: 481376637272098866}
+  - component: {fileID: 5770821684409696642}
+  m_Layer: 0
+  m_Name: Level  (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3471052482083789699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016839716319740736}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5224579694815599216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016839716319740736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u0411\u0430\u043D\u0434\u0438\u0442\u044B \u0432\u0435\u0440\u043D\u0443\u043B\u0438\u0441\u044C.
+    \u0418 \u0438\u0445 \u0442\u0435\u043F\u0435\u0440\u044C \u0431\u043E\u043B\u044C\u0448\u0435. 
+    \u0411\u0443\u0434\u044C\u0442\u0435 \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u044B."
+  _leftBarrierWaves:
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 3
+  _reward: 75
+--- !u!114 &1423107103124382638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016839716319740736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a89e029c743cd429bb4ef8b39e1775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startSpeech: "\u041F\u043B\u0430\u0442\u0438\u0442\u044C \u0431\u0443\u0434\u0435\u043C?
+    \u041D\u044B\u043D\u0435\u0448\u043D\u044F\u044F \u0440\u0430\u0441\u0446\u0435\u043D\u043A\u0430
+    - 200 \u043C\u043E\u043D\u0435\u0442"
+  _character: {fileID: 5655391264478873518, guid: 5a0989a000b130744bfeec0437d57923,
+    type: 3}
+  _requiredCharisma: 4
+  _confirm:
+    <TextAfter>k__BackingField: "\u041F\u0440\u0438\u044F\u0442\u043D\u043E \u0438\u043C\u0435\u0442\u044C
+      \u0434\u0435\u043B\u043E"
+    <DialogAction>k__BackingField: {fileID: 481376637272098866}
+  _cancel:
+    <TextAfter>k__BackingField: "\u0417\u0440\u044F. "
+    <DialogAction>k__BackingField: {fileID: 2174744621628269365}
+  _charisma:
+    <TextAfter>k__BackingField: "\u0421\u043A\u043E\u043B\u044C\u043A\u043E - \u0441\u043A\u043E\u043B\u044C\u043A\u043E
+      \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432 \u043F\u0435\u0440\u0435\u043C\u043E\u043B\u043E\u043B?
+      \u0414\u0430 \u043B\u0430\u0434\u043D\u043E. \u041A\u0430\u043A\u0438\u0435
+      \u0435\u0449\u0435 \u0434\u0435\u043D\u044C\u0433\u0438? \u041D\u0438\u0447\u0435\u0433\u043E
+      \u044F \u043D\u0435 \u0431\u0443\u0434\u0443 \u0443 \u0442\u0435\u0431\u044F
+      \u0431\u0440\u0430\u0442\u044C. \u042F \u043F\u043E\u0448\u0443\u0442\u0438\u043B.
+      \u0414\u0435\u0440\u0436\u0438 50 \u043C\u043E\u043D\u0435\u0442, \u0447\u0442\u043E\u0431\u044B
+      \u0437\u0430\u0449\u0438\u0449\u0430\u0442\u044C\u0441\u044F"
+    <DialogAction>k__BackingField: {fileID: 5770821684409696642}
+--- !u!114 &2174744621628269365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016839716319740736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb16d128cf3b2b847981eaf81e8e5584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _direction: 1
+  _waveEnemies:
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 6
+    _banditMelee: 12
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 5
+    _banditMelee: 12
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 7
+    _banditMelee: 12
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 7
+    _banditMelee: 15
+  - _zombies: 0
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 5
+    _banditMelee: 12
+  _textTask: "\u0417\u0430\u0449\u0438\u0449\u0430\u0439\u0442\u0435\u0441\u044C
+    \u043E\u0442 \u0431\u0430\u043D\u0434\u0438\u0442\u043E\u0432!"
+--- !u!114 &481376637272098866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016839716319740736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b777f4ff1e03a6b4eb3c865ed0d88d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: -200
+--- !u!114 &5770821684409696642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016839716319740736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b777f4ff1e03a6b4eb3c865ed0d88d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: 50
+--- !u!1 &9041968257415613913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852212572004281663}
+  - component: {fileID: 8820974555510531912}
+  m_Layer: 0
+  m_Name: Level  (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1852212572004281663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041968257415613913}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261821959253326152}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8820974555510531912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041968257415613913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67e50dd7b35ec47923749d68d1b884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _descriptionMissions: "\u041F\u043E \u043D\u0430\u0448\u0438\u043C \u0441\u0432\u0435\u0434\u0435\u043D\u0438\u044F
+    \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0437\u043E\u043C\u0431\u0438
+    \u043D\u0430\u0447\u0430\u043B\u0438 \u044D\u0432\u043E\u043B\u044E\u0446\u0438\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C.
+    \u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0438\u0437 \u043D\u0438\u0445
+    \u043D\u0430\u0443\u0447\u0438\u043B\u0438\u0441\u044C \u0431\u0435\u0433\u0430\u0442\u044C
+    \u0438 \u0432\u0437\u0440\u044B\u0432\u0430\u0442\u044C\u0441\u044F. \u0411\u0443\u0434\u044C\u0442\u0435
+    \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u044B!"
+  _leftBarrierWaves:
+  - _zombies: 8
+    _kamikazes: 2
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 9
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 10
+    _kamikazes: 2
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 5
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 7
+    _kamikazes: 0
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 5
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 8
+    _kamikazes: 1
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 9
+    _kamikazes: 2
+    _spiders: 0
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 4
+  _reward: 75
