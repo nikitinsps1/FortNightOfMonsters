@@ -4,7 +4,9 @@ Unity 2022.30f1 LTS
 
 !!!!WARNING!!!!  
 If you want load Unity project, you must open "Load Game" scene first!  
-PluginYG simulate YamdexGame SDK on editor  
+PluginYG simulate YamdexGame SDK on editor
+
+Folder: Assets/YandexGame is Plugin.
 
 Plugins:  
 1.Zenject  
