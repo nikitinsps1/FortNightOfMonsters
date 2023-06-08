@@ -5,12 +5,10 @@ using Zenject;
 public class InitLevel : MonoBehaviour
 {
     [SerializeField]
-    private Transform
-        _dialogsPlace;
+    private Transform  _dialogsPlace;
 
     [SerializeField]
-    private TextMeshProUGUI
-    _textStatus;
+    private TextMeshProUGUI _textStatus;
 
     [SerializeField]
     private LevelsContainer _levelsContainer;
