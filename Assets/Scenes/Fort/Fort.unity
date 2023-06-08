@@ -12352,7 +12352,7 @@ PrefabInstance:
     - target: {fileID: 6806936940707936797, guid: e55b4dcb17371fe41be8bc6f8a8d3726,
         type: 3}
       propertyPath: _leftBarrierWaves.Array.data[0]._zombies
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6806936940707936797, guid: e55b4dcb17371fe41be8bc6f8a8d3726,
         type: 3}
@@ -12412,7 +12412,7 @@ PrefabInstance:
     - target: {fileID: 6806936940707936797, guid: e55b4dcb17371fe41be8bc6f8a8d3726,
         type: 3}
       propertyPath: _leftBarrierWaves.Array.data[0]._kamikazes
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6806936940707936797, guid: e55b4dcb17371fe41be8bc6f8a8d3726,
         type: 3}
@@ -26209,7 +26209,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.65
+  m_fontSize: 99.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

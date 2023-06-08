@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 1956815223}
   - component: {fileID: 1956815222}
   m_Layer: 0
-  m_Name: Load Application
+  m_Name: Load Yandex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
