@@ -12,4 +12,4 @@ Plugins:
 3.NavMesh  
 4.TextMeshPro  
 5.Mesh Combiner  
-3.PluginYG (Yandex Games)
+6.PluginYG (Yandex Games)
