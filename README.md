@@ -3,10 +3,10 @@ Adapted for Yandex Games
 Unity 2022.30f1 LTS
 
 !!!!WARNING!!!!  
-If you want load Unity project, you must open "Load Game" scene first!  
-PluginYG simulate YamdexGame SDK on editor
+If you want load Unity project, you must open scene "Load Game" first!  
+PluginYG simulate YandexGame SDK on editor
 
-Folder: Assets/YandexGame is Plugin (not ny code).
+Folder: Assets/YandexGame is Plugin (not my code).
 
 Plugins:  
 1.Zenject  
