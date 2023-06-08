@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -9,25 +10,28 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     private TypeSound _typeSound;
 
-    protected AudioContainer _audioEffect;
-
+    protected AudioContainer _audio;
+    public event Action OnStopAttack;
     public TypeWeapons Type => _type;
 
     [Inject]
-    private void Construct(AudioContainer audioEffects)
+    private void Construct(AudioContainer audio)
     {
-        _audioEffect = audioEffects;
+        _audio = audio;
     }
 
-    protected virtual void OnSound()
+    protected virtual void Sound()
     {
-        _audioEffect.PlaySound(_typeSound, 0.15f);
+        _audio.PlaySound(_typeSound, 0.15f);
     }
 
     public virtual void Attack()
     {
-        OnSound();
+        Sound();
     }
 
-    public abstract void StopAttack();
+    public  void StopAttack()
+    {
+        OnStopAttack?.Invoke();
+    }
 }

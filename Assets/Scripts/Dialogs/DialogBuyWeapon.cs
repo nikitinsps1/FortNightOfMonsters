@@ -10,14 +10,14 @@ public class DialogBuyWeapon : DialogAction
     [SerializeField]
     private int _cost;
 
-    private ChangeWeaponPanel _changeWeaponButtons;
+    private ChangeWeaponPanel _changeWeapon;
     private BuyMenu _magazine;
     private SaveData _saveData;
 
     [Inject]
-    private void Construct(BuyMenu buyMenu,  ChangeWeaponPanel changeWeaponButtons, SaveData saveData)
+    private void Construct(BuyMenu buyMenu,  ChangeWeaponPanel changeWeapon, SaveData saveData)
     {
-        _changeWeaponButtons = changeWeaponButtons;
+        _changeWeapon = changeWeapon;
         _magazine = buyMenu;
         _saveData = saveData;
     }
@@ -27,13 +27,13 @@ public class DialogBuyWeapon : DialogAction
         HaveNewTask = false;
 
         Action upgrade = delegate
-        { _saveData.Armoury.Add(_weapon); };
+        {_saveData.Armoury.Add(_weapon);};
 
          upgrade += delegate
-        { _changeWeaponButtons.OnBuyWeapon(_weapon); };
+        {_changeWeapon.OnBuyWeapon(_weapon);};
 
         Action purchase = delegate 
-       { _magazine.StartTrade(_cost, upgrade); };
+        {_magazine.StartTrade(_cost, upgrade);};
 
         return purchase;
     }

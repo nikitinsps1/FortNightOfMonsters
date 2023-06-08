@@ -1,25 +1,19 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Zenject;
 
 public class InputPhone : MonoBehaviour
 {
- 
-
     [SerializeField]
-    private FixedJoystick
+    private Joystick
         _walkJoystick,
         _attackJoystick;
 
     private Player _player;
 
     private Vector3
-        _moveDirection,
-        _inputAttackJoystick;
-
-    private Vector2 _inputMoveJoystick;
-
-
+        _inputAttackJoystick,
+        _inputMoveJoystick,
+        _rotateVector;
 
     private Quaternion _angleCamera;
 
@@ -31,22 +25,17 @@ public class InputPhone : MonoBehaviour
 
     private void Awake()
     {
-
-        float cameraDegreeY = Camera.main.transform.rotation.eulerAngles.y;
-
-        _angleCamera = Quaternion.Euler(0, cameraDegreeY, 0);
-
-
+        Init();
     }
 
-
-
-
+    private void Init()
+    {
+        float cameraDegreeY = Camera.main.transform.rotation.eulerAngles.y;
+        _angleCamera = Quaternion.Euler(0, cameraDegreeY, 0);
+    }
 
     private void FixedUpdate()
     {
-
-
         if (_player.isActiveAndEnabled)
         {
             Move();
@@ -55,43 +44,31 @@ public class InputPhone : MonoBehaviour
 
     private void Move()
     {
-        _inputMoveJoystick.
-            Set(_walkJoystick.Horizontal, _walkJoystick.Vertical);
+        SetInputVector(ref _inputMoveJoystick, _walkJoystick);
+        SetInputVector(ref _inputAttackJoystick, _attackJoystick);
 
-        _inputMoveJoystick = _angleCamera * _inputMoveJoystick;
-
-        _inputAttackJoystick
-            .Set(_attackJoystick.Horizontal, 0, _attackJoystick.Vertical);
-
-        _inputAttackJoystick = _angleCamera * _inputAttackJoystick;
-
-        _moveDirection
-            .Set(_walkJoystick.Horizontal, 0, _walkJoystick.Vertical);
-
-        _moveDirection.Normalize();
-
-       
-            _player.Move(_moveDirection);
-        
-
+        _inputMoveJoystick.Normalize();
+        _player.Move(_inputMoveJoystick);
 
         if (_inputAttackJoystick != Vector3.zero)
         {
-           
-            _player
-                .RotateTarget(_inputAttackJoystick * 100);
-
+            _rotateVector = _inputAttackJoystick;
             _player.Attack();
         }
         else
         {
-
-            if (_inputMoveJoystick != Vector2.zero)
-            {
-                _player
-                    .RotateTarget(_moveDirection * 100);
-            }
+            _rotateVector = _inputMoveJoystick;
             _player.StopAttack();
         }
+        
+        if (_rotateVector!=Vector3.zero)
+            _player.RotateTarget (_rotateVector * _player.SpeedRotation);
+      
+    }
+
+    private void SetInputVector(ref Vector3 vector, Joystick joystick)
+    {
+        vector.Set(joystick.Horizontal, 0, joystick.Vertical);
+        vector = _angleCamera * vector;
     }
 }

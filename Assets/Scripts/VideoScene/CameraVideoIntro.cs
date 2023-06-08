@@ -8,7 +8,10 @@ public class CameraVideoIntro : MonoBehaviour
     private Transform _transform;
 
     private Tweener
-        _looking, _moving;
+        _looking,
+        _moving;
+
+    private float _moveDuration = 6;
 
     private void Awake()
     {
@@ -17,8 +20,9 @@ public class CameraVideoIntro : MonoBehaviour
 
     public void Move()
     {
-        _moving = _transform.DOMove
-            (_waypoint.position, 6).SetEase(Ease.Linear);
+        _moving =
+            _transform.DOMove(_waypoint.position, _moveDuration)
+            .SetEase(Ease.Linear);
     }
 
     private void OnDisable()
@@ -31,7 +35,8 @@ public class CameraVideoIntro : MonoBehaviour
     {
         _looking.Kill();
 
-       return _looking = _transform.DOLookAt
-            (target.position, speed).SetSpeedBased();
+       return _looking = 
+            _transform.DOLookAt(target.position, speed)
+            .SetSpeedBased();
     }
 }

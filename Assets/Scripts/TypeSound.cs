@@ -1,16 +1,16 @@
 ﻿public enum TypeSound
 {
-    HitBuilding = 0,
-    Dead = 1,
-    Destruction = 2,
-    Radio = 3,
-    Pistol = 4,
-    Explosion = 5,
-    Victory = 6,
-    Spite = 7,
-    Electric = 8,
-    ShootGun = 9,
-    FlamaeThrower = 10,
-    Swing = 11,
-    None = 12
+    None = 0,
+    HitBuilding = 1,
+    Dead = 2,
+    Destruction = 3,
+    Radio = 4,
+    Pistol = 5,
+    Explosion = 6,
+    Victory = 7,
+    Spite = 8,
+    Electric = 9,
+    ShootGun = 10,
+    FlameThrower = 11,
+    Swing = 12
 }

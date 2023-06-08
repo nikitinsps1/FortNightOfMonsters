@@ -1,13 +1,18 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 public class LoadSaveData : MonoBehaviour
 {
     [SerializeField]
-    private Barrier
+    private LineDefense
         _left,
         _right;
+
+    [SerializeField]
+    private GuardsContainer _guards;
+
+    [SerializeField]
+    private BarricadeContainer _barricades;
 
     private ChangeWeaponPanel _changeWeapon;
     private SaveData _saveData;
@@ -19,57 +24,43 @@ public class LoadSaveData : MonoBehaviour
 
     [Inject]
     private void Construct(
-        SaveData saveData
-        ,Player player
-        ,MainHouse mainHouse
-        ,ChangeWeaponPanel changeWeaponButtons)
+        SaveData saveData,
+        Player player,
+        MainHouse mainHouse,
+        ChangeWeaponPanel changeWeaponPanel)
     {
-        _changeWeapon = changeWeaponButtons;
+        _changeWeapon = changeWeaponPanel;
         _saveData = saveData;
         _player = player;
         _mainHouse = mainHouse;
-
     }
 
     private void Player()
     {
         float healthValue = _saveData
-            .Characteristick.Dictionary
-            [((int)TypeCharacteristicks.Health)];
+            .Characteristics.Levels
+            [(int)TypeCharacteristicks.Health];
 
         _player.ThisDamageable.SetHealth(healthValue);
     }
 
-    private void Barriers()
+    private void Barricade()
     {
-        Dictionary<int, Barrier> barriers =
-            new Dictionary<int, Barrier>
+        for (int i = 0; i < _saveData.Barricades.Levels.Length; i++)
         {
-            {((int) Directions.LeftFlank), _left},
-            {((int) Directions.RightFlank), _right }
+            _barricades.Upgrade(_barricades.Barricades[i], 
+                    _saveData.Barricades.Levels[i], 
+                    _saveData.Barricades.HealthBarricade[i]);
         }
-        ;
+    }
 
-        foreach (var barrier in barriers)
+    private void Guards()
+    {
+        for (int i = 0; i < _saveData.Guards.RankLevels.Length; i++)
         {
-            BarriersSave save = 
-                _saveData.BarriersUpgrades[barrier.Key];
-
-            int upBarricade = save.BarricadeLevel;
-            int upFirstGuard = save.GuardsLevel[0];
-            int upSecondGuard = save.GuardsLevel[1];
-
-            barrier.Value.UpgradeBarricade
-                (upBarricade, save.HealthBarricade[upBarricade]);
-
-            if (upFirstGuard>0)
+            if (_saveData.Guards.RankLevels[i] > 0)
             {
-                barrier.Value.AddRankGuard(0, upFirstGuard);
-            }
-
-            if (upSecondGuard > 0)
-            {
-                barrier.Value.AddRankGuard(1, upSecondGuard);
+                _guards.AddRankGuard(_guards.Guards[i], _saveData.Guards.RankLevels[i]);
             }
         }
     }
@@ -87,7 +78,7 @@ public class LoadSaveData : MonoBehaviour
 
     private void MainBase()
     {
-        foreach (var building in _saveData.BaseUpgrade.Upgrade)
+        foreach (var building in _saveData.BaseUpgrade.Upgrades)
         {
             if (building.Value == true)
             {
@@ -96,10 +87,11 @@ public class LoadSaveData : MonoBehaviour
         }
     }
 
-    public void Init()
+    public void Load()
     {
         Player();
-        Barriers();
+        Barricade();
+        Guards();
         Weapons();
         MainBase();
 

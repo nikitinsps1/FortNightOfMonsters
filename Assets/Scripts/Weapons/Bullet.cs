@@ -11,17 +11,17 @@ public class Bullet : MonoBehaviour
         _speed,
         _lifeTime;
 
-
-    private float _defaultLifeTime;
-
     private Transform _transform;
     private GameObject ThisGameObject;
+
+    private float _defaultLifeTime;
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();
-        ThisGameObject = gameObject;
         _defaultLifeTime = _lifeTime;
+
+        ThisGameObject = gameObject;
     }
 
     private void Update()
@@ -38,8 +38,7 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        _transform.Translate
-            (Vector3.forward * _speed * Time.deltaTime);
+        _transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 
     private void OnEnable()
@@ -49,11 +48,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Damageable>(out Damageable damageble))
+        if (other.TryGetComponent(out Damageable damageable))
         {
-            if (damageble.Relation != _relation)
+            if (damageable.Relation != _relation)
             {
-                damageble.ApplyDamage(_damage);
+                damageable.ApplyDamage(_damage);
                 ThisGameObject.SetActive(false);
             }
         }

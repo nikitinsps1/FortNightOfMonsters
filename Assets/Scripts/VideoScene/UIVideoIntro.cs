@@ -18,19 +18,15 @@ public class UIVideoIntro : MonoBehaviour
         _returnButton;
 
     private SceneChanger _sceneChanger;
-
     private Tweener _fadingLogo;
 
     public event Action OnLogoFaded;
-
 
     [Inject]
     private void Construct(SceneChanger sceneChanger)
     {
         _sceneChanger = sceneChanger;
     }
-
-
 
     private void Awake()
     {
@@ -48,12 +44,12 @@ public class UIVideoIntro : MonoBehaviour
 
     private void InitButtons()
     {
-        _exitButton.onClick.AddListener
-      (delegate 
-      {
-          Time.timeScale = 1;
-          _sceneChanger.Change(TypeScene.Fort); 
-      });
+        _exitButton.onClick.AddListener(
+            delegate 
+            {
+                Time.timeScale = 1;
+                _sceneChanger.Change(TypeScene.Fort); 
+            });
 
         _returnButton.onClick.AddListener(
             delegate
@@ -70,11 +66,8 @@ public class UIVideoIntro : MonoBehaviour
 
     public void FadeLogo()
     {
-        _fadingLogo =
-             _logo.DOColor(Color.white, 5f)
+        _fadingLogo =_logo.DOColor(Color.white, 5f)
              .SetEase(Ease.Linear)
-             .OnComplete(() =>
-             OnLogoFaded.Invoke()); 
-          
+             .OnComplete(() => OnLogoFaded.Invoke()); 
     }
 }

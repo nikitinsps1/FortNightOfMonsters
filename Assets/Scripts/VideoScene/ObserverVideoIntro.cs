@@ -4,7 +4,6 @@ using Zenject;
 
 public class ObserverVideoIntro : MonoBehaviour
 {
-
     [SerializeField]
     private CarVideo _car;
 
@@ -25,22 +24,19 @@ public class ObserverVideoIntro : MonoBehaviour
         _speedCameraBeforeCrush,
         _speedCameraAfterCrush;
 
-
-
-    private AudioContainer _audioSource;
-
+    private AudioContainer _audio;
     private SceneChanger _sceneChanger;
 
     [Inject]
     private void Construct(SceneChanger sceneChanger, AudioContainer audio)
     {
-        _audioSource = audio;
+        _audio = audio;
         _sceneChanger = sceneChanger;
     }
 
     private void Start()
     {
-        _audioSource.PlayMusic(TypeMusic.RailRoads);
+        _audio.PlayMusic(TypeMusic.RailRoads);
         _zombie.OnReachedFirstPoint += OnReachedPointZombie;
         _zombie.OnDead += OnDeadZombie;
         _uiVideoIntro.OnLogoFaded += OnFadedLogo;
@@ -53,7 +49,6 @@ public class ObserverVideoIntro : MonoBehaviour
         _uiVideoIntro.OnLogoFaded -= OnFadedLogo;
     }
 
-
     private void OnReachedPointZombie()
     {
         _car.Ride();
@@ -62,7 +57,7 @@ public class ObserverVideoIntro : MonoBehaviour
 
     private void OnDeadZombie()
     {
-        _audioSource.PlaySound(TypeSound.HitBuilding, 0.5f);
+        _audio.PlaySound(TypeSound.HitBuilding, 0.5f);
         _camera.Move();
         _camera.Look(_fort, _speedCameraAfterCrush).OnComplete(() =>
         _uiVideoIntro.FadeLogo());

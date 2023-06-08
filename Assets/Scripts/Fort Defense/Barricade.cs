@@ -15,9 +15,12 @@ public class Barricade : MonoBehaviour
     [SerializeField]
     private Transform _transformMesh;
 
+    [SerializeField]
+    private GameObject _dynamiteExplosion;
 
     private AudioContainer _audioEffects;
-    private DeadParticlesConteiner _deadParticles;
+    private ParticlesContainer _deadParticles;
+    private SaveData _saveData;
 
 
     public Damageable ThisDamageable
@@ -25,21 +28,29 @@ public class Barricade : MonoBehaviour
 
 
     [Inject]
-    private void Construct(AudioContainer audio, DeadParticlesConteiner deadParticles)
+    private void Construct(AudioContainer audio, ParticlesContainer deadParticles, SaveData save)
     {
         _audioEffects = audio;
         _deadParticles = deadParticles;
+        _saveData = save;
     }
 
     private void Awake()
     {
         ThisDamageable = GetComponent<Damageable>();
-        ThisDamageable.Construct(_transformMesh, _deadParticles, _audioEffects);
+        ThisDamageable.Construct(_deadParticles, _audioEffects);
     }
-
 
     private void OnDead()
     {
+        bool isHaveDynamite = _saveData.BaseUpgrade.Upgrades[(int)TypeUpgradesBuildings.Dynamite];
+
+        if (isHaveDynamite)
+        {
+            _audioEffects.PlaySound(TypeSound.Explosion,0.1f);
+            _dynamiteExplosion.gameObject.SetActive(true);
+        }
+
         _assaultMediator.BrokeBarrier();
         _assaultMediator.RemoveTarget(ThisDamageable);
     }
@@ -61,7 +72,7 @@ public class Barricade : MonoBehaviour
         ThisDamageable.OnApplyDamage -= OnApplyDamage;
     }
 
-    public void Upgrade(int level, float newHealthValue)
+    public void Solidify(int level, float newHealthValue)
     {
         for (int i = 0; i < _upgradesMeshes.Count; i++)
         {

@@ -15,22 +15,24 @@ public class EnemyFire : Enemy
     private float _shootVolume;
 
     private AudioContainer _audio;
+    private BulletsContainer _bullets;
 
-    private BulletsConteiner _bullets;
-
-    public void Construct(Player player, BulletsConteiner bulletPools, AudioContainer audio, DeadParticlesConteiner deadParticles)
+    public void Construct(
+        Player player, 
+        AudioContainer audio, 
+        ParticlesContainer particles, 
+        BulletsContainer bullets)
     {
-        Construct(player, audio,deadParticles );
-        _bullets = bulletPools;
+        Construct(player, audio,particles);
+        _bullets = bullets;
         _audio = audio;
     }
 
-    protected virtual void Shoot()
+    protected void Shoot()
     {
         ObjectPool bullet =
             _bullets.GetObject
-            (((int)_typeBullets), _shootPosition.position, ThisTransform.rotation);
-
+            ((int)_typeBullets, _shootPosition.position, ThisTransform.rotation);
 
         _audio.PlaySound(_shootingSound, _shootVolume);
     }

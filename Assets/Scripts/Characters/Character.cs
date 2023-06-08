@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Damageable))]
 [RequireComponent (typeof(CharacterAnimator))]
+
 public abstract class Character : MonoBehaviour
 {
     [SerializeField]
@@ -14,27 +15,11 @@ public abstract class Character : MonoBehaviour
     public CharacterAnimator ThisCharacterAnimator 
     { get; private set; }
 
-    protected float SpeedRotation => _speedRotation;
+    public float SpeedRotation => _speedRotation;
 
     private void Awake()
     {
         Init();
-    }
-
-
-    private void OnApplyDamage()
-    {
-        ThisCharacterAnimator.ApplyHit();
-    }
-
-    protected virtual void OnEnable()
-    {
-        ThisDamageable.OnApplyDamage += OnApplyDamage;
-    }
-
-    protected virtual void OnDisable()
-    {
-        ThisDamageable.OnApplyDamage -= OnApplyDamage;
     }
 
     protected virtual void Init()
@@ -44,13 +29,25 @@ public abstract class Character : MonoBehaviour
         ThisCharacterAnimator = GetComponent<CharacterAnimator>();
     }
 
+    protected virtual void OnEnable()
+    {
+        ThisDamageable.OnApplyDamage +=
+            ThisCharacterAnimator.ApplyHit;
+    }
+
+    protected virtual void OnDisable()
+    {
+        ThisDamageable.OnApplyDamage -=
+            ThisCharacterAnimator.ApplyHit;
+    }
+
     public virtual void RotateTarget(Vector3 targetPosition)
     {
         Vector3 direction = targetPosition - ThisTransform.position;
         direction.Normalize();
 
-        float angleRotation 
-            = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+        float angleRotation =
+            Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
         ThisTransform.rotation =
             Quaternion.RotateTowards

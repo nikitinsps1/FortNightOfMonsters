@@ -1,41 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
 public class SaveData : MonoBehaviour
 {
-    public Characteristicks Characteristick
+    public CharacteristicsSave Characteristics
+    { get; private set; }
+    public GuardsSave Guards
     { get; private set; }
     public PlayerArsenalSave Armoury
     { get; private set; }
     public BaseUpgradeSave BaseUpgrade
+    { get; private set; }
+    public BarricadeSave Barricades
     { get; private set; }
     public int NumberLevel
     { get; private set; }
     public int Money
     { get; private set; }
 
-    public Dictionary<int, BarriersSave> BarriersUpgrades
-                { get; private set; }
-
     public event Action OnChangeMoney;
+
+    private int _maxAmountGuards = 4;
+    private int _amountBarricades = 2;
+    private int _startMoney = 50;
+
+    private float _startHealth = 10;
 
     public void NewGame( )
     {
         NumberLevel = 0;
-        Characteristick = new Characteristicks(10);
+        Guards = new GuardsSave(_maxAmountGuards);
+        Characteristics = new CharacteristicsSave(_startHealth);
+        Barricades = new BarricadeSave(_amountBarricades);
         Armoury = new PlayerArsenalSave();
         BaseUpgrade = new BaseUpgradeSave();
-
-        BarriersUpgrades = new Dictionary<int, BarriersSave>
-        {
-            {((int) Directions.LeftFlank), new BarriersSave()},
-            {((int) Directions.RightFlank), new BarriersSave()}
-        };
-
-        Money = 50;
-
+        Money = _startMoney;
     }
 
     public void LevelComplete(int reward)
@@ -56,31 +56,35 @@ public class SaveData : MonoBehaviour
 
         Money = YandexGame.savesData.Money;
 
-        Characteristick = new Characteristicks
-            (YandexGame.savesData.Health, YandexGame.savesData.Charisma);
+        Characteristics = 
+            new CharacteristicsSave (
+                YandexGame.savesData.Health, 
+                YandexGame.savesData.Charisma);
 
-        Armoury = new PlayerArsenalSave
-        (YandexGame.savesData.Shootgun, YandexGame.savesData.Riffle, YandexGame.savesData.Flamebrower);
+        Armoury = 
+            new PlayerArsenalSave(
+                YandexGame.savesData.ShootGun, 
+                YandexGame.savesData.Riffle, 
+                YandexGame.savesData.FlameThrower);
 
-        BaseUpgrade = new BaseUpgradeSave
-        (YandexGame.savesData.LiveHouse, YandexGame.savesData.Dynamite, YandexGame.savesData.DefenceMainHouse);
+        BaseUpgrade = 
+            new BaseUpgradeSave(
+                YandexGame.savesData.LiveHouse, 
+                YandexGame.savesData.Dynamite, 
+                YandexGame.savesData.DefenseMainHouse);
 
+        Guards =
+            new GuardsSave(
+                YandexGame.savesData.AmountGuards, 
+                YandexGame.savesData.RanksGuards);
 
-        BarriersUpgrades = new Dictionary<int, BarriersSave>
-            {
-                {((int) Directions.LeftFlank), new BarriersSave
-                (YandexGame.savesData.FirstBarricade, YandexGame.savesData.FirstFirstGuard,
-                YandexGame.savesData.FirstSecondGuard, YandexGame.savesData.FirstAmountGuard)},
-
-            {((int) Directions.RightFlank), new BarriersSave
-                (YandexGame.savesData.SecondBarricade, YandexGame.savesData.SecondBFirstGuard,
-                YandexGame.savesData.SecondBSecondGuard, YandexGame.savesData.SecondBAmountGuard)},
-        };
+        Barricades =
+            new BarricadeSave
+            (YandexGame.savesData.BarricadesLevels);
     }
 
     public void SendServer()
     {
-
         YandexGame.savesData.ConvertGameData(this);
     }
 }

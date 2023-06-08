@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-/////////Порядок полей изменен ради удобства назначения в инспекторе/////////////
-
 public class Dialog : MonoBehaviour
 {
     [SerializeField, TextArea(1, 20)] 
@@ -31,9 +29,9 @@ public class Dialog : MonoBehaviour
     {
         Settings = new Dictionary<int, DialogButtonSetting>
         {
-            {((int) TypeAnswersDialog.Confirm), _confirm },
-            {((int) TypeAnswersDialog.Cancel), _cancel },
-            {((int) TypeAnswersDialog.Charisma), _charisma }
+            {(int) TypeAnswersDialog.Confirm, _confirm},
+            {(int) TypeAnswersDialog.Cancel, _cancel},
+            {(int) TypeAnswersDialog.Charisma, _charisma}
         };
     }
 }

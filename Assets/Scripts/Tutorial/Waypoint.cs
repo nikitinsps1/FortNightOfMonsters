@@ -3,29 +3,29 @@ using Zenject;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField]
+    private TutorialStage _tutorialStage;
 
     private AudioContainer _audio;
 
-    private Tutorial _tutorial;
 
     [Inject]
-    private void Construct(Tutorial tutorial, AudioContainer audioEffects)
+    private void Construct( AudioContainer audio)
     {
-        _tutorial = tutorial;
-        _audio = audioEffects;
+        _audio = audio;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Player>())
         {
-            _tutorial.ClickCounter();
+            _tutorialStage.ClickCounter();
             gameObject.SetActive(false);
         }
     }
 
     private void OnDisable()
     {
-        _audio.PlaySound(TypeSound.Victory, 0.15f);
+        _audio.PlaySound(TypeSound.Victory, 0.05f);
     }
 }

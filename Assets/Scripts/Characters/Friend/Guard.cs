@@ -3,31 +3,31 @@ using UnityEngine;
 using Zenject;
 
 [RequireComponent(typeof(Arsenal))]
+
 public class Guard : Character
 {
     [SerializeField]
     private AssaultMediator _assaultMediator;
 
     private AudioContainer _audioEffects;
-    private DeadParticlesConteiner _deadParticles;
-    private Damageable _target;
+    private ParticlesContainer _deadParticles;
     private WaitForSeconds _delayShootAnimation;
+    private Damageable _target;
 
-    private bool _isAssault;
+    private bool _isAlarm;
     public Arsenal ThisArsenal
     { get; private set; }
 
     [Inject]
-    private void Construct(AudioContainer effects, DeadParticlesConteiner deadParticles)
+    private void Construct(AudioContainer audio, ParticlesContainer particles)
     {
-        _deadParticles = deadParticles;
-        _audioEffects = effects;
+        _deadParticles = particles;
+        _audioEffects = audio;
     }
-
 
     private void Update()
     {
-        if (_isAssault)
+        if (_isAlarm)
         {
             Defend();
         }
@@ -35,11 +35,9 @@ public class Guard : Character
 
     private void Defend()
     {
-   
-
         if (_target == null || _target.IsAlive == false)
         {
-            Damageable newTarget =
+            Damageable newTarget = 
                 _assaultMediator.GetTarget(TypeRealations.Enemy);
 
             if (newTarget == null)
@@ -53,14 +51,27 @@ public class Guard : Character
         }
         else
         {
-            RotateTarget
-                (_target.ThisTransform.position);
+            RotateTarget(_target.ThisTransform.position);
         }
     }
 
     private void OnDead()
     {
         _assaultMediator.RemoveTarget(ThisDamageable);
+    }
+
+    protected override void Init()
+    {
+        base.Init();
+
+        ThisDamageable.Construct
+            (_deadParticles, _audioEffects);
+
+        ThisArsenal = GetComponent<Arsenal>();
+        ThisArsenal.Init();
+
+        _delayShootAnimation
+            = new WaitForSeconds(Random.value);
     }
 
     protected override void OnEnable()
@@ -70,14 +81,13 @@ public class Guard : Character
         ThisArsenal
             .OnChangedWeapon += ThisCharacterAnimator.ChangeWeapon;
 
-        ThisDamageable
-            .OnDead += OnDead;
-
         ThisCharacterAnimator
             .OnAnimationEvent += ThisArsenal.Attack;
 
         ThisCharacterAnimator
             .OnEndAnimationEvent += ThisArsenal.StopAttack;
+
+        ThisDamageable.OnDead += OnDead;
     }
 
     protected override void OnDisable()
@@ -87,48 +97,32 @@ public class Guard : Character
         ThisArsenal
             .OnChangedWeapon -= ThisCharacterAnimator.ChangeWeapon;
 
-        ThisDamageable
-            .OnDead -= OnDead;
-
         ThisCharacterAnimator
             .OnAnimationEvent -= ThisArsenal.Attack;
 
         ThisCharacterAnimator
             .OnEndAnimationEvent -= ThisArsenal.StopAttack;
-    }
 
-    protected override void Init()
-    {
-        base.Init();
-
-        ThisDamageable
-            .Construct(ThisTransform, _deadParticles, _audioEffects);
-
-        ThisArsenal = GetComponent<Arsenal>();
-        ThisArsenal.Init();
-
-        _delayShootAnimation
-            = new WaitForSeconds(Random.value);
-    }
-
-    public override void Attack()
-    {
-        _target
-            = _assaultMediator.GetTarget(TypeRealations.Enemy);
-
-        base.Attack();
-        _isAssault = true;
-    }
-
-    public override void StopAttack()
-    {
-        base.StopAttack();
-        _isAssault = false;
+        ThisDamageable.OnDead -= OnDead;
     }
 
     public IEnumerator StartShooting()
     {
         yield return _delayShootAnimation;
         Attack();
+    }
+
+    public override void Attack()
+    {
+        _target = _assaultMediator.GetTarget(TypeRealations.Enemy);
+
+        base.Attack();
+        _isAlarm = true;
+    }
+
+    public override void StopAttack()
+    {
+        base.StopAttack();
+        _isAlarm = false;
     }
 }

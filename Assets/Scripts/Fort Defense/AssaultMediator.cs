@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-[RequireComponent(typeof(EnemySpawner))]
 public class AssaultMediator : MonoBehaviour
 {
     [SerializeField]
     private Directions _direction;
 
     [SerializeField]
-    private Barrier _barrier;
+    private LineDefense _barrier;
+
     [SerializeField]
-    private AudioContainer _audio;
+    private EnemySpawner _enemySpawner;
 
     private List<Damageable>
         _enemies,
         _frontiers;
 
-    private EnemySpawner _enemySpawner;
     private LevelProgress _levelProgress;
 
     private WaveEnemies[] _waves;
@@ -36,13 +35,7 @@ public class AssaultMediator : MonoBehaviour
 
     private void Awake()
     {
-        Init();
-    }
-
-    public void Init()
-    {
         _enemies = new List<Damageable>();
-        _enemySpawner = GetComponent<EnemySpawner>();
     }
 
     private void InitTeams()
@@ -56,15 +49,14 @@ public class AssaultMediator : MonoBehaviour
         {
             _enemies.Add(enemies[i].ThisDamageable);
 
-
             enemies[i]
                 .StartAssault(this, _barrierIsBroken);
         }
     }
 
-    private List<Damageable> ChooseTeam(TypeRealations typeRelations)
+    private List<Damageable> ChooseTeam(TypeRealations relation)
     {
-        if (typeRelations == TypeRealations.Enemy)
+        if (relation == TypeRealations.Enemy)
         {
            return _enemies;
         }

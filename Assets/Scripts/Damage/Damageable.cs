@@ -11,7 +11,7 @@ public class Damageable : MonoBehaviour
     private TypeRealations _relation;
 
     [SerializeField]
-    private TypeDeadPartiecles _deadParticles;
+    private TypeDeadParticles _deadParticles;
 
     [SerializeField]
     private Collider _collider;
@@ -25,16 +25,11 @@ public class Damageable : MonoBehaviour
         _deadVolume,
         _damageVolume;
 
-
-    private DeadParticlesConteiner _particlePools;
+    private ParticlesContainer _particlePools;
     private AudioContainer _audio;
     private GameObject _gameObject;
 
     private float _defaultHealth;
-
-    public float Health => _health;
-    public TypeRealations Relation => _relation;
-
     public Transform ThisTransform 
     { get; private set; }   
     public bool IsAlive 
@@ -45,19 +40,21 @@ public class Damageable : MonoBehaviour
         OnSetHealth,
         OnDead;
 
-    public void Construct(Transform thisTransform, DeadParticlesConteiner particlesPools, AudioContainer audioEffects)
+    public TypeRealations Relation => _relation;
+    public float Health => _health;
+
+    public void Construct(ParticlesContainer particles, AudioContainer audio)
     {
-
-
-        ThisTransform = thisTransform;
-        _gameObject = gameObject;
-        _particlePools = particlesPools;
-        _audio = audioEffects;
- 
+        _particlePools = particles;
+        _audio = audio;
     }
+
     private void Awake()
     {
+        ThisTransform = transform;
+
         _defaultHealth = _health;
+        _gameObject = gameObject;
     }
     private void OnEnable()
     {
@@ -71,7 +68,7 @@ public class Damageable : MonoBehaviour
         OnDead?.Invoke();
 
         _particlePools.GetObject
-            (((int)_deadParticles), ThisTransform.position, ThisTransform.rotation);
+            ((int)_deadParticles, ThisTransform.position, ThisTransform.rotation);
 
         _audio.PlaySound(_deadSound, _deadVolume);
 
@@ -83,13 +80,11 @@ public class Damageable : MonoBehaviour
 
     public Vector3 GetAttackPosition(Transform attacking)
     {
-        return _collider
-            .ClosestPoint(attacking.position);
+        return _collider.ClosestPoint(attacking.position);
     }
 
-    public virtual void ApplyDamage(float damage)
+    public void ApplyDamage(float damage)
     {
-
         OnApplyDamage?.Invoke();
         _audio.PlaySound(_damageSound, _damageVolume);
         _hitParticle.Play();
@@ -97,14 +92,12 @@ public class Damageable : MonoBehaviour
 
         if (_health < 0)
         {
-    
             Dead();
         }
     }
 
-    public virtual void SetHealth(float value)
+    public void SetHealth(float value)
     {
-        Debug.Log(1);
         _health = value;
         _defaultHealth = value;
         OnSetHealth?.Invoke();

@@ -145,8 +145,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 2, z: 4}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 4, y: 3.4524345, z: 4.2303214}
+  m_Center: {x: 0, y: 1.7262173, z: 0.1151607}
 --- !u!195 &7207483503565755905
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   _speedRotation: 400
   _shootPosition: {fileID: 2961525516678735667}
   _typeBullets: 0
-  _shootingSound: 7
+  _shootingSound: 8
   _shootVolume: 0.1
 --- !u!114 &4210901506635820041
 MonoBehaviour:
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceForAttack: 12
   _agent: {fileID: 7207483503565755905}
   _obstacle: {fileID: 8859141376388399882}
+  _distanceForAttack: 12
 --- !u!114 &5245312606657571642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7551ab08fa7bb345a6dbd2bb1c6f7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageSound: 12
-  _deadSound: 12
+  _damageSound: 0
+  _deadSound: 0
   _relation: 0
   _deadParticles: 3
   _collider: {fileID: 7207483503565755910}

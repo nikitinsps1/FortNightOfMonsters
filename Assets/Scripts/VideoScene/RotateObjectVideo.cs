@@ -9,9 +9,7 @@ public class RotateObjectVideo : MonoBehaviour
     [SerializeField]
     private float _speed;
 
-
     private Tween _rotating;
-
 
     private void Awake()
     {

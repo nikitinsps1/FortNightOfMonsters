@@ -135,6 +135,7 @@ MonoBehaviour:
   - {fileID: 0}
   _assaultMediator: {fileID: 0}
   _transformMesh: {fileID: 0}
+  _dynamiteExplosion: {fileID: 0}
 --- !u!114 &2711245481484001160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 869792320313870375}
-  - component: {fileID: 7914955097881013505}
   m_Layer: 2
   m_Name: Dinamits
   m_TagString: Untagged
@@ -190,19 +190,6 @@ Transform:
   m_Father: {fileID: 2440707121416880488}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7914955097881013505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3561394177705002764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 046ecebeaabb88e4f913e3968e4540e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _explosion: {fileID: 0}
 --- !u!1001 &1678467927565490348
 PrefabInstance:
   m_ObjectHideFlags: 0

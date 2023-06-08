@@ -2257,7 +2257,7 @@ MonoBehaviour:
   _speedRotation: 450
   _shootPosition: {fileID: 6102154067885202126}
   _typeBullets: 1
-  _shootingSound: 4
+  _shootingSound: 5
   _shootVolume: 0.1
 --- !u!114 &1953687998511354122
 MonoBehaviour:
@@ -2271,8 +2271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7551ab08fa7bb345a6dbd2bb1c6f7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageSound: 12
-  _deadSound: 12
+  _damageSound: 0
+  _deadSound: 0
   _relation: 0
   _deadParticles: 2
   _collider: {fileID: 8238774679155155375}
@@ -2292,9 +2292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceForAttack: 12
   _agent: {fileID: 2244056673465445483}
   _obstacle: {fileID: 3136375867651730841}
+  _distanceForAttack: 12
 --- !u!114 &8463119758638460962
 MonoBehaviour:
   m_ObjectHideFlags: 0

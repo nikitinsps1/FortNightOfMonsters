@@ -29,8 +29,7 @@ public class Tumbleweed : MonoBehaviour
 
     public  void Move()
     {
-        _moving = _transform
-            .DOMove(_target.position, _speed)
+        _moving = _transform.DOMove(_target.position, _speed)
             .SetSpeedBased()
             .SetEase(Ease.Linear);
     }

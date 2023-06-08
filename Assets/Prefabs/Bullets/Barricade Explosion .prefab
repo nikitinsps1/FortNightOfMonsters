@@ -23783,8 +23783,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4824643274001091947}
-  - component: {fileID: 2779028228256884084}
   - component: {fileID: 8091284685997349949}
+  - component: {fileID: 7612534957682092355}
   m_Layer: 0
   m_Name: DamageZone
   m_TagString: Untagged
@@ -23807,22 +23807,6 @@ Transform:
   m_Father: {fileID: 6675755901227325357}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2779028228256884084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4350208140786620178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade7b2d02c4c1b545a23808120c84d5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _relations: 1
-  _amountTargets: 1
-  _collider: {fileID: 8091284685997349949}
-  _damage: 20
 --- !u!135 &8091284685997349949
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23844,6 +23828,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7612534957682092355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4350208140786620178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4db661e66bbb5448bd1f6fda3bb9c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _relations: 1
+  _collider: {fileID: 8091284685997349949}
+  _damage: 10
 --- !u!1 &6630489640582579830
 GameObject:
   m_ObjectHideFlags: 0
@@ -23893,7 +23892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particleSystem: {fileID: 372919455450312265}
-  _damager: {fileID: 2779028228256884084}
+  _damager: {fileID: 7612534957682092355}
   _timer: 0.5
 --- !u!114 &4773687701881823484
 MonoBehaviour:

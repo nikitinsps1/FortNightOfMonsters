@@ -2,12 +2,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+
 public class CharacterAnimator : MonoBehaviour
 {
     private Animator _animator;
 
-    public event Action OnAnimationEvent;
-    public event Action OnEndAnimationEvent;
+    public event Action
+        OnAnimationEvent,
+        OnEndAnimationEvent;
 
     private void Awake()
     {
@@ -40,14 +42,14 @@ public class CharacterAnimator : MonoBehaviour
     public void ChangeWeapon(TypeWeapons type)
     {
         _animator.SetFloat
-            (ContainerStrings.NumberCurrentWeapon, ((int)type));
+            (ContainerStrings.NumberCurrentWeapon, (int)type);
     }
 
     public void Move(Vector3 blendTreeParameters)
     {
         _animator.SetFloat(
-      ContainerStrings.InputMagnitude, blendTreeParameters.magnitude,
-          0.1f, Time.deltaTime * 2);
+            ContainerStrings.InputMagnitude, blendTreeParameters.magnitude,
+            0.1f, Time.deltaTime * 2);
 
         _animator.SetFloat(
             ContainerStrings.Horizontal, blendTreeParameters.x,

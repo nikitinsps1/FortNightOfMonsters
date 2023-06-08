@@ -23,7 +23,6 @@ public class InteractivePoint : MonoBehaviour
         {
             _button.gameObject.SetActive(true);
 
-
             _button.SetNewAction(_enablingObject, _nameAction);
         }
     }

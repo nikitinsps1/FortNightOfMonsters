@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5771570704965259736}
-  - component: {fileID: 985570627}
   - component: {fileID: 7287652089123768184}
+  - component: {fileID: 1390871175211233435}
   m_Layer: 0
   m_Name: DamageZone
   m_TagString: Untagged
@@ -33,22 +33,6 @@ Transform:
   m_Father: {fileID: 5771570705301807302}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &985570627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5771570704965259739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade7b2d02c4c1b545a23808120c84d5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _relations: 0
-  _amountTargets: 0
-  _collider: {fileID: 7287652089123768184}
-  _damage: 1
 --- !u!65 &7287652089123768184
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70,6 +54,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 1.75, z: 1}
+--- !u!114 &1390871175211233435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771570704965259739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4db661e66bbb5448bd1f6fda3bb9c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _relations: 0
+  _collider: {fileID: 7287652089123768184}
+  _damage: 1
 --- !u!1 &5771570705302240384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,7 +1449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedRotation: 122
-  _meleeDamage: {fileID: 985570627}
+  _meleeDamage: {fileID: 1390871175211233435}
 --- !u!114 &614269898720905313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,9 +1474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceForAttack: 1.5
   _agent: {fileID: 5771570705750089636}
   _obstacle: {fileID: 450547956693800389}
+  _distanceForAttack: 1.2
 --- !u!114 &1104650844050611029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,8 +1489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7551ab08fa7bb345a6dbd2bb1c6f7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageSound: 12
-  _deadSound: 12
+  _damageSound: 0
+  _deadSound: 0
   _relation: 0
   _deadParticles: 2
   _collider: {fileID: 6471240280890808007}

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Zenject;
 
 [RequireComponent(typeof(Button))]
+
 public class ChangeWeaponButton : MonoBehaviour
 {
     [SerializeField] 
@@ -27,9 +28,8 @@ public class ChangeWeaponButton : MonoBehaviour
         ThisButton = GetComponent<Button>();
 
         Action action = (delegate
-        { _player.ThisArsenal.Change(_type); });
+        {_player.ThisArsenal.Change(_type);});
 
         ThisButton.onClick.AddListener(action.Invoke);
     }
-
 }

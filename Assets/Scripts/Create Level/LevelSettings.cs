@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/////////Порядок полей изменен ради удобства назначения в инспекторе
+
 public class LevelSettings : MonoBehaviour
 {
     [SerializeField, TextArea(1, 20)]
@@ -15,10 +17,10 @@ public class LevelSettings : MonoBehaviour
     private TypeMusic _music;
 
     [SerializeField]
-    private Dialog _dialog;
+    private int _reward;
 
     [SerializeField]
-    private int _reward;
+    private Dialog _dialog;
 
     private WaveEnemies _enemiesOnStartPool;
 
@@ -43,12 +45,13 @@ public class LevelSettings : MonoBehaviour
 
         InvasionsSettings = new Dictionary<int, WaveEnemies[]>
         {
-            {(int)Directions.LeftFlank,  _leftBarrierWaves },
-            {(int)Directions.RightFlank, _rightBarrierWaves }
+            {(int)Directions.LeftFlank,  _leftBarrierWaves},
+            {(int)Directions.RightFlank, _rightBarrierWaves}
         };
 
-        SumWaves
-            (CountMax(ref _leftBarrierWaves), CountMax(ref _rightBarrierWaves));
+        SumWaves(
+            CountMax(ref _leftBarrierWaves), 
+            CountMax(ref _rightBarrierWaves));
     }
 
     private void InitWaves(WaveEnemies[] waves)
@@ -61,21 +64,17 @@ public class LevelSettings : MonoBehaviour
 
     private void SumWaves(WaveEnemies first,  WaveEnemies second)
     {
-        WaveEnemies empty =
-            new WaveEnemies();
+        WaveEnemies empty = new WaveEnemies();
 
-        _enemiesOnStartPool =
-            new WaveEnemies();
+        _enemiesOnStartPool = new WaveEnemies();
 
-        _enemiesOnStartPool
-            .ConstructEmptyWave();
-
+        _enemiesOnStartPool.ConstructEmptyWave();
         empty.ConstructEmptyWave();
 
         foreach (var item in _enemiesOnStartPool.Amount)
         {
-            int amountEnemy
-                = first.Amount[item.Key] + second.Amount[item.Key];
+            int amountEnemy = 
+                first.Amount[item.Key] + second.Amount[item.Key];
 
             empty.Amount[item.Key] = amountEnemy;
         }
@@ -84,22 +83,21 @@ public class LevelSettings : MonoBehaviour
 
     private WaveEnemies CountMax(ref WaveEnemies[] waves)
     {
-        WaveEnemies emptyWave =
-            new WaveEnemies();
+        WaveEnemies amountMaxEnemy = new WaveEnemies();
 
-        emptyWave
-            .ConstructEmptyWave();
+        amountMaxEnemy.ConstructEmptyWave();
 
         for (int i = 0; i < waves.Length; i++)
         {
-            foreach (var item in waves[i].Amount)
+            foreach (var enemyType in waves[i].Amount)
             {
-                if (item.Value > emptyWave.Amount[item.Key])
+                if (enemyType.Value > amountMaxEnemy.Amount[enemyType.Key])
                 {
-                    emptyWave.Amount[item.Key] = item.Value;
+                    amountMaxEnemy.Amount[enemyType.Key] = 
+                        enemyType.Value;
                 }
             }
         }
-        return emptyWave;
+        return amountMaxEnemy;
     }
 }

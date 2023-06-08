@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4050884370799801650}
   - component: {fileID: 1682707883823355470}
   - component: {fileID: 5803986767778458070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5322087522323511599}
   - component: {fileID: 5322087522323511596}
   - component: {fileID: 5322087522323511597}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camp Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4965,9 +4965,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ammo_pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 93375713b9d6e4a4ab7099069b571d4d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 93375713b9d6e4a4ab7099069b571d4d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 93375713b9d6e4a4ab7099069b571d4d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 93375713b9d6e4a4ab7099069b571d4d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 93375713b9d6e4a4ab7099069b571d4d, type: 3}
       propertyPath: m_IsActive

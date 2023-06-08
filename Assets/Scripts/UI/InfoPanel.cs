@@ -14,23 +14,23 @@ public class InfoPanel : MonoBehaviour
     [SerializeField]
     private Transform _transform;
 
+    private AudioContainer _audio;
     private Tween _tween;
-    private AudioContainer _effects;
 
     [Inject]
-    private void Construct(AudioContainer audioEffects)
+    private void Construct(AudioContainer audio)
     {
-        _effects = audioEffects;
+        _audio = audio;
     }
 
     public void ShowMessage(string newText)
     {
         _panel.SetActive(true);
-        _effects.PlaySound(TypeSound.Radio, 0.1f);
+        _audio.PlaySound(TypeSound.Radio, 0.1f);
         _transform.localScale = Vector3.zero;
-        _tween = _transform.DOScale(1, 1).SetEase(Ease.OutBack);
 
-
+        _tween = _transform.DOScale(1, 1)
+            .SetEase(Ease.OutBack);
 
         _textMesh.text = newText;
     }

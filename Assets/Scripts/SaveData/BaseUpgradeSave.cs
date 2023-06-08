@@ -2,23 +2,23 @@
 
 public class BaseUpgradeSave
 {
-    public Dictionary<int, bool> Upgrade;
+    public Dictionary<int, bool> Upgrades;
 
     public BaseUpgradeSave
         (bool liveHouse = false
         ,bool dynamite = false
         ,bool mainHouseDefense = false)
     {
-        Upgrade = new Dictionary<int, bool>
+        Upgrades = new Dictionary<int, bool>
         {
-            {((int)TypeUpgradesBuildings.LiveHouse), liveHouse },
-            {((int) TypeUpgradesBuildings.Dynamite), dynamite },
-            {((int) TypeUpgradesBuildings.MainHouseDefense), mainHouseDefense },
+            {(int)TypeUpgradesBuildings.LiveHouse, liveHouse},
+            {(int) TypeUpgradesBuildings.Dynamite, dynamite},
+            {(int) TypeUpgradesBuildings.MainHouseDefense, mainHouseDefense},
         };
     }
 
     public void Build(TypeUpgradesBuildings type)
     {
-        Upgrade[((int)type)] = true;
+        Upgrades[(int)type] = true;
     }
 }

@@ -21,12 +21,12 @@ public struct WaveEnemies
     {
         Amount = new Dictionary<int, int>()
             {
-                { ((int)TypeEnemy.Zombie), _zombies },
-                { ((int)TypeEnemy.Kamikaze),_kamikazes },
-                { ((int)TypeEnemy.Spider), _spiders },
-                { ((int)TypeEnemy.Cyborg), _cyborgs },
-                { ((int)TypeEnemy.BanditGun), _banditGun },
-                { ((int)TypeEnemy.BanditMele), _banditMelee }
+                { (int)TypeEnemy.Zombie, _zombies },
+                { (int)TypeEnemy.Kamikaze,_kamikazes },
+                { (int)TypeEnemy.Spider, _spiders },
+                { (int)TypeEnemy.Cyborg, _cyborgs },
+                { (int)TypeEnemy.BanditGun, _banditGun },
+                { (int)TypeEnemy.BanditMele, _banditMelee }
             };
     }
 
@@ -34,12 +34,12 @@ public struct WaveEnemies
     {
         Amount = new Dictionary<int, int>()
             {
-                { ((int)TypeEnemy.Zombie), 0 },
-                { ((int)TypeEnemy.Kamikaze),0 },
-                { ((int)TypeEnemy.Spider), 0 },
-                { ((int)TypeEnemy.Cyborg), 0 },
-                { ((int)TypeEnemy.BanditGun), 0 },
-                { ((int)TypeEnemy.BanditMele), 0 }
+                { (int)TypeEnemy.Zombie, 0 },
+                { (int)TypeEnemy.Kamikaze,0 },
+                { (int)TypeEnemy.Spider, 0 },
+                { (int)TypeEnemy.Cyborg, 0 },
+                { (int)TypeEnemy.BanditGun, 0 },
+                { (int)TypeEnemy.BanditMele, 0 }
             };
     }
 }

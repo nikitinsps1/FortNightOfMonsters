@@ -3,53 +3,51 @@ using Zenject;
 
 [RequireComponent(typeof(CharacterAnimator))]
 [RequireComponent (typeof(Damageable))]
+
 public class Mannequin : MonoBehaviour
 {
+    [SerializeField]
+    private TutorialStage _tutorialStage;
+
     private AudioContainer _audio;
-
     private CharacterAnimator _characterAnimator;
-    private Tutorial _tutorial;
-    private Transform _transform;
-    private Damageable _damagaeble;
-
-    private DeadParticlesConteiner _deadParticlesConteiner;
+    private Damageable _damageable;
+    private ParticlesContainer _particles;
 
     [Inject]
-    private void Construct(Tutorial tutorial, DeadParticlesConteiner deadParticles, AudioContainer audioEffects)
+    private void Construct( ParticlesContainer particles, AudioContainer audio)
     {
-        _tutorial = tutorial;
-        _deadParticlesConteiner = deadParticles;
-        _audio = audioEffects;
+        _particles = particles;
+        _audio = audio;
     }
 
     private void Awake()
     {
         _characterAnimator = GetComponent<CharacterAnimator>();
-        _transform = GetComponent<Transform>();
-        _damagaeble = GetComponent<Damageable>();
+        _damageable = GetComponent<Damageable>();
     }
 
     private void Start()
     {
-        _damagaeble.Construct(_transform, _deadParticlesConteiner, _audio);
+        _damageable.Construct( _particles, _audio);
     }
 
     private void OnEnable()
     {
-        _damagaeble.OnDead += OnDead;
-        _damagaeble.OnApplyDamage += OnApplyDamage;
+        _damageable.OnDead += OnDead;
+        _damageable.OnApplyDamage += OnApplyDamage;
     }
 
     private void OnDisable()
     {
 
-        _damagaeble.OnDead -= OnDead;
-        _damagaeble.OnApplyDamage -= OnApplyDamage;
+        _damageable.OnDead -= OnDead;
+        _damageable.OnApplyDamage -= OnApplyDamage;
     }
 
-    public virtual void OnDead() 
+    public void OnDead() 
     {
-        _tutorial.ClickCounter();
+        _tutorialStage.ClickCounter();
     }
 
     public void OnApplyDamage()

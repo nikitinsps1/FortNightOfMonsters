@@ -31673,7 +31673,7 @@ MonoBehaviour:
   _endPoint: {fileID: 46925899}
   _particleSystem: {fileID: 198247869864325515}
   _renderer: {fileID: 5209178628048096061}
-  _timeRachedPoints: 11
+  _timeReachedPoints: 12
 --- !u!1 &5209178628051273287
 GameObject:
   m_ObjectHideFlags: 0

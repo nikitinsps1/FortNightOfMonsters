@@ -14,12 +14,7 @@ public class EndLevelPanel : MonoBehaviour
     [SerializeField]
     private Button _button;
 
-
-
     private Transform _transform;
-
-    
-
     private Tween _scaleImage;
     private SaveData _saveData;
     private Action _action;
@@ -37,13 +32,13 @@ public class EndLevelPanel : MonoBehaviour
 
     public void Init(Action action, string text)
     {
-
         _action = action;
 
         if (_saveData.NumberLevel % 3 == 0 && _saveData.NumberLevel != 0)
         {
+            _button.onClick.AddListener
+                (YandexGame.FullscreenShow);
 
-            _button.onClick.AddListener(YandexGame.FullscreenShow);
             YandexGame.CloseFullAdEvent += _action;
         }
         else
@@ -53,11 +48,13 @@ public class EndLevelPanel : MonoBehaviour
 
 
         _transform.localScale = Vector3.zero;
-        _scaleImage = _transform.DOScale(1, 1).SetEase(Ease.OutBack).OnComplete(() => Time.timeScale = 0);
+
+        _scaleImage = _transform.DOScale(1, 1)
+            .SetEase(Ease.OutBack)
+            .OnComplete(() => Time.timeScale = 0);
+
         _textMeshPro.text = text;
     }
-
-
 
     private void OnDisable()
     {
@@ -65,7 +62,7 @@ public class EndLevelPanel : MonoBehaviour
         {
             YandexGame.CloseFullAdEvent -= _action;
         }
-        
+        Time.timeScale = 1;
         _scaleImage.Kill();
     }
 }

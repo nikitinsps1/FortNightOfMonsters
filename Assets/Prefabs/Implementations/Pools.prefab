@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _object: {fileID: 5803986767778458070, guid: 20552b8495e945942b0e7a68d9779c27, type: 3}
-  _startAmount: 0
+  _startAmount: 5
 --- !u!1 &1313691902397683556
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +80,7 @@ Transform:
   - {fileID: 874025254319744913}
   - {fileID: 4363007272365629804}
   - {fileID: 2181194250974902178}
+  - {fileID: 3297866091432758090}
   m_Father: {fileID: 1065416175397518589}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,6 +101,7 @@ MonoBehaviour:
   _deadZombie: {fileID: 5781667620354236512}
   _deadSpider: {fileID: 3667568957367303644}
   _buildingBoom: {fileID: 1697507171855616666}
+  _hit: {fileID: 7596272533738303670}
 --- !u!1 &1517051398980621083
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986187977258594093}
-  - component: {fileID: 4633572167634486961}
+  - component: {fileID: 3338577127681379286}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -138,7 +140,7 @@ Transform:
   m_Father: {fileID: 1065416175397518589}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4633572167634486961
+--- !u!114 &3338577127681379286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1517051398980621083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f3c488252649d540848a5fec4871745, type: 3}
+  m_Script: {fileID: 11500000, guid: 86a61bb946e67bd46843dbb1cbbbbfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _zombies: {fileID: 1644460667138532917}
@@ -155,7 +157,7 @@ MonoBehaviour:
   _cyborgs: {fileID: 6479028865096200746}
   _spiders: {fileID: 8906786861335196059}
   _gunBandits: {fileID: 6409062853071566691}
-  _meleBandits: {fileID: 7879634078415678891}
+  _meleeBandits: {fileID: 7879634078415678891}
 --- !u!1 &2565630607416186851
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +513,7 @@ Transform:
   - {fileID: 306044583857299542}
   - {fileID: 4808982074701752446}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6620358548460874092
 GameObject:
@@ -606,6 +608,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _object: {fileID: 9140383538092711550, guid: e3add1ff18b991543a67c3c5d3605ad9, type: 3}
   _startAmount: 0
+--- !u!1 &7411209294803793707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3297866091432758090}
+  - component: {fileID: 7596272533738303670}
+  m_Layer: 0
+  m_Name: Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3297866091432758090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411209294803793707}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 306044583857299542}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7596272533738303670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411209294803793707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b2633c054803741b969ca869e6c979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 1208757536669495784, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  _startAmount: 15
 --- !u!1 &7505009802728211630
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4808982074701752446}
-  - component: {fileID: 3227962493604149069}
+  - component: {fileID: 8175052639251776025}
   m_Layer: 0
   m_Name: Bullets
   m_TagString: Untagged
@@ -641,7 +689,7 @@ Transform:
   m_Father: {fileID: 1065416175397518589}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3227962493604149069
+--- !u!114 &8175052639251776025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -650,7 +698,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7505009802728211630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7133481320434a04f8a873bb983abaff, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c1c2f0f4cce6864581046ae4c75a3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spite: {fileID: 148588152018429899}

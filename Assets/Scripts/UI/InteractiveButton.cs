@@ -22,7 +22,9 @@ public class InteractiveButton : MonoBehaviour
     private void OnEnable()
     {
         _transform.localScale = Vector3.zero;
-        _scaling = _transform.DOScale(1, 1).SetEase(Ease.OutBack);
+
+        _scaling = _transform.DOScale(1, 1)
+            .SetEase(Ease.OutBack);
 
         _button.onClick.AddListener
             (delegate { gameObject.SetActive(false); });
@@ -30,7 +32,6 @@ public class InteractiveButton : MonoBehaviour
 
     private void OnDisable()
     {
-  
         OffInteractive();
     }
 

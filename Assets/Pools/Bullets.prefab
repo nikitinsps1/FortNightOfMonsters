@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7862423413975485470}
   - component: {fileID: 1856047257436813211}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8436888834751998165}
   - component: {fileID: 4164040629154854879}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ Transform:
   - {fileID: 4355586481630000361}
   - {fileID: 5247256185710214915}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4164040629154854879
 MonoBehaviour:
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5247256185710214915}
   - component: {fileID: 1089505255119353841}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Explosion Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4355586481630000361}
   - component: {fileID: 1936255323437030069}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}

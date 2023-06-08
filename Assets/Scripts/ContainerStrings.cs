@@ -10,4 +10,6 @@ public static class ContainerStrings
     public static string Horizontal => "Horizontal";
     public static string InputMagnitude => "InputMagnitude";
     public static string NumberCurrentWeapon => "NumberCurrentWeapon";
+    public static string Desktop => "desktop";
+
 }

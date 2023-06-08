@@ -4,13 +4,15 @@ using Zenject;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private EnemiesPoolsContainer _pool;
+    private EnemiesContainer _pool;
 
     private Transform _transform;
     private List<Enemy> _spawnedEnemies;
 
+    private float _radiusSpawn = 10.5f;
+
     [Inject]
-    private void Construct(EnemiesPoolsContainer enemies)
+    private void Construct(EnemiesContainer enemies)
     {
         _pool = enemies;
     }
@@ -38,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
             for (int i = 0; i < item.Value; i++)
             {
                 spawnPosition 
-                    = _transform.position + Random.insideUnitSphere * 10.5f;
+                    = _transform.position + Random.insideUnitSphere * _radiusSpawn;
 
                 enemy = _pool.GetObject
                     (item.Key, spawnPosition, _transform.rotation)

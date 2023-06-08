@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
+
 namespace YG
 {
     [System.Serializable]
@@ -10,76 +11,82 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
 
-
         ////////Base
-        public int Level;
-        public int Money;
+        public int
+            Level,
+            Money,
+            AmountGuards;
 
-        ////////Characteristick
-        public float Health;
-        public float Charisma;
+        public int[]
+            RanksGuards,
+            BarricadesLevels;
 
-        ////////Weapon
-        public bool Shootgun;
-        public bool Riffle;
-        public bool Flamebrower;
+        public float
+            Health,
+            Charisma;
 
-        ////////Buidling
-        public bool LiveHouse;
-        public bool Dynamite;
-        public bool DefenceMainHouse;
+        public bool
+            ShootGun,
+            Riffle,
+            FlameThrower,
 
-        ////////Barriers 1
-        public int FirstBarricade;
-        public int FirstAmountGuard;
-        public int FirstFirstGuard;
-        public int FirstSecondGuard;
-
-
-        ////////Barriers 2
-        public int SecondBarricade;
-        public int SecondBAmountGuard;
-        public int SecondBFirstGuard;
-        public int SecondBSecondGuard;
+            LiveHouse,
+            Dynamite,
+            DefenseMainHouse;
 
 
         public void ConvertGameData(SaveData saveData)
         {
-
-            Money = saveData.Money;
             Level = saveData.NumberLevel;
+            Money = saveData.Money;
 
+            AmountGuards = saveData.Guards.AmountGuards;
+            RanksGuards = saveData.Guards.RankLevels;
+            BarricadesLevels = saveData.Barricades.Levels;
 
-            Health = saveData.Characteristick.Dictionary[((int)TypeCharacteristicks.Health)];
-            Charisma = saveData.Characteristick.Dictionary[((int)TypeCharacteristicks.Charisma)];
-
-            Shootgun = saveData.Armoury.Weapons[((int)TypeWeapons.ShootGun)];
-            Riffle = saveData.Armoury.Weapons[((int)TypeWeapons.Riffle)];
-            Flamebrower = saveData.Armoury.Weapons[((int)TypeWeapons.FlameBrower)];
-
-
-            DefenceMainHouse = saveData.BaseUpgrade.Upgrade[((int)TypeUpgradesBuildings.MainHouseDefense)];
-            Dynamite = saveData.BaseUpgrade.Upgrade[((int)TypeUpgradesBuildings.Dynamite)];
-            LiveHouse = saveData.BaseUpgrade.Upgrade[((int)TypeUpgradesBuildings.LiveHouse)];
-
-            BarriersSave leftSave = saveData.BarriersUpgrades[((int)Directions.LeftFlank)];
-            BarriersSave rightSave = saveData.BarriersUpgrades[((int)Directions.RightFlank)];
-
-            FirstBarricade = leftSave.BarricadeLevel;
-            FirstAmountGuard = leftSave.AmountGuard;
-            FirstFirstGuard = leftSave.GuardsLevel[0];
-            FirstSecondGuard = leftSave.GuardsLevel[1];
-
-            SecondBarricade = rightSave.BarricadeLevel;
-            SecondBAmountGuard = rightSave.AmountGuard;
-            SecondBFirstGuard = rightSave.GuardsLevel[0];
-            SecondBSecondGuard = rightSave.GuardsLevel[1];
+            Characteristics(saveData.Characteristics.Levels);
+            Building(saveData.BaseUpgrade.Upgrades);
+            Weapons(saveData.Armoury.Weapons);
 
             YandexGame.SaveProgress();
         }
+
+        public void Characteristics(Dictionary<int, float> characteristics)
+        {
+            Health = characteristics
+                [(int)TypeCharacteristicks.Health];
+
+            Charisma = characteristics
+                [(int)TypeCharacteristicks.Charisma];
+        }
+
+        public void Building(Dictionary<int, bool> building)
+        {
+            DefenseMainHouse = building
+                [(int)TypeUpgradesBuildings.MainHouseDefense];
+
+            Dynamite = building
+                [(int)TypeUpgradesBuildings.Dynamite];
+
+            LiveHouse = building
+                [(int)TypeUpgradesBuildings.LiveHouse];
+        }
+
+        public void Weapons(Dictionary<int, bool> weapons)
+        {
+            ShootGun = weapons
+                [(int)TypeWeapons.ShootGun];
+
+            Riffle = weapons
+                [(int)TypeWeapons.Riffle];
+
+            FlameThrower = weapons
+                [(int)TypeWeapons.Flamethrower];
+        }
+
         public SavesYG()
         {
-        
+
         }
     }
 }

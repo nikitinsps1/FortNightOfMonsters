@@ -18,8 +18,10 @@ public class DialogChangeMoney : DialogAction
     public override Action GetEvent()
     {
         HaveNewTask = false;
-        Action action =
-            delegate { _saveData.RefreshAmountMoney(_value);};
+
+        Action action = delegate
+        {_saveData.RefreshAmountMoney(_value);};
+
         return action;
     }
 }
