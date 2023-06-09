@@ -194,14 +194,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7207483503558468995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38bbc02749f45b48b1d42c8159661cd, type: 3}
+  m_Script: {fileID: 11500000, guid: b7b31a1a5fa35134ba2b0fca0c3786f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedRotation: 400
-  _shootPosition: {fileID: 2961525516678735667}
+  _speedRotation: 350
+  _shootPoint: {fileID: 2961525516678735667}
   _typeBullets: 0
   _shootingSound: 8
-  _shootVolume: 0.1
+  _shootVolume: 0.05
 --- !u!114 &4210901506635820041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 7207483503565755905}
   _obstacle: {fileID: 8859141376388399882}
-  _distanceForAttack: 12
+  _distanceAttack: 10
 --- !u!114 &5245312606657571642
 MonoBehaviour:
   m_ObjectHideFlags: 0

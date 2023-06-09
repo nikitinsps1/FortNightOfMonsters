@@ -27,7 +27,7 @@ public class SaveData : MonoBehaviour
     private int _startMoney = 50;
 
 
-    public void NewGame( )
+    public void NewGame()
     {
         NumberLevel = 0;
         Characteristics = new CharacteristicsSave();
@@ -56,21 +56,21 @@ public class SaveData : MonoBehaviour
 
         Money = YandexGame.savesData.Money;
 
-        Characteristics = 
-            new CharacteristicsSave (
-                YandexGame.savesData.Health, 
+        Characteristics =
+            new CharacteristicsSave(
+                YandexGame.savesData.Health,
                 YandexGame.savesData.Charisma);
 
-        Weapons = 
+        Weapons =
             new PlayerArsenalSave(
-                YandexGame.savesData.ShootGun, 
-                YandexGame.savesData.Riffle, 
+                YandexGame.savesData.ShootGun,
+                YandexGame.savesData.Riffle,
                 YandexGame.savesData.FlameThrower);
 
-        Fort = 
+        Fort =
             new FortUpgradeSave(
-                YandexGame.savesData.LiveHouse, 
-                YandexGame.savesData.Dynamite, 
+                YandexGame.savesData.LiveHouse,
+                YandexGame.savesData.Dynamite,
                 YandexGame.savesData.DefenseMainHouse);
 
         Guards =

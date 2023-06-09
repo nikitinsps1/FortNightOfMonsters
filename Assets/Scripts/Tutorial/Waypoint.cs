@@ -10,14 +10,14 @@ public class Waypoint : MonoBehaviour
 
 
     [Inject]
-    private void Construct( AudioContainer audio)
+    private void Construct(AudioContainer audio)
     {
         _audio = audio;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.GetComponent<PlayerHeroLogic>())
         {
             _tutorialStage.ClickCounter();
             gameObject.SetActive(false);

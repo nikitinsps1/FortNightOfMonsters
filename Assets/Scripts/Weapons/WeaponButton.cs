@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
@@ -10,13 +9,13 @@ public class WeaponButton : MonoBehaviour
     [SerializeField]
     private TypeWeapons _weapon;
 
-    private Player _player;
+    private PlayerHeroLogic _player;
 
     public Button ThisButton
     { get; private set; }
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerHeroLogic player)
     {
         _player = player;
     }
@@ -26,17 +25,11 @@ public class WeaponButton : MonoBehaviour
         ThisButton = GetComponent<Button>();
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        Action action = (delegate
-        { _player.ThisArsenal.Change(_weapon); });
-
-        ThisButton.onClick.AddListener(action.Invoke);
-    }
-
-    private void OnDisable()
-    {
-        ThisButton.onClick.RemoveAllListeners();
+        ThisButton
+            .onClick
+            .AddListener(() => _player.ThisArsenal.Change(_weapon));
     }
 
 }

@@ -12,8 +12,8 @@ public abstract class UpgradePanel<Upgrade> : MonoBehaviour where Upgrade : Upgr
     protected Upgrade _upgrading;
 
     private BuyMenu _buyMenu;
-
     protected Action OnPurchase;
+
     protected Upgrade Upgrading => _upgrading;
     protected SaveData SaveData
     { get; private set; }
@@ -22,7 +22,7 @@ public abstract class UpgradePanel<Upgrade> : MonoBehaviour where Upgrade : Upgr
     private void Construct(BuyMenu buyMenu, SaveData saveData)
     {
         _buyMenu = buyMenu;
-        SaveData = saveData; 
+        SaveData = saveData;
     }
 
     private void Start() => RefreshPanel();

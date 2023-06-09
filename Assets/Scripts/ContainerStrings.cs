@@ -1,4 +1,4 @@
-public static class ContainerStrings 
+public static class ContainerStrings
 {
     public static string Move => "Move";
     public static string Attack => "Attack";
@@ -11,5 +11,4 @@ public static class ContainerStrings
     public static string InputMagnitude => "InputMagnitude";
     public static string NumberCurrentWeapon => "NumberCurrentWeapon";
     public static string Desktop => "desktop";
-
 }

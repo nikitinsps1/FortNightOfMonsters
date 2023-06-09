@@ -10,18 +10,16 @@ public class DialogChangeMoney : DialogAction
     private SaveData _saveData;
 
     [Inject]
-    private void Construct(SaveData saveData )
+    private void Construct(SaveData saveData)
     {
         _saveData = saveData;
     }
 
-    public override Action GetEvent()
+    public override Action GetAction()
     {
-        HaveNewTask = false;
+        IsHaveNewTask = false;
 
-        Action action = delegate
-        {_saveData.RefreshAmountMoney(_value);};
-
-        return action;
+        return delegate
+        { _saveData.RefreshAmountMoney(_value); };
     }
 }

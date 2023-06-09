@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,25 +15,17 @@ public class DialogMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _tmpDialog;
 
-    [SerializeField]
-    private Button _endDialogButton;
-
-    [SerializeField]
-    private GameObject _characterPlace;
-
     private Dialog _dialog;
     private SaveData _data;
-    private TaskPanel _taskPanel;
+    private LevelProgress _levelProgress;
 
-    private Dictionary
-        <int, Button>
-        _buttonsDialog;
+    private Dictionary<int, Button> _buttonsDialog;
 
     [Inject]
-    private void Construct(SaveData data, TaskPanel taskPanel)
+    private void Construct(SaveData data, LevelProgress levelProgress)
     {
         _data = data;
-        _taskPanel = taskPanel;
+        _levelProgress = levelProgress;
     }
 
     private void OnEnable()
@@ -44,9 +35,10 @@ public class DialogMenu : MonoBehaviour
 
     private void CheckCharisma()
     {
-        int charismaValue = 
-            (_data.Characteristics.ThisDictionary
-            [(int)TypeCharacteristicks.Charisma]);
+        int charismaValue = (_data
+            .Characteristics
+            .ThisDictionary
+            [(int)TypeCharacteristics.Charisma]);
 
         if (charismaValue < _dialog.RequiredCharisma)
         {
@@ -60,49 +52,34 @@ public class DialogMenu : MonoBehaviour
 
     private void InitializeButton(int indexButton, Button button)
     {
-        DialogButtonSetting setting = _dialog.Settings[indexButton];
+        DialogButtonSetting setting =
+            _dialog.Settings[indexButton];
 
-        Action resultDialog = delegate
-        { ChangeText(setting.TextAfter); };
-
-        if (setting.DialogAction != null)
-        {
-            resultDialog += setting.DialogAction.GetEvent();
-        }
-
-        resultDialog += delegate
-        { EndDialog(setting.HaveNewTask);};
-
-        button.onClick.AddListener(resultDialog.Invoke);
+        button.onClick.AddListener(() => ResultDialog(setting));
     }
 
-    private void EndDialog(bool haveNewTask)
-    {
-        foreach (var item in _buttonsDialog)
-        {
-            item.Value.gameObject.SetActive(false);
-        }
-
-        _endDialogButton.gameObject.SetActive(true);
-
-        _characterPlace.SetActive(false);
-
-        if (haveNewTask == false)
-        {
-            _taskPanel.OnReadyForInvasions();
-        }
-    }
 
     private void ChangeText(string newText)
     {
         _tmpDialog.text = newText;
+    }
 
+
+    public void ResultDialog(DialogButtonSetting setting)
+    {
+        ChangeText(setting.TextAfter);
+
+        if (setting.DialogAction != null)
+            setting.DialogAction.GetAction().Invoke();
+
+        if (setting.HaveNewTask == false)
+            _levelProgress.ReadyInvasion();
     }
 
     public void Init(Dialog dialog)
     {
         _dialog = dialog;
-        dialog.Init();
+        _dialog.Init();
 
         _buttonsDialog = new Dictionary<int, Button>
         {

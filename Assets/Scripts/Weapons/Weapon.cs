@@ -30,7 +30,7 @@ public abstract class Weapon : MonoBehaviour
         Sound();
     }
 
-    public  void StopAttack()
+    public void StopAttack()
     {
         OnStopAttack?.Invoke();
     }

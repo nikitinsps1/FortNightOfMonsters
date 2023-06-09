@@ -22,13 +22,13 @@ public class LevelSettings : MonoBehaviour
     [SerializeField]
     private Dialog _dialog;
 
-    private WaveEnemies _enemiesOnStartPool;
+    private WaveEnemies _enemiesStartPool;
+
 
     public Dictionary<int, WaveEnemies[]> InvasionsSettings
     { get; private set; }
-
     public Dialog ThisDialog => _dialog;
-    public WaveEnemies EnemiesOnStartPool => _enemiesOnStartPool;
+    public WaveEnemies EnemiesOnStartPool => _enemiesStartPool;
     public TypeMusic Music => _music;
     public string DescriptionMissions => _descriptionMissions;
     public int Reward => _reward;
@@ -50,7 +50,7 @@ public class LevelSettings : MonoBehaviour
         };
 
         SumWaves(
-            CountMax(ref _leftBarrierWaves), 
+            CountMax(ref _leftBarrierWaves),
             CountMax(ref _rightBarrierWaves));
     }
 
@@ -62,29 +62,27 @@ public class LevelSettings : MonoBehaviour
         }
     }
 
-    private void SumWaves(WaveEnemies first,  WaveEnemies second)
+    private void SumWaves(WaveEnemies first, WaveEnemies second)
     {
         WaveEnemies empty = new WaveEnemies();
+        _enemiesStartPool = new WaveEnemies();
 
-        _enemiesOnStartPool = new WaveEnemies();
-
-        _enemiesOnStartPool.ConstructEmptyWave();
+        _enemiesStartPool.ConstructEmptyWave();
         empty.ConstructEmptyWave();
 
-        foreach (var item in _enemiesOnStartPool.Amount)
+        foreach (var item in _enemiesStartPool.Amount)
         {
-            int amountEnemy = 
+            int amountEnemy =
                 first.Amount[item.Key] + second.Amount[item.Key];
 
             empty.Amount[item.Key] = amountEnemy;
         }
-        _enemiesOnStartPool = empty;
+        _enemiesStartPool = empty;
     }
 
     private WaveEnemies CountMax(ref WaveEnemies[] waves)
     {
         WaveEnemies amountMaxEnemy = new WaveEnemies();
-
         amountMaxEnemy.ConstructEmptyWave();
 
         for (int i = 0; i < waves.Length; i++)
@@ -93,8 +91,7 @@ public class LevelSettings : MonoBehaviour
             {
                 if (enemyType.Value > amountMaxEnemy.Amount[enemyType.Key])
                 {
-                    amountMaxEnemy.Amount[enemyType.Key] = 
-                        enemyType.Value;
+                    amountMaxEnemy.Amount[enemyType.Key] = enemyType.Value;
                 }
             }
         }

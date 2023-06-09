@@ -19,7 +19,6 @@ public class FlameThrower : MeleeWeapon
         OnStopAttack -= _attackParticle.Stop;
     }
 
-
     protected override void Sound()
     {
         _audio.Flame.Play();

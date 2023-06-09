@@ -1098,7 +1098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedRotation: 450
-  _shootPosition: {fileID: 7858748184154866586}
+  _shootPoint: {fileID: 7858748184154866586}
   _typeBullets: 2
   _shootingSound: 6
   _shootVolume: 0.5
@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 7858748185669565688}
   _obstacle: {fileID: 1661492367}
-  _distanceForAttack: 2
+  _distanceAttack: 1
 --- !u!114 &2082943690905821681
 MonoBehaviour:
   m_ObjectHideFlags: 0

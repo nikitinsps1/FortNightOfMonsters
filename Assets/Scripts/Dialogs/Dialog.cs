@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
-    [SerializeField, TextArea(1, 20)] 
+    [SerializeField, TextArea(1, 20)]
     private string _startSpeech;
 
     [SerializeField]
     private GameObject _character;
 
-    [SerializeField] 
+    [SerializeField]
     private int _requiredCharisma;
 
     public GameObject Character => _character;
@@ -22,8 +22,8 @@ public class Dialog : MonoBehaviour
         _cancel,
         _charisma;
 
-    public Dictionary<int, DialogButtonSetting> 
-        Settings { get; private set; }
+    public Dictionary<int, DialogButtonSetting> Settings
+    { get; private set; }
 
     public void Init()
     {

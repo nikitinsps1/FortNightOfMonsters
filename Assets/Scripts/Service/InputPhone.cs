@@ -8,7 +8,7 @@ public class InputPhone : MonoBehaviour
         _walkJoystick,
         _attackJoystick;
 
-    private Player _player;
+    private PlayerHeroLogic _player;
 
     private Vector3
         _inputAttackJoystick,
@@ -18,7 +18,7 @@ public class InputPhone : MonoBehaviour
     private Quaternion _angleCamera;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerHeroLogic player)
     {
         _player = player;
     }
@@ -30,8 +30,11 @@ public class InputPhone : MonoBehaviour
 
     private void Init()
     {
-        float cameraDegreeY = Camera.main.transform.rotation.eulerAngles.y;
-        _angleCamera = Quaternion.Euler(0, cameraDegreeY, 0);
+        float cameraDegreeY =
+            Camera.main.transform.rotation.eulerAngles.y;
+
+        _angleCamera =
+            Quaternion.Euler(0, cameraDegreeY, 0);
     }
 
     private void FixedUpdate()
@@ -60,10 +63,10 @@ public class InputPhone : MonoBehaviour
             _rotateVector = _inputMoveJoystick;
             _player.StopAttack();
         }
-        
-        if (_rotateVector!=Vector3.zero)
-            _player.RotateTarget (_rotateVector * _player.SpeedRotation);
-      
+
+        if (_rotateVector != Vector3.zero)
+            _player.RotateTarget(_rotateVector * _player.SpeedRotation);
+
     }
 
     private void SetInputVector(ref Vector3 vector, Joystick joystick)

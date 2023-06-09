@@ -12,7 +12,7 @@ public class Pool : MonoBehaviour
     private List<ObjectPool> _pool;
     public int StartAmount => _startAmount;
 
-    public void FormPool(int count )
+    public void FormPool(int count)
     {
         _pool = new List<ObjectPool>();
 
@@ -24,7 +24,7 @@ public class Pool : MonoBehaviour
 
     public virtual ObjectPool CreateObject()
     {
-        ObjectPool newObject= Instantiate(_object);
+        ObjectPool newObject = Instantiate(_object);
         newObject.Init();
 
         _pool.Add(newObject);

@@ -6,7 +6,7 @@ public class Tumbleweed : MonoBehaviour
     [SerializeField]
     private Transform _target;
 
-    [SerializeField] 
+    [SerializeField]
     private float _speed;
 
     private Tweener _moving;
@@ -27,9 +27,10 @@ public class Tumbleweed : MonoBehaviour
         _moving.Kill();
     }
 
-    public  void Move()
+    public void Move()
     {
-        _moving = _transform.DOMove(_target.position, _speed)
+        _moving = _transform
+            .DOMove(_target.position, _speed)
             .SetSpeedBased()
             .SetEase(Ease.Linear);
     }

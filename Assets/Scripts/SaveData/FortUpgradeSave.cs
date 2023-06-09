@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class FortUpgradeSave: SavedObject
+public class FortUpgradeSave : SavedObject
 {
     public FortUpgradeSave(
         int liveHouse = 0,

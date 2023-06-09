@@ -24,7 +24,7 @@ public class ZombieVideo : MonoBehaviour
     public event Action
         OnDead,
         OnReachedFirstPoint;
-  
+
     private void Awake()
     {
         _transform = transform;
@@ -39,14 +39,16 @@ public class ZombieVideo : MonoBehaviour
     {
         _moving = DOTween.Sequence();
 
-        _moving.Append(_transform.DOMove
-            (_firstPoint.position, _timeReachedPoints)
+        _moving
+            .Append(_transform
+            .DOMove(_firstPoint.position, _timeReachedPoints)
             .SetEase(Ease.Linear));
 
         _moving.AppendCallback(OnReachedFirstPoint.Invoke);
-        
-        _moving.Append(_transform.DOMove
-            (_endPoint.position, _timeReachedPoints)
+
+        _moving
+            .Append(_transform
+            .DOMove(_endPoint.position, _timeReachedPoints)
             .SetEase(Ease.Linear));
     }
 
@@ -54,6 +56,7 @@ public class ZombieVideo : MonoBehaviour
     {
         _renderer.enabled = false;
         _particleSystem.Play();
+
         OnDead.Invoke();
     }
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMelee : Enemy
+public class EnemyMeleeLogic : EnemyLogic
 {
     [SerializeField]
     private MeleeDamage _meleeDamage;

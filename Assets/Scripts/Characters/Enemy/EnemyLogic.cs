@@ -2,19 +2,19 @@
 
 [RequireComponent(typeof(NavigationEnemy))]
 
-public abstract class Enemy : Character
+public abstract class EnemyLogic : CharacterLogic
 {
     private NavigationEnemy _navigation;
 
     private Damageable _target;
     private AssaultMediator _mediator;
 
-    private bool _isAssault = false;
+    private bool _isStartAssault = false;
     private bool _isAttack = false;
 
     private void Update()
     {
-        if (_isAssault)
+        if (_isStartAssault)
         {
             Assault();
         }
@@ -24,7 +24,7 @@ public abstract class Enemy : Character
     {
         if (_target.IsAlive == false)
         {
-            _target = _mediator.GetTarget(TypeRealations.Friend);
+            _target = _mediator.GetTarget(TypeRelations.Friend);
             _navigation.SetTarget(_target);
         }
     }
@@ -32,7 +32,6 @@ public abstract class Enemy : Character
     private void Dead()
     {
         _mediator.RemoveTarget(ThisDamageable);
-        _isAssault = false;
         _isAttack = false;
     }
 
@@ -45,6 +44,7 @@ public abstract class Enemy : Character
     protected override void OnEnable()
     {
         base.OnEnable();
+
         ThisDamageable.OnDead += Dead;
         _navigation.OnReachedPoint += Attack;
         _navigation.OnChangeDestination += StopAttack;
@@ -59,36 +59,34 @@ public abstract class Enemy : Character
 
         if (_mediator != null)
         {
-            _mediator.OnBrokenBarrier -= _navigation.StartHuntPlayer;
+            _mediator.OnBrokenBarrier -=
+                _navigation.StartHuntPlayer;
         }
     }
 
     public void StartAssault(AssaultMediator mediator, bool BarrierIsBroken)
     {
         _mediator = mediator;
-        _isAssault = true;
+        _isStartAssault = true;
 
-        _target = _mediator
-            .GetTarget(TypeRealations.Friend);
+        _target = _mediator.GetTarget(TypeRelations.Friend);
 
-        _navigation
-            .SetTarget(_target, BarrierIsBroken);
+        _navigation.SetTarget(_target, BarrierIsBroken);
 
-        _mediator.OnBrokenBarrier += _navigation.StartHuntPlayer;
+        _mediator.OnBrokenBarrier +=
+            _navigation.StartHuntPlayer;
     }
 
-    public virtual void Construct(Player player, AudioContainer audio, ParticlesContainer particles)
+    public void Construct(PlayerHeroLogic player, AudioContainer audio, ParticlesContainer particles)
     {
         if (ThisDamageable == null)
         {
             ThisDamageable = GetComponent<Damageable>();
         }
 
-        ThisDamageable
-               .Construct(particles, audio);
+        ThisDamageable.Construct(particles, audio);
 
-        _navigation
-            .Construct(player.ThisDamageable);
+        _navigation.Construct(player.ThisDamageable);
     }
 
     public override void Attack()
@@ -99,7 +97,7 @@ public abstract class Enemy : Character
             base.Attack();
         }
 
-        RotateTarget(_navigation._targetPosition);
+        RotateTarget(_navigation.TargetPosition);
     }
 
     public override void StopAttack()

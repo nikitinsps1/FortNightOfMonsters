@@ -62,10 +62,10 @@ namespace YG
         public void Characteristics(Dictionary<int, int> characteristics)
         {
             Health = characteristics
-                [(int)TypeCharacteristicks.Health];
+                [(int)TypeCharacteristics.Health];
 
             Charisma = characteristics
-                [(int)TypeCharacteristicks.Charisma];
+                [(int)TypeCharacteristics.Charisma];
         }
 
         public void Building(Dictionary<int, int> building)

@@ -4,7 +4,7 @@ using Zenject;
 
 public class InputPlayer : MonoBehaviour
 {
-    private Player _player;
+    private PlayerHeroLogic _player;
     private Camera _camera;
 
     private Vector3 _moveDirection;
@@ -14,7 +14,7 @@ public class InputPlayer : MonoBehaviour
     private bool _isMouseOnUI;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerHeroLogic player)
     {
         _player = player;
     }
@@ -57,7 +57,8 @@ public class InputPlayer : MonoBehaviour
 
     private void Rotate()
     {
-        _mouseRay =_camera.ScreenPointToRay(Input.mousePosition);
+        _mouseRay =
+            _camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(_mouseRay, out RaycastHit hit))
         {
@@ -67,11 +68,12 @@ public class InputPlayer : MonoBehaviour
 
     private void Attack()
     {
-        _isMouseOnUI = EventSystem.current.IsPointerOverGameObject();
+        _isMouseOnUI =
+            EventSystem.current.IsPointerOverGameObject();
 
         if (Input.GetMouseButtonDown(0) && _isMouseOnUI == false)
             _player.Attack();
-        
+
         if (Input.GetMouseButtonUp(0))
             _player.StopAttack();
     }

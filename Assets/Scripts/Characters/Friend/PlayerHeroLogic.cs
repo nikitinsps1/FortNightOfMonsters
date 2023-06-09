@@ -2,9 +2,9 @@ using UnityEngine;
 using Zenject;
 
 [RequireComponent(typeof(Arsenal))]
-[RequireComponent (typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 
-public class Player : Character
+public class PlayerHeroLogic : CharacterLogic
 {
     [SerializeField]
     private float _moveSpeed;
@@ -12,7 +12,7 @@ public class Player : Character
     private Rigidbody _rigidBody;
     private ParticlesContainer _deadParticles;
     private AudioContainer _audioEffects;
-   
+
     private Quaternion _angleCamera;
 
     private Vector3
@@ -33,39 +33,38 @@ public class Player : Character
     {
         base.OnEnable();
 
-        ThisArsenal
-            .OnChangedWeapon += ThisCharacterAnimator.ChangeWeapon;
+        ThisArsenal.OnChangedWeapon +=
+            ThisCharacterAnimator.ChangeWeapon;
 
-        ThisCharacterAnimator
-            .OnAnimationEvent += ThisArsenal.Attack;
+        ThisCharacterAnimator.OnAnimationEvent +=
+            ThisArsenal.Attack;
 
-        ThisCharacterAnimator
-            .OnEndAnimationEvent += ThisArsenal.StopAttack;
+        ThisCharacterAnimator.OnEndAnimationEvent +=
+            ThisArsenal.StopAttack;
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
 
-        ThisArsenal
-            .OnChangedWeapon -= ThisCharacterAnimator.ChangeWeapon;
+        ThisArsenal.OnChangedWeapon -=
+            ThisCharacterAnimator.ChangeWeapon;
 
-        ThisCharacterAnimator
-            .OnAnimationEvent -= ThisArsenal.Attack;
+        ThisCharacterAnimator.OnAnimationEvent -=
+            ThisArsenal.Attack;
 
-        ThisCharacterAnimator
-            .OnEndAnimationEvent -= ThisArsenal.StopAttack;
+        ThisCharacterAnimator.OnEndAnimationEvent -=
+            ThisArsenal.StopAttack;
     }
 
     public void Move(Vector3 _direction)
     {
-        _moveDirection =  _angleCamera * _direction;
+        _moveDirection = _angleCamera * _direction;
 
-        _rigidBody.MovePosition
-            (ThisTransform.position + _moveDirection * _moveSpeed * Time.fixedDeltaTime);
+        _rigidBody.MovePosition(
+            ThisTransform.position + _moveDirection * _moveSpeed * Time.fixedDeltaTime);
 
-        _inverseVector =
-            ThisTransform.InverseTransformVector(_direction);
+        _inverseVector = ThisTransform.InverseTransformVector(_direction);
 
         ThisCharacterAnimator.Move(_inverseVector);
     }
@@ -76,11 +75,9 @@ public class Player : Character
 
         ThisArsenal = GetComponent<Arsenal>();
         _rigidBody = GetComponent<Rigidbody>();
-
         ThisArsenal.Init();
-
-        ThisDamageable.Construct
-            (_deadParticles, _audioEffects);
+        
+        ThisDamageable.Construct(_deadParticles, _audioEffects);
 
         float cameraDegreeY =
             Camera.main.transform.rotation.eulerAngles.y;

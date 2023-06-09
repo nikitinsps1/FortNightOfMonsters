@@ -26,7 +26,7 @@ public class BulletTrace : MonoBehaviour
             _lineRenderer.enabled = false;
             StopAllCoroutines();
         }
-        
+
         StartCoroutine(LifeLine(originPosition, endPosition));
     }
 }

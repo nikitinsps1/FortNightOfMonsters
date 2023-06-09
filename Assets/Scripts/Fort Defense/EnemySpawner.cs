@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     private EnemiesContainer _pool;
 
     private Transform _transform;
-    private List<Enemy> _spawnedEnemies;
+    private List<EnemyLogic> _spawnedEnemies;
 
     private float _radiusSpawn = 10.5f;
 
@@ -24,28 +24,28 @@ public class EnemySpawner : MonoBehaviour
 
     private void Init()
     {
-        _spawnedEnemies = new List<Enemy>();
+        _spawnedEnemies = new List<EnemyLogic>();
         _transform = transform;
     }
 
-    public List<Enemy> Spawn(ref WaveEnemies sizeWave)
+    public List<EnemyLogic> Spawn(ref WaveEnemies sizeWave)
     {
         _spawnedEnemies.Clear();
 
-        Enemy enemy;
+        EnemyLogic enemy;
         Vector3 spawnPosition;
 
         foreach (var item in sizeWave.Amount)
         {
             for (int i = 0; i < item.Value; i++)
             {
-                spawnPosition 
-                    = _transform.position + Random.insideUnitSphere * _radiusSpawn;
+                spawnPosition =
+                    _transform.position + Random.insideUnitSphere * _radiusSpawn;
 
-                enemy = _pool.GetObject
-                    (item.Key, spawnPosition, _transform.rotation)
-                    .GetComponent<Enemy>();
-                  
+                enemy = _pool.GetObject(
+                    item.Key, spawnPosition, _transform.rotation)
+                    .GetComponent<EnemyLogic>();
+
                 _spawnedEnemies.Add(enemy);
             }
         }

@@ -14,7 +14,7 @@ public class AudioContainer : MonoBehaviour
         _hitBuilding,
         _electric,
         _destruction,
-        
+
         _swing,
         _pistol,
         _shootGun,
@@ -24,14 +24,14 @@ public class AudioContainer : MonoBehaviour
 
         _victory,
         _radio,
-        
+
         _main,
         _scoFi,
         _wind,
         _railRoad,
         _pursuit,
         _cyber;
- 
+
     private Dictionary<int, AudioClip>
         _sounds,
         _musics;

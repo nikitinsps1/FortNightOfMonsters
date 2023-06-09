@@ -39,7 +39,7 @@ public class Gun : Weapon
         Init();
     }
 
-    private  void Init()
+    private void Init()
     {
         _rayBulletTrace = new Ray();
         _spreadBullets = new Vector3[_bulletsOneShoot];
@@ -50,7 +50,7 @@ public class Gun : Weapon
         int numberBullet = 0;
         float angleLeft = 0;
         float angleRight = 0;
-   
+
         if (_bulletsOneShoot % 2 > 0)
         {
             _spreadBullets[0] =
@@ -58,14 +58,14 @@ public class Gun : Weapon
 
             numberBullet++;
         }
-    
-       
+
+
         for (; numberBullet < _bulletsOneShoot; numberBullet++)
         {
             if (numberBullet <= _bulletsOneShoot / 2)
             {
                 SetShootVector
-                    (ref _spreadBullets[numberBullet], ref angleLeft,-_spread);
+                    (ref _spreadBullets[numberBullet], ref angleLeft, -_spread);
             }
             else
             {
@@ -75,10 +75,10 @@ public class Gun : Weapon
         }
     }
 
-    private void SetShootVector(ref Vector3 vector, ref float angle, float spread )
+    private void SetShootVector(ref Vector3 vector, ref float angle, float spread)
     {
         angle += spread;
-        vector =  Quaternion.Euler(0, angle, 0) * _firePosition.forward;
+        vector = Quaternion.Euler(0, angle, 0) * _firePosition.forward;
     }
 
     private void DrawBulletTrace(BulletTrace lineLife, float length)
@@ -86,8 +86,10 @@ public class Gun : Weapon
         Vector3 hitPoint =
             _rayBulletTrace.origin + _rayBulletTrace.direction * length;
 
-        _particles.GetObject
-            ((int)TypeDeadParticles.Hit, hitPoint, Quaternion.identity);
+        _particles.GetObject(
+            (int)TypeDeadParticles.Hit,
+            hitPoint,
+            Quaternion.identity);
 
         lineLife.DrawLine(_rayBulletTrace.origin, hitPoint);
     }
@@ -110,7 +112,7 @@ public class Gun : Weapon
 
                 if (hit.collider.TryGetComponent(out Damageable damageable))
                 {
-                    if (damageable.Relation == TypeRealations.Enemy)
+                    if (damageable.Relation == TypeRelations.Enemy)
                     {
                         damageable.ApplyDamage(_damage);
                     }

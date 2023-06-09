@@ -14,29 +14,26 @@ public class CharacterAnimator : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-    } 
+    }
 
     protected void OnEnable()
     {
         _animator.Play(0, 0, UnityEngine.Random.value);
     }
 
-    public void StartAttack() 
+    public void StartAttack()
     {
-        _animator.SetBool
-            (ContainerStrings.IsAttack, true);
+        _animator.SetBool(ContainerStrings.IsAttack, true);
     }
 
-    public void StopAttack() 
+    public void StopAttack()
     {
-        _animator.SetBool
-            (ContainerStrings.IsAttack, false);
+        _animator.SetBool(ContainerStrings.IsAttack, false);
     }
 
     public void ApplyHit()
     {
-        _animator.SetTrigger
-            (ContainerStrings.Hit);
+        _animator.SetTrigger(ContainerStrings.Hit);
     }
 
     public void ChangeWeapon(TypeWeapons type)
@@ -48,19 +45,25 @@ public class CharacterAnimator : MonoBehaviour
     public void Move(Vector3 blendTreeParameters)
     {
         _animator.SetFloat(
-            ContainerStrings.InputMagnitude, blendTreeParameters.magnitude,
-            0.1f, Time.deltaTime * 2);
+            ContainerStrings.InputMagnitude,
+            blendTreeParameters.magnitude,
+            0.1f,
+            Time.deltaTime * 2);
 
         _animator.SetFloat(
-            ContainerStrings.Horizontal, blendTreeParameters.x,
-            0.1f, Time.deltaTime * 2);
+            ContainerStrings.Horizontal,
+            blendTreeParameters.x,
+            0.1f,
+            Time.deltaTime * 2);
 
         _animator.SetFloat(
-            ContainerStrings.Vertical, blendTreeParameters.z,
-            0.1f, Time.deltaTime * 2);
+            ContainerStrings.Vertical,
+            blendTreeParameters.z,
+            0.1f,
+            Time.deltaTime * 2);
     }
 
-    public  void AnimationEvent()
+    public void AnimationEvent()
     {
         OnAnimationEvent?.Invoke();
     }

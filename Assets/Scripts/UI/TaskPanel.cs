@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,15 +11,21 @@ public class TaskPanel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _textMesh;
 
-    public void OnReadyForInvasions()
+    private void Awake()
     {
-        _button.interactable = true;
-        _textMesh.text = "Нажмите, чтобы начать вторжение";
+        _button.onClick.AddListener(() => gameObject.SetActive(false));
     }
 
-    public void OnSetNewTask(string task)
+    public void SetNewTask(string text)
     {
         _button.interactable = false;
-        _textMesh.text = task;
+        _textMesh.text = text;
+    }
+
+    public void SetNewTask(string text, Action action)
+    {
+        SetNewTask(text);
+        _button.interactable = true;
+        _button.onClick.AddListener(action.Invoke);
     }
 }

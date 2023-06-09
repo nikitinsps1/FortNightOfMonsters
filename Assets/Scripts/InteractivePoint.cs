@@ -19,7 +19,7 @@ public class InteractivePoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.GetComponent<PlayerHeroLogic>())
         {
             _button.gameObject.SetActive(true);
 
@@ -29,7 +29,7 @@ public class InteractivePoint : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.GetComponent<PlayerHeroLogic>())
         {
             _button.OffInteractive();
         }

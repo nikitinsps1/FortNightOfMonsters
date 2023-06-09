@@ -23,12 +23,8 @@ public class ChangeSceneButton : MonoBehaviour
 
     private void InitButton()
     {
-
-        _button.onClick.AddListener(delegate
-        {
-            InitScene();
-            _changer.Change(_scene);
-        });
+        _button.onClick.AddListener(() => InitScene());
+        _button.onClick.AddListener(() => _changer.Change(_scene));
     }
 
     private void InitScene()

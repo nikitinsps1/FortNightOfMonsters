@@ -13,18 +13,15 @@ public class LevelProgress : MonoBehaviour
     _rightFlank;
 
     [SerializeField]
-    private EndLevel 
+    private EndLevel
         _endLevelPanels;
 
     [SerializeField]
     private TaskPanel _taskPanel;
 
-    private Dictionary
-    <int, AssaultMediator>
-    _assaultMediators;
+    private Dictionary<int, AssaultMediator> _assaultMediators;
 
-    private AudioContainer _audio;
-    private Player _player;
+    private PlayerHeroLogic _player;
     private SaveData _saveData;
     private LevelSettings _setting;
     private MainHouse _mainHouse;
@@ -36,16 +33,22 @@ public class LevelProgress : MonoBehaviour
     private bool _isHaveSideAssault;
 
     [Inject]
-    private void Construct(
-        SaveData saveData,
-        Player player,
-        MainHouse mainHouse,
-        AudioContainer audio)
+    private void Construct(SaveData saveData, PlayerHeroLogic player, MainHouse mainHouse)
     {
         _saveData = saveData;
         _player = player;
         _mainHouse = mainHouse;
-        _audio = audio;
+    }
+
+    private void StartInvasions()
+    {
+        CloseMagazines();
+
+        foreach (var setting in _setting.InvasionsSettings)
+        {
+            _assaultMediators[setting.Key]
+                .StartInvasion(setting.Value);
+        }
     }
 
     private void CloseMagazines()
@@ -66,11 +69,8 @@ public class LevelProgress : MonoBehaviour
 
     private void OnDisable()
     {
-        _player.ThisDamageable
-            .OnDead -= Fail;
-
-        _mainHouse.ThisDamageable
-            .OnDead -= Fail;
+        _player.ThisDamageable.OnDead -= Fail;
+        _mainHouse.ThisDamageable.OnDead -= Fail;
     }
 
     public void Init(LevelSettings levelSettings, int amountLevels)
@@ -78,11 +78,8 @@ public class LevelProgress : MonoBehaviour
         _setting = levelSettings;
         _amountLevels = amountLevels;
 
-        _player.ThisDamageable
-            .OnDead += Fail;
-
-        _mainHouse.ThisDamageable
-            .OnDead += Fail;
+        _player.ThisDamageable.OnDead += Fail;
+        _mainHouse.ThisDamageable.OnDead += Fail;
 
         _defenseCounter = 0;
 
@@ -115,39 +112,28 @@ public class LevelProgress : MonoBehaviour
 
     public void Fail()
     {
-        _endLevelPanels.OnEnd
-             (TypeEndLevel.Fail, "Заново");
+        _endLevelPanels.OnEnd(TypeEndLevel.Fail, "Заново");
     }
 
-   public void ReadyInvasion()
+    public void ReadyInvasion()
     {
-        _taskPanel.OnReadyForInvasions();
-    }
-
-    public void StartInvasions()
-    {
-        CloseMagazines();
-
-        foreach (var setting in _setting.InvasionsSettings)
-        {
-            _assaultMediators[setting.Key]
-                .StartInvasion( setting.Value);
-        }
+        _taskPanel.SetNewTask("Нажмите, чтобы начать вторжение!", StartInvasions);
     }
 
     public void SetNewTask(string taskText)
     {
-        _taskPanel.OnSetNewTask(taskText);
+        _taskPanel.SetNewTask(taskText);
     }
 
-    public void SetNewTask
-        (string taskText, Directions direction, WaveEnemies[] waveMonsters)
+    public void SetNewTask(
+        string text,
+        Directions direction,
+        WaveEnemies[] waveMonsters)
     {
-        SetNewTask(taskText);
+        SetNewTask(text);
         _isHaveSideAssault = true;
 
-        _assaultMediators[(int)direction]
-            .StartInvasion(waveMonsters);
+        _assaultMediators[(int)direction].StartInvasion(waveMonsters);
 
         CloseMagazines();
     }
@@ -157,8 +143,9 @@ public class LevelProgress : MonoBehaviour
         if (_isHaveSideAssault)
         {
             _isHaveSideAssault = false;
+
             OpenMagazines();
-            _taskPanel.OnReadyForInvasions();
+            ReadyInvasion();
         }
         else
         {

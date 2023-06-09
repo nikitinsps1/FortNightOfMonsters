@@ -27,10 +27,13 @@ public class CarVideo : MonoBehaviour
         _moving = DOTween.Sequence();
 
         _moving.Append
-            (_transform.DOMove(_zombie.position, _timeToZombie).SetEase(Ease.Linear));
+            (_transform
+            .DOMove(_zombie.position, _timeToZombie)
+            .SetEase(Ease.Linear));
 
-        _moving.Append
-            (_transform.DOMove(_endPoint.position, _timeToEndPoint).SetEase(Ease.Linear));
+        _moving.Append(_transform
+            .DOMove(_endPoint.position, _timeToEndPoint)
+            .SetEase(Ease.Linear));
     }
 
     private void OnDisable()

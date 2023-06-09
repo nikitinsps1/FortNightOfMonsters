@@ -5,10 +5,13 @@ using UnityEngine;
 public struct DialogButtonSetting
 {
     [field: SerializeField, TextArea(1, 20)]
-    public string TextAfter { get; private set; }
+    public string TextAfter
+    { get; private set; }
 
-    [field: SerializeField] 
-    public DialogAction DialogAction { get; private set; }
+
+    [field: SerializeField]
+    public DialogAction DialogAction
+    { get; private set; }
 
     public bool HaveNewTask
     {
@@ -16,7 +19,7 @@ public struct DialogButtonSetting
         {
             if (DialogAction != null)
             {
-                if (DialogAction.HaveNewTask)
+                if (DialogAction.IsHaveNewTask)
                 {
                     return true;
                 }

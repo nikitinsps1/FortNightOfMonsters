@@ -4,7 +4,7 @@ using UnityEngine;
 public class TutorialInstaller : MonoInstaller
 {
     [Header("Player")]
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerHeroLogic _player;
     [SerializeField] private Transform _startPosition;
 
     [Header("UI")]
@@ -14,7 +14,6 @@ public class TutorialInstaller : MonoInstaller
     [Header("Other")]
     [SerializeField] private TutorialObserver _tutorial;
     [SerializeField] private ParticlesContainer _deadParticles;
-
 
     public override void InstallBindings()
     {
@@ -32,7 +31,7 @@ public class TutorialInstaller : MonoInstaller
 
     private void BindPlayer()
     {
-        Container.Bind<Player>().FromComponentInNewPrefab(_player).AsSingle();
+        Container.Bind<PlayerHeroLogic>().FromComponentInNewPrefab(_player).AsSingle();
         _player.transform.position = _startPosition.position;
     }
 }

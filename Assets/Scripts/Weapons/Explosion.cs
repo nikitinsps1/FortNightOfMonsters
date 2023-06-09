@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private ParticleSystem _particleSystem;
 
-    [SerializeField] 
+    [SerializeField]
     private MeleeDamage _damager;
 
-    [SerializeField] 
+    [SerializeField]
     private float _timer;
 
     private WaitForSeconds _timerCoroutine;

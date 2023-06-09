@@ -11,15 +11,16 @@ public class MainCamera : MonoBehaviour
         _offsetZ,
         _offsetX;
 
-    private Player _player;
+    private PlayerHeroLogic _player;
     private Transform _transform;
     private Tween _shake;
 
-    private Vector3 _offset;
-    private Vector3 _newPosition;
+    private Vector3
+        _offset,
+        _newPosition;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerHeroLogic player)
     {
         _player = player;
     }
@@ -31,7 +32,7 @@ public class MainCamera : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.ThisCharacterAnimator.OnAnimationEvent += Shake; 
+        _player.ThisCharacterAnimator.OnAnimationEvent += Shake;
     }
 
     private void OnDisable()
@@ -42,8 +43,8 @@ public class MainCamera : MonoBehaviour
 
     private void Start()
     {
-        _transform.position = new Vector3
-            (_player.ThisTransform.position.x + _offsetX,
+        _transform.position = new Vector3(
+            _player.ThisTransform.position.x + _offsetX,
             _positionY,
             _player.ThisTransform.position.z + _offsetZ);
 
@@ -57,8 +58,10 @@ public class MainCamera : MonoBehaviour
             _newPosition =
                 _player.ThisTransform.position + _offset;
 
-            _transform.position = Vector3.Lerp
-                (_transform.position, _newPosition, _smoothing * Time.fixedDeltaTime);
+            _transform.position = Vector3.Lerp(
+                _transform.position,
+                _newPosition,
+                _smoothing * Time.fixedDeltaTime);
         }
     }
 

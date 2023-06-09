@@ -4,15 +4,16 @@ using Zenject;
 public class CharacteristicsUpgrader : Upgrader
 {
     [field: SerializeField]
-    public TypeCharacteristicks Type  { get;private set; }
+    public TypeCharacteristics Type { get; private set; }
 
     [SerializeField]
     private int[] _values;
 
-    private Player _player;
+    private PlayerHeroLogic _player;
+
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerHeroLogic player)
     {
         _player = player;
     }
@@ -28,12 +29,12 @@ public class CharacteristicsUpgrader : Upgrader
 
     public int GetValue()
     {
-        return _values[Level-1];
+        return _values[Level - 1];
     }
 
     public override void Upgrade()
     {
-        if (Type == TypeCharacteristicks.Health)
+        if (Type == TypeCharacteristics.Health)
         {
             _player.ThisDamageable.SetHealth(_values[Level]);
         }

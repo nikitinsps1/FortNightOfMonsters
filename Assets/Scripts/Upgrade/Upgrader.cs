@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 
-public abstract class Upgrader: MonoBehaviour
+public abstract class Upgrader : MonoBehaviour
 {
-
-    [SerializeField] 
+    [SerializeField]
     private int[] _costs;
 
     public int Level
-    {get; private set;}
+    { get; private set; }
 
     public int MaxLevel => _costs.Length;
-
 
     public int GetCost()
     {
@@ -28,9 +26,6 @@ public abstract class Upgrader: MonoBehaviour
 
     public virtual void Upgrade()
     {
-  
-
         Level++;
-    
     }
 }

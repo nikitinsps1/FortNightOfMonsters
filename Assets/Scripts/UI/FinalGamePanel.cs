@@ -7,9 +7,10 @@ public class FinalGamePanel : MonoBehaviour
     private GameObject _panel;
 
     private SaveData _saveData;
+    private int _maxLevel = 12;
 
     [Inject]
-    private void Construct(SaveData saveData )
+    private void Construct(SaveData saveData)
     {
         _saveData = saveData;
 
@@ -17,7 +18,7 @@ public class FinalGamePanel : MonoBehaviour
 
     private void Start()
     {
-        if (_saveData.NumberLevel == 12)
+        if (_saveData.NumberLevel == _maxLevel)
         {
             _panel.SetActive(true);
             _saveData.NewGame();

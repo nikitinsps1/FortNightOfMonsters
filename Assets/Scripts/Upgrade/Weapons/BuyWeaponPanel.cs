@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BuyWeaponPanel : UpgradePanel<WeaponProduct>
 {
-    [SerializeField] 
+    [SerializeField]
     private WeaponUpgraderContainer _changeWeapon;
 
     [SerializeField]

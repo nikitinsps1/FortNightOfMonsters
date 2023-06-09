@@ -11,8 +11,7 @@ public class EndLevel : MonoBehaviour
         _falls,
         _final;
 
-    private Dictionary
-        <int, EndLevelPanel> _panels;
+    private Dictionary<int, EndLevelPanel> _panels;
 
     private SceneChanger _levelChanger;
 

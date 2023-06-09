@@ -7,10 +7,10 @@ public class DialogBanditAssault : DialogAction
     [SerializeField]
     private Directions _direction;
 
-    [SerializeField] 
+    [SerializeField]
     private WaveEnemies[] _waveEnemies;
 
-    [SerializeField] 
+    [SerializeField]
     private string _textTask;
 
     private LevelProgress _progress;
@@ -23,24 +23,21 @@ public class DialogBanditAssault : DialogAction
         _enemies = enemies;
     }
 
-    public override Action GetEvent()
+    public override Action GetAction()
     {
+        IsHaveNewTask = true;
+
+        _enemies.Pools[(int)TypeEnemy.BanditGun].FormPool(5);
+        _enemies.Pools[(int)TypeEnemy.BanditMele].FormPool(10);
+
         for (int i = 0; i < _waveEnemies.Length; i++)
         {
             _waveEnemies[i].Init();
-
-            _enemies.Pools[(int)TypeEnemy.BanditGun].FormPool(5);
-            _enemies.Pools[(int)TypeEnemy.BanditMele].FormPool(10);
         }
 
-        HaveNewTask = true;
-
-        Action action = delegate 
-            {
-                _progress
-                .SetNewTask(_textTask, _direction, _waveEnemies); 
-            };
-
-        return action;
+        return delegate
+        {
+            _progress.SetNewTask(_textTask, _direction, _waveEnemies);
+        };
     }
 }

@@ -40,6 +40,6 @@ public class MainHouse : MonoBehaviour
 
     private void OnApplyDamage()
     {
-       _transformMesh.DOShakePosition(0.5f, 0.05f);
+        _transformMesh.DOShakePosition(0.5f, 0.05f);
     }
 }

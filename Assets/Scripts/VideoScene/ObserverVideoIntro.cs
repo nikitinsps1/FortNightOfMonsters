@@ -59,8 +59,9 @@ public class ObserverVideoIntro : MonoBehaviour
     {
         _audio.PlaySound(TypeSound.HitBuilding, 0.5f);
         _camera.Move();
-        _camera.Look(_fort, _speedCameraAfterCrush).OnComplete(() =>
-        _uiVideoIntro.FadeLogo());
+
+        _camera.Look(
+            _fort, _speedCameraAfterCrush).OnComplete(() => _uiVideoIntro.FadeLogo());
     }
 
     private void OnFadedLogo()

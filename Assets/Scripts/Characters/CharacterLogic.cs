@@ -1,18 +1,18 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Damageable))]
-[RequireComponent (typeof(CharacterAnimator))]
+[RequireComponent(typeof(CharacterAnimator))]
 
-public abstract class Character : MonoBehaviour
+public abstract class CharacterLogic : MonoBehaviour
 {
     [SerializeField]
     private float _speedRotation;
 
     public Damageable ThisDamageable
-    { get; protected set; }  
-    public Transform ThisTransform 
+    { get; protected set; }
+    public Transform ThisTransform
     { get; private set; }
-    public CharacterAnimator ThisCharacterAnimator 
+    public CharacterAnimator ThisCharacterAnimator
     { get; private set; }
 
     public float SpeedRotation => _speedRotation;
@@ -41,7 +41,7 @@ public abstract class Character : MonoBehaviour
             ThisCharacterAnimator.ApplyHit;
     }
 
-    public virtual void RotateTarget(Vector3 targetPosition)
+    public void RotateTarget(Vector3 targetPosition)
     {
         Vector3 direction = targetPosition - ThisTransform.position;
         direction.Normalize();

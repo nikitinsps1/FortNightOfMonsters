@@ -10,18 +10,15 @@ public class UpgradeCharacteristicPanel : UpgradePanel<CharacteristicsUpgrader>
     {
         base.RefreshPanel();
 
-        if (Upgrading.Level>0)
+        if (Upgrading.Level > 0)
         {
-            _countCharacteristic
-                .text = Upgrading.GetValue().ToString();
+            _countCharacteristic.text = 
+                Upgrading.GetValue().ToString();
         }
     }
 
     protected override void SavePurchase()
     {
-      
-
-        SaveData.Characteristics
-            .Save((int)Upgrading.Type);
+        SaveData.Characteristics.Save((int)Upgrading.Type);
     }
 }

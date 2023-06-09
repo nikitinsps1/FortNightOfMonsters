@@ -8270,7 +8270,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &618596257
 MonoBehaviour:
@@ -9725,7 +9725,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035446340
 GameObject:
@@ -11520,7 +11520,7 @@ PrefabInstance:
     - target: {fileID: 1065416175397518589, guid: edc35d2300af18d4d979bd0d6d51c074,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1065416175397518589, guid: edc35d2300af18d4d979bd0d6d51c074,
         type: 3}
@@ -18477,10 +18477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogsPlace: {fileID: 328450717}
   _textStatus: {fileID: 568923526474832679}
-  _levelsContainer: {fileID: 1444993363}
-  _loadSaveData: {fileID: 1010224127}
-  _dialogMenu: {fileID: 4249887891709815842}
-  _hud: {fileID: 1152610072}
 --- !u!4 &1548519189
 Transform:
   m_ObjectHideFlags: 0
@@ -18494,7 +18490,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554282462
 GameObject:
@@ -20510,7 +20506,7 @@ Transform:
   - {fileID: 1756485145}
   - {fileID: 769391569}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2056857701
 PrefabInstance:
@@ -27072,7 +27068,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.65
+  m_fontSize: 87.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -34188,7 +34184,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.7
+  m_fontSize: 64.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36576,7 +36572,7 @@ PrefabInstance:
     - target: {fileID: 3116313324595450702, guid: 43113f340cd05dd4581b8da4cda58c31,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3116313324595450702, guid: 43113f340cd05dd4581b8da4cda58c31,
         type: 3}
@@ -36681,6 +36677,11 @@ PrefabInstance:
       objectReference: {fileID: 8027761207267705130}
     - target: {fileID: 3116313324595450703, guid: 43113f340cd05dd4581b8da4cda58c31,
         type: 3}
+      propertyPath: _loadSave
+      value: 
+      objectReference: {fileID: 1010224127}
+    - target: {fileID: 3116313324595450703, guid: 43113f340cd05dd4581b8da4cda58c31,
+        type: 3}
       propertyPath: _infoPanel
       value: 
       objectReference: {fileID: 3515155117237151974}
@@ -36694,6 +36695,11 @@ PrefabInstance:
       propertyPath: _taskPanel
       value: 
       objectReference: {fileID: 2574023417361512962}
+    - target: {fileID: 3116313324595450703, guid: 43113f340cd05dd4581b8da4cda58c31,
+        type: 3}
+      propertyPath: _dialogMenu
+      value: 
+      objectReference: {fileID: 4249887891709815842}
     - target: {fileID: 3116313324595450703, guid: 43113f340cd05dd4581b8da4cda58c31,
         type: 3}
       propertyPath: _fabricEnemy
@@ -36728,7 +36734,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _weaponButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886676725}
     - target: {fileID: 3116313324595450703, guid: 43113f340cd05dd4581b8da4cda58c31,
         type: 3}
       propertyPath: _deadParticles
@@ -36749,6 +36755,11 @@ PrefabInstance:
       propertyPath: _startPosition
       value: 
       objectReference: {fileID: 1009144566}
+    - target: {fileID: 3116313324595450703, guid: 43113f340cd05dd4581b8da4cda58c31,
+        type: 3}
+      propertyPath: _levelsContainer
+      value: 
+      objectReference: {fileID: 1444993363}
     - target: {fileID: 3116313324595450703, guid: 43113f340cd05dd4581b8da4cda58c31,
         type: 3}
       propertyPath: _particlesFactory
@@ -48732,8 +48743,6 @@ MonoBehaviour:
   _cancel: {fileID: 6482098494781644746}
   _charisma: {fileID: 4893649871683364829}
   _tmpDialog: {fileID: 1670629316989955084}
-  _endDialogButton: {fileID: 8606056232657074389}
-  _characterPlace: {fileID: 328450716}
 --- !u!222 &4263143020927320994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49561,7 +49570,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8718036332665120531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4862088636000582831}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5163065730573172663}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &4901627966599201650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52866,7 +52899,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4942745847931254069}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4862088636000582831}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5163065730573172663}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &6493231798220384831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53347,7 +53404,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3838750384979177763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4862088636000582831}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5163065730573172663}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!224 &6794364811202088961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58177,31 +58258,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3390070982490007632}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5191582401480593220}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 618596257}
-        m_TargetAssemblyTypeName: LevelProgress, Assembly-CSharp
-        m_MethodName: StartInvasions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &8423452322526953519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -58727,6 +58784,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5966922470881436096}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 328450716}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

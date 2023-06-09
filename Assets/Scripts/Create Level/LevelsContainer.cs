@@ -2,7 +2,7 @@
 
 public class LevelsContainer : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private LevelSettings[] _levels;
     public LevelSettings[] Levels => _levels;
 }

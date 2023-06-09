@@ -4,7 +4,7 @@ using Zenject;
 public class LevelInstaller : MonoInstaller
 {
     [Header("Player")]
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerHeroLogic _player;
     [SerializeField] private Transform _startPosition;
 
     [Header("UI")]
@@ -13,22 +13,28 @@ public class LevelInstaller : MonoInstaller
     [SerializeField] private BuyMenu _buyMenu;
     [SerializeField] private InfoPanel _infoPanel;
     [SerializeField] private TaskPanel _taskPanel;
+    [SerializeField] private DialogMenu _dialogMenu;
+    [SerializeField] private HudBars _hudBars;
 
     [Header("Pools")]
     [SerializeField] private ParticlesContainer _deadParticles;
     [SerializeField] private BulletsContainer _bullets;
     [SerializeField] private EnemiesContainer _enemies;
 
+    [Header("Service")]
+    [SerializeField] private LevelProgress _levelProgress;
+    [SerializeField] private LevelsContainer _levelsContainer;
+    [SerializeField] private LoadSave _loadSave;
+
     [Header("Other")]
     [SerializeField] private MainHouse _house;
-    [SerializeField] private LevelProgress _levelProgress;
 
     public override void InstallBindings()
     {
         BindPools();
         BindFort();
         BindPlayer();
-        BindLevel();
+        BindService();
         BindUiElements();
     }
 
@@ -39,9 +45,11 @@ public class LevelInstaller : MonoInstaller
         Container.Bind<EnemiesContainer>().FromInstance(_enemies).AsSingle();
     }
 
-    private void BindLevel()
+    private void BindService()
     {
         Container.Bind<LevelProgress>().FromInstance(_levelProgress).AsSingle();
+        Container.Bind<LevelsContainer>().FromInstance(_levelsContainer).AsSingle();
+        Container.Bind<LoadSave>().FromInstance(_loadSave).AsSingle();
     }
 
     private void BindFort()
@@ -51,7 +59,7 @@ public class LevelInstaller : MonoInstaller
 
     private void BindPlayer()
     {
-        Container.Bind<Player>().FromComponentInNewPrefab(_player).AsSingle();
+        Container.Bind<PlayerHeroLogic>().FromComponentInNewPrefab(_player).AsSingle();
         _player.transform.position = _startPosition.position;
     }
 
@@ -62,5 +70,7 @@ public class LevelInstaller : MonoInstaller
         Container.Bind<InteractiveButton>().FromInstance(_interactiveButton).AsSingle();
         Container.Bind<InfoPanel>().FromInstance(_infoPanel).AsSingle();
         Container.Bind<BuyMenu>().FromInstance(_buyMenu).AsSingle();
+        Container.Bind<DialogMenu>().FromInstance(_dialogMenu).AsSingle();
+        Container.Bind<HudBars>().FromInstance(_hudBars).AsSingle();
     }
 }

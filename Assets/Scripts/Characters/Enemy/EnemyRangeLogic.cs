@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class EnemyFire : Enemy
+public class EnemyRangeLogic : EnemyLogic
 {
     [SerializeField]
-    private Transform _shootPosition;
+    private Transform _shootPoint;
 
     [SerializeField]
     private TypeBullets _typeBullets;
@@ -18,12 +18,13 @@ public class EnemyFire : Enemy
     private BulletsContainer _bullets;
 
     public void Construct(
-        Player player, 
-        AudioContainer audio, 
-        ParticlesContainer particles, 
+        PlayerHeroLogic player,
+        AudioContainer audio,
+        ParticlesContainer particles,
         BulletsContainer bullets)
     {
-        Construct(player, audio,particles);
+        Construct(player, audio, particles);
+
         _bullets = bullets;
         _audio = audio;
     }
@@ -31,8 +32,7 @@ public class EnemyFire : Enemy
     protected void Shoot()
     {
         ObjectPool bullet =
-            _bullets.GetObject
-            ((int)_typeBullets, _shootPosition.position, ThisTransform.rotation);
+            _bullets.GetObject((int)_typeBullets, _shootPoint.position, ThisTransform.rotation);
 
         _audio.PlaySound(_shootingSound, _shootVolume);
     }

@@ -2,7 +2,7 @@
 using Zenject;
 
 public class DeleteSave : MonoBehaviour
-{ 
+{
     private SaveData _saveData;
 
     [Inject]

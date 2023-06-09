@@ -5,31 +5,24 @@ using Zenject;
 public class InitLevel : MonoBehaviour
 {
     [SerializeField]
-    private Transform  _dialogsPlace;
+    private Transform _dialogsPlace;
 
     [SerializeField]
     private TextMeshProUGUI _textStatus;
 
-    [SerializeField]
-    private LevelsContainer _levelsContainer;
-
-    [SerializeField]
-    private LoadSave _loadSaveData;
-
-    [SerializeField]
     private DialogMenu _dialogMenu;
-
-    [SerializeField]
-    private HudBars _hud;
 
     private EnemiesContainer _enemies;
     private AudioContainer _audio;
     private InfoPanel _info;
 
+    private LevelsContainer _levelsContainer;
     private LevelSettings _levelSettings;
     private LevelProgress _levelProgress;
 
     private SaveData _saveData;
+    private LoadSave _loadSave;
+
 
     [Inject]
     private void Construct(
@@ -37,13 +30,19 @@ public class InitLevel : MonoBehaviour
         LevelProgress levelProgress,
         SaveData save,
         AudioContainer audio,
-        EnemiesContainer enemies)
+        EnemiesContainer enemies,
+        LevelsContainer levelsContainer,
+        LoadSave loadSave,
+        DialogMenu dialog)
     {
         _enemies = enemies;
         _info = infoPanel;
         _levelProgress = levelProgress;
         _saveData = save;
         _audio = audio;
+        _levelsContainer = levelsContainer;
+        _loadSave = loadSave;
+        _dialogMenu = dialog;
     }
 
     private void Start()
@@ -53,23 +52,20 @@ public class InitLevel : MonoBehaviour
 
         _levelSettings.Init();
 
-        _levelProgress.Init
-            (_levelSettings, _levelsContainer.Levels.Length);
+        _levelProgress
+            .Init(_levelSettings, _levelsContainer.Levels.Length);
 
-        _loadSaveData.Load();
-        _audio.PlayMusic(_levelSettings.Music);
+        _loadSave.Load();
 
         InitDialog();
         SetNumberDay();
         FormPools();
 
-        _info.ShowMessage
-            (_levelSettings.DescriptionMissions);
-
-        _hud.HealthBar();
-        _hud.MoneyCounter();
+        _info
+            .ShowMessage(_levelSettings.DescriptionMissions);
 
         _saveData.SendServer();
+        _audio.PlayMusic(_levelSettings.Music);
     }
 
     private void SetNumberDay()
@@ -86,7 +82,6 @@ public class InitLevel : MonoBehaviour
         if (_levelSettings.ThisDialog != null)
         {
             _dialogMenu.Init(_levelSettings.ThisDialog);
-
             _dialogsPlace.gameObject.SetActive(true);
 
             Instantiate(
@@ -105,7 +100,9 @@ public class InitLevel : MonoBehaviour
     {
         foreach (var item in _levelSettings.EnemiesOnStartPool.Amount)
         {
-            _enemies.Pools[item.Key].FormPool(item.Value);
+            _enemies
+                .Pools[item.Key]
+                .FormPool(item.Value);
         }
     }
 }

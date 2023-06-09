@@ -4,7 +4,7 @@ using Zenject;
 
 [RequireComponent(typeof(Arsenal))]
 
-public class Guard : Character
+public class GuardLogic : CharacterLogic
 {
     [SerializeField]
     private AssaultMediator _assaultMediator;
@@ -37,8 +37,8 @@ public class Guard : Character
     {
         if (_target == null || _target.IsAlive == false)
         {
-            Damageable newTarget = 
-                _assaultMediator.GetTarget(TypeRealations.Enemy);
+            Damageable newTarget =
+                _assaultMediator.GetTarget(TypeRelations.Enemy);
 
             if (newTarget == null)
             {
@@ -64,28 +64,25 @@ public class Guard : Character
     {
         base.Init();
 
-        ThisDamageable.Construct
-            (_deadParticles, _audioEffects);
+        ThisDamageable.Construct( _deadParticles, _audioEffects);
 
         ThisArsenal = GetComponent<Arsenal>();
         ThisArsenal.Init();
-
-        _delayShootAnimation
-            = new WaitForSeconds(Random.value);
+        _delayShootAnimation = new WaitForSeconds(Random.value);
     }
 
     protected override void OnEnable()
     {
         base.OnEnable();
 
-        ThisArsenal
-            .OnChangedWeapon += ThisCharacterAnimator.ChangeWeapon;
+        ThisArsenal.OnChangedWeapon +=
+            ThisCharacterAnimator.ChangeWeapon;
 
-        ThisCharacterAnimator
-            .OnAnimationEvent += ThisArsenal.Attack;
+        ThisCharacterAnimator.OnAnimationEvent +=
+            ThisArsenal.Attack;
 
-        ThisCharacterAnimator
-            .OnEndAnimationEvent += ThisArsenal.StopAttack;
+        ThisCharacterAnimator.OnEndAnimationEvent +=
+            ThisArsenal.StopAttack;
 
         ThisDamageable.OnDead += OnDead;
     }
@@ -94,14 +91,14 @@ public class Guard : Character
     {
         base.OnDisable();
 
-        ThisArsenal
-            .OnChangedWeapon -= ThisCharacterAnimator.ChangeWeapon;
+        ThisArsenal.OnChangedWeapon -=
+            ThisCharacterAnimator.ChangeWeapon;
 
-        ThisCharacterAnimator
-            .OnAnimationEvent -= ThisArsenal.Attack;
+        ThisCharacterAnimator.OnAnimationEvent -=
+            ThisArsenal.Attack;
 
-        ThisCharacterAnimator
-            .OnEndAnimationEvent -= ThisArsenal.StopAttack;
+        ThisCharacterAnimator.OnEndAnimationEvent -=
+            ThisArsenal.StopAttack;
 
         ThisDamageable.OnDead -= OnDead;
     }
@@ -114,7 +111,7 @@ public class Guard : Character
 
     public override void Attack()
     {
-        _target = _assaultMediator.GetTarget(TypeRealations.Enemy);
+        _target = _assaultMediator.GetTarget(TypeRelations.Enemy);
 
         base.Attack();
         _isAlarm = true;

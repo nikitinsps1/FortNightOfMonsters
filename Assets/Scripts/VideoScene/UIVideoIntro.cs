@@ -45,10 +45,10 @@ public class UIVideoIntro : MonoBehaviour
     private void InitButtons()
     {
         _exitButton.onClick.AddListener(
-            delegate 
+            delegate
             {
                 Time.timeScale = 1;
-                _sceneChanger.Change(TypeScene.Fort); 
+                _sceneChanger.Change(TypeScene.Fort);
             });
 
         _returnButton.onClick.AddListener(
@@ -66,8 +66,9 @@ public class UIVideoIntro : MonoBehaviour
 
     public void FadeLogo()
     {
-        _fadingLogo =_logo.DOColor(Color.white, 5f)
-             .SetEase(Ease.Linear)
-             .OnComplete(() => OnLogoFaded.Invoke()); 
+        _fadingLogo = _logo
+            .DOColor(Color.white, 5f)
+            .SetEase(Ease.Linear)
+            .OnComplete(() => OnLogoFaded.Invoke());
     }
 }

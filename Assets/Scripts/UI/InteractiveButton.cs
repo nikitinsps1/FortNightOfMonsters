@@ -8,7 +8,7 @@ public class InteractiveButton : MonoBehaviour
     [SerializeField]
     private Button _button;
 
-    [SerializeField] 
+    [SerializeField]
     private TextMeshProUGUI _nameInteractive;
 
     private Transform _transform;
@@ -26,8 +26,7 @@ public class InteractiveButton : MonoBehaviour
         _scaling = _transform.DOScale(1, 1)
             .SetEase(Ease.OutBack);
 
-        _button.onClick.AddListener
-            (delegate { gameObject.SetActive(false); });
+        _button.onClick.AddListener(() => gameObject.SetActive(false));
     }
 
     private void OnDisable()
@@ -37,9 +36,7 @@ public class InteractiveButton : MonoBehaviour
 
     public void SetNewAction(GameObject enabledObject, string name)
     {
-        _button.onClick.AddListener
-            (delegate { enabledObject.SetActive(true); });
-
+        _button.onClick.AddListener(() => enabledObject.SetActive(true));
         _nameInteractive.text = name;
     }
 

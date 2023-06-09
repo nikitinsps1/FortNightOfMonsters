@@ -21,7 +21,7 @@ public class UpgradeGuardPanel : UpgradePanel<GuardUpgrade>
 
         foreach (var item in _container.Upgraders)
         {
-            if (item.Value.Level>0)
+            if (item.Value.Level > 0)
             {
                 amountGuard++;
             }
@@ -29,22 +29,22 @@ public class UpgradeGuardPanel : UpgradePanel<GuardUpgrade>
         return amountGuard;
     }
 
-
     protected override void OpenBuyMenu()
     {
         int amountGuard = GetAmountGuards();
-        int amountLiveHouse = SaveData.Fort.ThisDictionary[(int)TypeFortUpgrade.LiveHouse];
+        int amountLiveHouse = SaveData
+            .Fort
+            .ThisDictionary
+            [(int)TypeFortUpgrade.LiveHouse];
 
-        if (amountGuard < 2 || amountLiveHouse>0 || Upgrading.Level > 0)
+        if (amountGuard < 2 || amountLiveHouse > 0 || Upgrading.Level > 0)
         {
             base.OpenBuyMenu();
         }
         else
         {
-            _infoPanel.ShowMessage
-                ("Для найма дополнительного охранника, постройте жилой дом");
+            _infoPanel.ShowMessage("Для найма дополнительного охранника, постройте жилой дом");
         }
-
     }
 
     protected override void RefreshPanel()

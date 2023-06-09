@@ -19,7 +19,6 @@ public class UpgradersBarrierContainer : UpgradersContainer
 
     public int GetIndex(Upgrader upgrader)
     {
-
-       return Array.IndexOf(_upgraders, upgrader);
+        return Array.IndexOf(_upgraders, upgrader);
     }
 }

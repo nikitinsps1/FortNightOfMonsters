@@ -37,7 +37,6 @@ public class LoadSave : MonoBehaviour
 
     public void Load()
     {
-
         LoadUpgrades(_characteristics, _saveData.Characteristics);
         LoadUpgrades(_barricades, _saveData.Barricades);
         LoadUpgrades(_guards, _saveData.Guards);

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PoolContainer<Spawnable>: MonoBehaviour
+public abstract class PoolContainer<Spawnable> : MonoBehaviour
 {
-    public Dictionary <int, Pool>  Pools
-    { get;set; }
+    public Dictionary<int, Pool> Pools
+    { get; set; }
 
     private void Awake()
     {
@@ -27,17 +27,16 @@ public abstract class PoolContainer<Spawnable>: MonoBehaviour
         }
     }
 
-    public ObjectPool GetObject
-        (int indexPool, Vector3 position, Quaternion rotation)
+    public ObjectPool GetObject(int indexPool, Vector3 position, Quaternion rotation)
     {
-        ObjectPool  spawnObject 
+        ObjectPool spawnObject
             = ChoosePool(indexPool).GetObject();
 
         spawnObject.ThisGameObject.SetActive(true);
 
-        Vector3 newPosition = new Vector3 (
+        Vector3 newPosition = new Vector3(
             position.x,
-            spawnObject.ThisTransform.position.y, 
+            spawnObject.ThisTransform.position.y,
             position.z);
 
         spawnObject

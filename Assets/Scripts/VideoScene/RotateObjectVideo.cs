@@ -18,12 +18,12 @@ public class RotateObjectVideo : MonoBehaviour
 
     private void Start()
     {
-        _rotating = _transform.DORotate(new Vector3(360, 0, 0),
-            _speed, RotateMode.LocalAxisAdd)
+        _rotating = _transform
+            .DORotate(new Vector3(360, 0, 0), _speed, RotateMode.LocalAxisAdd)
             .SetSpeedBased()
             .SetEase(Ease.Linear)
             .SetLoops(-1);
-     
+
     }
 
     private void OnDisable()

@@ -42,23 +42,22 @@ public class AssaultMediator : MonoBehaviour
     {
         _frontiers = _barrier.FormFrontiers();
 
-        List<Enemy> enemies
-            = _enemySpawner.Spawn(ref _waves[_wavesCounter]);
+        List<EnemyLogic> enemies =
+            _enemySpawner.Spawn(ref _waves[_wavesCounter]);
 
         for (int i = 0; i < enemies.Count; i++)
         {
             _enemies.Add(enemies[i].ThisDamageable);
 
-            enemies[i]
-                .StartAssault(this, _barrierIsBroken);
+            enemies[i].StartAssault(this, _barrierIsBroken);
         }
     }
 
-    private List<Damageable> ChooseTeam(TypeRealations relation)
+    private List<Damageable> ChooseTeam(TypeRelations relation)
     {
-        if (relation == TypeRealations.Enemy)
+        if (relation == TypeRelations.Enemy)
         {
-           return _enemies;
+            return _enemies;
         }
         else
         {
@@ -83,7 +82,7 @@ public class AssaultMediator : MonoBehaviour
         }
     }
 
-    public void StartInvasion( WaveEnemies[] waves)
+    public void StartInvasion(WaveEnemies[] waves)
     {
         if (waves.Length == 0)
         {
@@ -97,12 +96,11 @@ public class AssaultMediator : MonoBehaviour
         }
     }
 
-    public Damageable GetTarget(TypeRealations relationTarget)
+    public Damageable GetTarget(TypeRelations relationTarget)
     {
-        List<Damageable> currentTeam =
-            ChooseTeam(relationTarget); 
+        List<Damageable> currentTeam = ChooseTeam(relationTarget);
 
-        if (currentTeam.Count>0)
+        if (currentTeam.Count > 0)
         {
             return currentTeam[0];
         }
@@ -124,7 +122,7 @@ public class AssaultMediator : MonoBehaviour
         }
     }
 
-    public void BrokeBarrier() 
+    public void BrokeBarrier()
     {
         OnBrokenBarrier?.Invoke();
         _barrierIsBroken = true;

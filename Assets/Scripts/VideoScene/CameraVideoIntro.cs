@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CameraVideoIntro : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private Transform _waypoint;
     private Transform _transform;
 
@@ -35,8 +35,8 @@ public class CameraVideoIntro : MonoBehaviour
     {
         _looking.Kill();
 
-       return _looking = 
-            _transform.DOLookAt(target.position, speed)
-            .SetSpeedBased();
+        return _looking =
+             _transform.DOLookAt(target.position, speed)
+             .SetSpeedBased();
     }
 }

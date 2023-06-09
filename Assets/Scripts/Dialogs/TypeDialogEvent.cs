@@ -2,5 +2,5 @@
 {
     Trade = 0,
     Assault = 1,
-    ChangeMoney = 2 
+    ChangeMoney = 2
 }

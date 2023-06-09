@@ -10,7 +10,7 @@ public class BuyMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _textMesh;
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject _panelMagazine;
 
     [SerializeField]
@@ -60,11 +60,13 @@ public class BuyMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        _rewardAdsButton.onClick.AddListener
-            (delegate {YandexGame.RewVideoShow(0);});
+        _rewardAdsButton
+            .onClick
+            .AddListener(() => YandexGame.RewVideoShow(0));
 
-        _rewardAdsButton.onClick.AddListener
-            (delegate {_panelMagazine.SetActive(false); });
+        _rewardAdsButton
+            .onClick
+            .AddListener(() => _panelMagazine.SetActive(false));
 
         YandexGame.RewardVideoEvent += Complete;
     }

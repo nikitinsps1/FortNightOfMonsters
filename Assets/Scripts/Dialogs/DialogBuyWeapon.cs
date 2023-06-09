@@ -20,18 +20,17 @@ public class DialogBuyWeapon : DialogAction
         _saveData = saveData;
     }
 
-    public override Action GetEvent()
+    public override Action GetAction()
     {
-        HaveNewTask = false;
+        IsHaveNewTask = false;
 
         Action upgrade = delegate
-        {_saveData.Weapons.Save((int)_weapon.Type);};
+        {
+            _saveData.Weapons.Save((int)_weapon.Type);
+            _weapon.Upgrade();
+        };
 
-         upgrade +=_weapon.Upgrade;
-
-        Action purchase = delegate 
-        {_magazine.Trade(_cost, upgrade);};
-
-        return purchase;
+        return delegate
+        { _magazine.Trade(_cost, upgrade); };
     }
 }

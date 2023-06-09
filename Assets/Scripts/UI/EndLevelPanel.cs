@@ -36,9 +36,7 @@ public class EndLevelPanel : MonoBehaviour
 
         if (_saveData.NumberLevel % 3 == 0 && _saveData.NumberLevel != 0)
         {
-            _button.onClick.AddListener
-                (YandexGame.FullscreenShow);
-
+            _button.onClick.AddListener(YandexGame.FullscreenShow);
             YandexGame.CloseFullAdEvent += _action;
         }
         else

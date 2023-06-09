@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    [SerializeField] private TypeSound
-        _damageSound, 
+    [SerializeField]
+    private TypeSound
+        _damageSound,
         _deadSound;
 
     [SerializeField]
-    private TypeRealations _relation;
+    private TypeRelations _relation;
 
     [SerializeField]
     private TypeDeadParticles _deadParticles;
@@ -30,9 +31,9 @@ public class Damageable : MonoBehaviour
     private GameObject _gameObject;
 
     private float _defaultHealth;
-    public Transform ThisTransform 
-    { get; private set; }   
-    public bool IsAlive 
+    public Transform ThisTransform
+    { get; private set; }
+    public bool IsAlive
     { get; private set; }
 
     public event Action
@@ -40,7 +41,7 @@ public class Damageable : MonoBehaviour
         OnSetHealth,
         OnDead;
 
-    public TypeRealations Relation => _relation;
+    public TypeRelations Relation => _relation;
     public float Health => _health;
 
     public void Construct(ParticlesContainer particles, AudioContainer audio)
@@ -67,8 +68,10 @@ public class Damageable : MonoBehaviour
     {
         OnDead?.Invoke();
 
-        _particlePools.GetObject
-            ((int)_deadParticles, ThisTransform.position, ThisTransform.rotation);
+        _particlePools.GetObject(
+            (int)_deadParticles,
+            ThisTransform.position,
+            ThisTransform.rotation);
 
         _audio.PlaySound(_deadSound, _deadVolume);
 
@@ -86,6 +89,7 @@ public class Damageable : MonoBehaviour
     public void ApplyDamage(float damage)
     {
         OnApplyDamage?.Invoke();
+
         _audio.PlaySound(_damageSound, _damageVolume);
         _hitParticle.Play();
         _health -= damage;

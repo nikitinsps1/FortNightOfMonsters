@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class PlayerArsenalSave: SavedObject
+public class PlayerArsenalSave : SavedObject
 {
     public PlayerArsenalSave(
          int shootGun = 0,

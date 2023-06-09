@@ -13,7 +13,7 @@ public class SceneChanger : MonoBehaviour
 
     private AsyncOperation _loading;
 
-   private IEnumerator Load(TypeScene scene)
+    private IEnumerator Load(TypeScene scene)
     {
         _loading = SceneManager.LoadSceneAsync((int)scene);
 
@@ -29,7 +29,7 @@ public class SceneChanger : MonoBehaviour
 
     public void Change(TypeScene scene)
     {
-        if ( _canvas.enabled == false)
+        if (_canvas.enabled == false)
         {
             _canvas.enabled = true;
             StartCoroutine(Load(scene));

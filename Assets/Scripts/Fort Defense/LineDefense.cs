@@ -8,7 +8,7 @@ public class LineDefense : MonoBehaviour
     private Directions _directionInvasion;
 
     [SerializeField]
-    private Guard[] _guards;
+    private GuardLogic[] _guards;
 
     [SerializeField]
     private Barricade _barricade;
@@ -33,7 +33,7 @@ public class LineDefense : MonoBehaviour
         {
             if (_guards[i].isActiveAndEnabled)
             {
-                StartCoroutine(_guards[i].StartShooting()); 
+                StartCoroutine(_guards[i].StartShooting());
             }
         }
     }
@@ -57,7 +57,6 @@ public class LineDefense : MonoBehaviour
         }
 
         _frontiers.Add(_mainHouse);
-
         return _frontiers;
     }
 }

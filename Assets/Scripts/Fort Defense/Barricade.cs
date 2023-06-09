@@ -5,7 +5,7 @@ using Zenject;
 [RequireComponent(typeof(Damageable))]
 public class Barricade : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private AssaultMediator _assaultMediator;
 
     [SerializeField]
@@ -23,10 +23,10 @@ public class Barricade : MonoBehaviour
 
 
     [Inject]
-    private void Construct(AudioContainer audio, ParticlesContainer deadParticles, SaveData save)
+    private void Construct(AudioContainer audio, ParticlesContainer particles, SaveData save)
     {
         _audioEffects = audio;
-        _deadParticles = deadParticles;
+        _deadParticles = particles;
         _saveData = save;
     }
 
@@ -41,9 +41,9 @@ public class Barricade : MonoBehaviour
         int levelUpgradeDynamite = _saveData.Fort
             .ThisDictionary[(int)TypeFortUpgrade.Dynamite];
 
-        if (levelUpgradeDynamite>0)
+        if (levelUpgradeDynamite > 0)
         {
-            _audioEffects.PlaySound(TypeSound.Explosion,0.1f);
+            _audioEffects.PlaySound(TypeSound.Explosion, 0.1f);
             _dynamiteExplosion.gameObject.SetActive(true);
         }
 

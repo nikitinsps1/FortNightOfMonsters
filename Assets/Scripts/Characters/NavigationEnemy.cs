@@ -7,14 +7,14 @@ using UnityEngine.AI;
 
 public class NavigationEnemy : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private NavMeshAgent _agent;
 
     [SerializeField]
     private NavMeshObstacle _obstacle;
 
     [SerializeField]
-    private float _distanceForAttack;
+    private float _distanceAttack;
 
     private Transform _transform;
 
@@ -25,7 +25,7 @@ public class NavigationEnemy : MonoBehaviour
 
     private Vector3 _destinationCache;
 
-    private bool 
+    private bool
         _isHuntPlayer,
         _isMoving;
 
@@ -35,11 +35,11 @@ public class NavigationEnemy : MonoBehaviour
         _targetDistance,
         _changingPositionTarget;
 
-    public event Action 
+    public event Action
         OnReachedPoint,
         OnChangeDestination;
 
-    public Vector3 _targetPosition
+    public Vector3 TargetPosition
     { get; private set; }
 
 
@@ -65,7 +65,7 @@ public class NavigationEnemy : MonoBehaviour
 
     private void Move()
     {
-        _targetPosition = _target.GetAttackPosition(_transform);
+        TargetPosition = _target.GetAttackPosition(_transform);
         _targetDistance = GetDistance();
 
         if (_isHuntPlayer)
@@ -91,7 +91,7 @@ public class NavigationEnemy : MonoBehaviour
 
     private float GetDistance()
     {
-        _frontierDistance = 
+        _frontierDistance =
             (_transform.position - _frontier.GetAttackPosition(_transform)).sqrMagnitude;
 
         if (_target == _frontier)
@@ -109,24 +109,25 @@ public class NavigationEnemy : MonoBehaviour
         _playerDistance =
             (_transform.position - _player.GetAttackPosition(_transform)).sqrMagnitude;
 
-        _target = (_playerDistance < _frontierDistance) ? _player : _frontier;
+        _target =
+            (_playerDistance < _frontierDistance) ? _player : _frontier;
     }
 
     private void CheckChangeDestination()
     {
         _changingPositionTarget =
-            (_destinationCache - _targetPosition).sqrMagnitude;
+            (_destinationCache - TargetPosition).sqrMagnitude;
 
-        if (_targetDistance > _distanceForAttack * _distanceForAttack && _changingPositionTarget > 2)
+        if (_targetDistance > _distanceAttack * _distanceAttack && _changingPositionTarget > 2)
         {
             OnChangeDestination?.Invoke();
-            SetDestination(_targetPosition);
+            SetDestination(TargetPosition);
         }
     }
 
     private void CheckIsEndPath()
     {
-        if (_targetDistance < _distanceForAttack * _distanceForAttack)
+        if (_targetDistance < _distanceAttack * _distanceAttack)
         {
             OnReachedPoint?.Invoke();
         }
@@ -167,7 +168,6 @@ public class NavigationEnemy : MonoBehaviour
         OnReachedPoint -= Stop;
         _agent.enabled = false;
         _obstacle.enabled = false;
-
     }
 
     public void Construct(Damageable player)

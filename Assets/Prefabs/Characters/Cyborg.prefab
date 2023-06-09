@@ -542,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 3171797574218767721}
   _obstacle: {fileID: 5803963264102896615}
-  _distanceForAttack: 2
+  _distanceAttack: 1.5
 --- !u!114 &7097454709395739125
 MonoBehaviour:
   m_ObjectHideFlags: 0

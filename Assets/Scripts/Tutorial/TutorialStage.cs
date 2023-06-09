@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using YG;
 using Zenject;
 
-public  class TutorialStage : MonoBehaviour
+public class TutorialStage : MonoBehaviour
 {
     [SerializeField, TextArea(1, 20)]
     private string _descriptionDesktop;
@@ -20,11 +20,11 @@ public  class TutorialStage : MonoBehaviour
     private UnityEvent _additionalAction;
 
     private InfoPanel _infoPanel;
-    public event Action OnComplete;
 
-    private int   _taskCounter;
-
+    private int _taskCounter;
     private string _deviceType;
+
+    public event Action OnComplete;
 
     [Inject]
     private void Construct(InfoPanel infoPanel)
@@ -34,7 +34,7 @@ public  class TutorialStage : MonoBehaviour
 
     private void Awake()
     {
-        _deviceType =  YandexGame.EnvironmentData.deviceType;
+        _deviceType = YandexGame.EnvironmentData.deviceType;
     }
 
     private void ShowDescription()

@@ -17,7 +17,7 @@ public class BulletsContainer : PoolContainer<TypeBullets>
     _explosion;
 
     protected override void InitDictionary()
-    { 
+    {
         Pools = new Dictionary<int, Pool>()
         {
             {(int)TypeBullets.Spite, _spite},

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class InfoPanel : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private TextMeshProUGUI _textMesh;
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject _panel;
 
     [SerializeField]

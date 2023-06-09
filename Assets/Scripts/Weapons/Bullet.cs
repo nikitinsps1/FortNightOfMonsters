@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    private TypeRealations _relation;
+    private TypeRelations _relation;
 
     [SerializeField]
     private float

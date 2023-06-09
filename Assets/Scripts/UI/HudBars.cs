@@ -13,10 +13,16 @@ public class HudBars : MonoBehaviour
     private SaveData _saveData;
 
     [Inject]
-    private void Construct(SaveData saveData, Player player)
+    private void Construct(SaveData saveData, PlayerHeroLogic player)
     {
         _player = player.ThisDamageable;
         _saveData = saveData;
+    }
+
+    private void Start()
+    {
+        HealthBar();
+        MoneyCounter();
     }
 
     private void OnEnable()
@@ -37,7 +43,7 @@ public class HudBars : MonoBehaviour
     {
         _health.text = _player.Health.ToString();
     }
-       
+
     public void MoneyCounter()
     {
         _money.text = _saveData.Money.ToString();

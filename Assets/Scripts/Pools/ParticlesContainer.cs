@@ -4,7 +4,7 @@ using UnityEngine;
 public enum TypeDeadParticles
 {
     Boom = 0,
-    DeadZombie  = 1,
+    DeadZombie = 1,
     DeadPeople = 2,
     DeadSpider = 3,
     BuildingBoom = 4,

@@ -2,7 +2,7 @@ using UnityEngine;
 using Zenject;
 
 [RequireComponent(typeof(CharacterAnimator))]
-[RequireComponent (typeof(Damageable))]
+[RequireComponent(typeof(Damageable))]
 
 public class Mannequin : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class Mannequin : MonoBehaviour
     private ParticlesContainer _particles;
 
     [Inject]
-    private void Construct( ParticlesContainer particles, AudioContainer audio)
+    private void Construct(ParticlesContainer particles, AudioContainer audio)
     {
         _particles = particles;
         _audio = audio;
@@ -29,7 +29,7 @@ public class Mannequin : MonoBehaviour
 
     private void Start()
     {
-        _damageable.Construct( _particles, _audio);
+        _damageable.Construct(_particles, _audio);
     }
 
     private void OnEnable()
@@ -40,12 +40,11 @@ public class Mannequin : MonoBehaviour
 
     private void OnDisable()
     {
-
         _damageable.OnDead -= OnDead;
         _damageable.OnApplyDamage -= OnApplyDamage;
     }
 
-    public void OnDead() 
+    public void OnDead()
     {
         _tutorialStage.ClickCounter();
     }

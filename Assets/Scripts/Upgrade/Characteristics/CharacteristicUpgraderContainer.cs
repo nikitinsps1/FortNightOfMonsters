@@ -12,8 +12,8 @@ public class CharacteristicUpgraderContainer : UpgradersContainer
     {
         Upgraders = new Dictionary<int, Upgrader>()
         {
-            {(int)TypeCharacteristicks.Health, _health },
-            {(int)TypeCharacteristicks.Charisma, _charisma },
+            {(int)TypeCharacteristics.Health, _health },
+            {(int)TypeCharacteristics.Charisma, _charisma },
         };
     }
 }

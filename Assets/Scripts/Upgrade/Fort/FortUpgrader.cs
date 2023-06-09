@@ -5,7 +5,6 @@ public class FortUpgrader : Upgrader
     [field: SerializeField]
     public TypeFortUpgrade Type { get; private set; }
 
-
     [SerializeField]
     private GameObject[] _buildings;
 

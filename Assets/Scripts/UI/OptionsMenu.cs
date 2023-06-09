@@ -23,6 +23,7 @@ public class OptionsMenu : MonoBehaviour
     private void OnEnable()
     {
         float musicValue;
+
         _mixer.audioMixer.GetFloat("Volume", out musicValue);
         _sliderSounds.value = musicValue;
 
@@ -34,7 +35,6 @@ public class OptionsMenu : MonoBehaviour
         {
             _toggle.isOn = true;
         }
-
     }
 
     public void SetQualityGraphics(bool enable)

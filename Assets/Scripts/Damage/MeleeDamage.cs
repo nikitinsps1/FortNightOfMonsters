@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MeleeDamage : MonoBehaviour
 {
-    [SerializeField] 
-    private TypeRealations _relations;
+    [SerializeField]
+    private TypeRelations _relations;
 
     [SerializeField]
     private Collider _collider;
