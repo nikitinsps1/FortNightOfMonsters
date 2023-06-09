@@ -1,14 +1,10 @@
 using DG.Tweening;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 [RequireComponent(typeof(Damageable))]
 public class Barricade : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> _upgradesMeshes;
-
     [SerializeField] 
     private AssaultMediator _assaultMediator;
 
@@ -21,7 +17,6 @@ public class Barricade : MonoBehaviour
     private AudioContainer _audioEffects;
     private ParticlesContainer _deadParticles;
     private SaveData _saveData;
-
 
     public Damageable ThisDamageable
     { get; private set; }
@@ -43,9 +38,10 @@ public class Barricade : MonoBehaviour
 
     private void OnDead()
     {
-        bool isHaveDynamite = _saveData.BaseUpgrade.Upgrades[(int)TypeUpgradesBuildings.Dynamite];
+        int levelUpgradeDynamite = _saveData.Fort
+            .ThisDictionary[(int)TypeFortUpgrade.Dynamite];
 
-        if (isHaveDynamite)
+        if (levelUpgradeDynamite>0)
         {
             _audioEffects.PlaySound(TypeSound.Explosion,0.1f);
             _dynamiteExplosion.gameObject.SetActive(true);
@@ -70,22 +66,5 @@ public class Barricade : MonoBehaviour
     {
         ThisDamageable.OnDead -= OnDead;
         ThisDamageable.OnApplyDamage -= OnApplyDamage;
-    }
-
-    public void Solidify(int level, float newHealthValue)
-    {
-        for (int i = 0; i < _upgradesMeshes.Count; i++)
-        {
-            if (i == level)
-            {
-                _upgradesMeshes[i].SetActive(true);
-            }
-            else
-            {
-                _upgradesMeshes[i].SetActive(false);
-            }
-        }
-
-        ThisDamageable.SetHealth(newHealthValue);
     }
 }

@@ -6,14 +6,15 @@ public class SaveData : MonoBehaviour
 {
     public CharacteristicsSave Characteristics
     { get; private set; }
-    public GuardsSave Guards
+    public BarriersSave Guards
     { get; private set; }
-    public PlayerArsenalSave Armoury
+    public BarriersSave Barricades
     { get; private set; }
-    public BaseUpgradeSave BaseUpgrade
+    public PlayerArsenalSave Weapons
     { get; private set; }
-    public BarricadeSave Barricades
+    public FortUpgradeSave Fort
     { get; private set; }
+
     public int NumberLevel
     { get; private set; }
     public int Money
@@ -25,16 +26,15 @@ public class SaveData : MonoBehaviour
     private int _amountBarricades = 2;
     private int _startMoney = 50;
 
-    private float _startHealth = 10;
 
     public void NewGame( )
     {
         NumberLevel = 0;
-        Guards = new GuardsSave(_maxAmountGuards);
-        Characteristics = new CharacteristicsSave(_startHealth);
-        Barricades = new BarricadeSave(_amountBarricades);
-        Armoury = new PlayerArsenalSave();
-        BaseUpgrade = new BaseUpgradeSave();
+        Characteristics = new CharacteristicsSave();
+        Guards = new BarriersSave(_maxAmountGuards);
+        Barricades = new BarriersSave(_amountBarricades);
+        Weapons = new PlayerArsenalSave();
+        Fort = new FortUpgradeSave();
         Money = _startMoney;
     }
 
@@ -61,26 +61,24 @@ public class SaveData : MonoBehaviour
                 YandexGame.savesData.Health, 
                 YandexGame.savesData.Charisma);
 
-        Armoury = 
+        Weapons = 
             new PlayerArsenalSave(
                 YandexGame.savesData.ShootGun, 
                 YandexGame.savesData.Riffle, 
                 YandexGame.savesData.FlameThrower);
 
-        BaseUpgrade = 
-            new BaseUpgradeSave(
+        Fort = 
+            new FortUpgradeSave(
                 YandexGame.savesData.LiveHouse, 
                 YandexGame.savesData.Dynamite, 
                 YandexGame.savesData.DefenseMainHouse);
 
         Guards =
-            new GuardsSave(
-                YandexGame.savesData.AmountGuards, 
-                YandexGame.savesData.RanksGuards);
+            new BarriersSave(_maxAmountGuards, YandexGame.savesData.RanksGuards);
 
         Barricades =
-            new BarricadeSave
-            (YandexGame.savesData.BarricadesLevels);
+            new BarriersSave
+            (_amountBarricades, YandexGame.savesData.BarricadesLevels);
     }
 
     public void SendServer()

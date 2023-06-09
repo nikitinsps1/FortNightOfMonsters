@@ -8,7 +8,7 @@ public class LevelInstaller : MonoInstaller
     [SerializeField] private Transform _startPosition;
 
     [Header("UI")]
-    [SerializeField] private ChangeWeaponPanel _weaponButton;
+    [SerializeField] private WeaponUpgraderContainer _weaponButton;
     [SerializeField] private InteractiveButton _interactiveButton;
     [SerializeField] private BuyMenu _buyMenu;
     [SerializeField] private InfoPanel _infoPanel;
@@ -58,7 +58,7 @@ public class LevelInstaller : MonoInstaller
     private void BindUiElements()
     {
         Container.Bind<TaskPanel>().FromInstance(_taskPanel).AsSingle();
-        Container.Bind<ChangeWeaponPanel>().FromInstance(_weaponButton).AsSingle();
+        Container.Bind<WeaponUpgraderContainer>().FromInstance(_weaponButton).AsSingle();
         Container.Bind<InteractiveButton>().FromInstance(_interactiveButton).AsSingle();
         Container.Bind<InfoPanel>().FromInstance(_infoPanel).AsSingle();
         Container.Bind<BuyMenu>().FromInstance(_buyMenu).AsSingle();

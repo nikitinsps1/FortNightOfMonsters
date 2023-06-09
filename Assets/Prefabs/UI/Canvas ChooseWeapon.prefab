@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8296396961356527171}
   - component: {fileID: 8296396961356527196}
   - component: {fileID: 8296396961356527197}
-  - component: {fileID: 1743396974}
   m_Layer: 0
   m_Name: Canvas ChooseWeapon
   m_TagString: Untagged
@@ -108,24 +107,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1743396974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296396961356527198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a10e9cc2d2ae14fa48a08ac296a745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buttons:
-  - {fileID: 749250335}
-  - {fileID: 929852751}
-  - {fileID: 518379889}
-  - {fileID: 2142311889}
-  - {fileID: 1258959631}
 --- !u!1 &8296396961922616088
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a88b7c1bfe1a840809692d96ccabb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 2
+  _weapon: 0
 --- !u!1 &8296396962039223438
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a88b7c1bfe1a840809692d96ccabb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 1
+  _weapon: 0
 --- !u!1 &8296396962198110079
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a88b7c1bfe1a840809692d96ccabb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _weapon: 0
 --- !u!1 &8296396962447738808
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a88b7c1bfe1a840809692d96ccabb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 3
+  _weapon: 0
 --- !u!1 &8296396963195707770
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,4 +781,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a88b7c1bfe1a840809692d96ccabb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 4
+  _weapon: 0

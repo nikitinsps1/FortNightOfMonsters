@@ -14,10 +14,13 @@ public class InitLevel : MonoBehaviour
     private LevelsContainer _levelsContainer;
 
     [SerializeField]
-    private LoadSaveData _loadSaveData;
+    private LoadSave _loadSaveData;
 
     [SerializeField]
     private DialogMenu _dialogMenu;
+
+    [SerializeField]
+    private HudBars _hud;
 
     private EnemiesContainer _enemies;
     private AudioContainer _audio;
@@ -62,6 +65,9 @@ public class InitLevel : MonoBehaviour
 
         _info.ShowMessage
             (_levelSettings.DescriptionMissions);
+
+        _hud.HealthBar();
+        _hud.MoneyCounter();
 
         _saveData.SendServer();
     }

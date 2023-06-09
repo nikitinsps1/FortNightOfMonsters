@@ -10,7 +10,6 @@ public class TutorialInstaller : MonoInstaller
     [Header("UI")]
     [SerializeField] private InfoPanel _infoPanel;
     [SerializeField] private InteractiveButton _interactiveButton;
-    [SerializeField] private ChangeWeaponPanel _changeWeapon;
 
     [Header("Other")]
     [SerializeField] private TutorialObserver _tutorial;
@@ -28,7 +27,6 @@ public class TutorialInstaller : MonoInstaller
     private void BindUI()
     {
         Container.Bind<InfoPanel>().FromInstance(_infoPanel).AsSingle();
-        Container.Bind<ChangeWeaponPanel>().FromInstance(_changeWeapon).AsSingle();
         Container.Bind<InteractiveButton>().FromInstance(_interactiveButton).AsSingle();
     }
 

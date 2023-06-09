@@ -15,17 +15,10 @@ namespace YG
         public int
             Level,
             Money,
-            AmountGuards;
 
-        public int[]
-            RanksGuards,
-            BarricadesLevels;
-
-        public float
             Health,
-            Charisma;
+            Charisma,
 
-        public bool
             ShootGun,
             Riffle,
             FlameThrower,
@@ -34,24 +27,39 @@ namespace YG
             Dynamite,
             DefenseMainHouse;
 
+        public int[]
+            RanksGuards,
+            BarricadesLevels;
+
+
 
         public void ConvertGameData(SaveData saveData)
         {
             Level = saveData.NumberLevel;
             Money = saveData.Money;
 
-            AmountGuards = saveData.Guards.AmountGuards;
-            RanksGuards = saveData.Guards.RankLevels;
-            BarricadesLevels = saveData.Barricades.Levels;
+            RanksGuards = GetValuesDictionary(saveData.Guards.ThisDictionary);
+            BarricadesLevels = GetValuesDictionary(saveData.Barricades.ThisDictionary);
 
-            Characteristics(saveData.Characteristics.Levels);
-            Building(saveData.BaseUpgrade.Upgrades);
-            Weapons(saveData.Armoury.Weapons);
+            Characteristics(saveData.Characteristics.ThisDictionary);
+            Building(saveData.Fort.ThisDictionary);
+            Weapons(saveData.Weapons.ThisDictionary);
 
             YandexGame.SaveProgress();
         }
 
-        public void Characteristics(Dictionary<int, float> characteristics)
+        public int[] GetValuesDictionary(Dictionary<int, int> dictionary)
+        {
+            int[] values = new int[dictionary.Count];
+
+            foreach (var item in dictionary)
+            {
+                values[item.Key] = item.Value;
+            }
+            return values;
+        }
+
+        public void Characteristics(Dictionary<int, int> characteristics)
         {
             Health = characteristics
                 [(int)TypeCharacteristicks.Health];
@@ -60,19 +68,19 @@ namespace YG
                 [(int)TypeCharacteristicks.Charisma];
         }
 
-        public void Building(Dictionary<int, bool> building)
+        public void Building(Dictionary<int, int> building)
         {
             DefenseMainHouse = building
-                [(int)TypeUpgradesBuildings.MainHouseDefense];
+                [(int)TypeFortUpgrade.DefenseBag];
 
             Dynamite = building
-                [(int)TypeUpgradesBuildings.Dynamite];
+                [(int)TypeFortUpgrade.Dynamite];
 
             LiveHouse = building
-                [(int)TypeUpgradesBuildings.LiveHouse];
+                [(int)TypeFortUpgrade.LiveHouse];
         }
 
-        public void Weapons(Dictionary<int, bool> weapons)
+        public void Weapons(Dictionary<int, int> weapons)
         {
             ShootGun = weapons
                 [(int)TypeWeapons.ShootGun];

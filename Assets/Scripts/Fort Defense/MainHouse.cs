@@ -3,16 +3,9 @@ using UnityEngine;
 using Zenject;
 
 [RequireComponent(typeof(Damageable))]
+
 public class MainHouse : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject
-        _liveHouse,
-        _defenseBags;
-
-    [SerializeField] 
-    private GameObject[] _dynamites;
-
     [SerializeField]
     private Transform _transformMesh;
 
@@ -48,30 +41,5 @@ public class MainHouse : MonoBehaviour
     private void OnApplyDamage()
     {
        _transformMesh.DOShakePosition(0.5f, 0.05f);
-    }
-
-    public void Upgrade(TypeUpgradesBuildings type)
-    {
-        switch (type)
-        {
-            case TypeUpgradesBuildings.MainHouseDefense:
-                _defenseBags.SetActive(true);
-                ThisDamageable.SetHealth(50);
-                break;
-
-            case TypeUpgradesBuildings.LiveHouse:
-                _liveHouse.SetActive(true);
-                break;
-
-            case TypeUpgradesBuildings.Dynamite:
-                for (int i = 0; i < _dynamites.Length; i++)
-                {
-                    _dynamites[i].SetActive(true);
-                }
-                break;
-
-            default:
-                break;
-        }
     }
 }

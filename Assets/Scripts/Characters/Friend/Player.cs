@@ -12,7 +12,7 @@ public class Player : Character
     private Rigidbody _rigidBody;
     private ParticlesContainer _deadParticles;
     private AudioContainer _audioEffects;
-
+   
     private Quaternion _angleCamera;
 
     private Vector3

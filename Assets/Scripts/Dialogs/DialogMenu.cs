@@ -45,7 +45,7 @@ public class DialogMenu : MonoBehaviour
     private void CheckCharisma()
     {
         int charismaValue = 
-            ((int)_data.Characteristics.Levels
+            (_data.Characteristics.ThisDictionary
             [(int)TypeCharacteristicks.Charisma]);
 
         if (charismaValue < _dialog.RequiredCharisma)

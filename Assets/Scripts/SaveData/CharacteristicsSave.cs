@@ -1,30 +1,13 @@
 ﻿using System.Collections.Generic;
 
-public class CharacteristicsSave
+public class CharacteristicsSave: SavedObject
 {
-    public CharacteristicsSave(float health, float charisma = 0)
+    public CharacteristicsSave(int health = 0 , int charisma = 0)
     {
-        Levels = new Dictionary<int, float>
+        ThisDictionary = new Dictionary<int, int>
         {
             {(int)TypeCharacteristicks.Health,  health },
             {(int)TypeCharacteristicks.Charisma, charisma }
         };
     }
-
-    public Dictionary<int, float> Levels;
-
-    public void UpCharacteristics(TypeCharacteristicks type)
-    {
-        if (type == TypeCharacteristicks.Health)
-        {
-            HealthLevel++;
-            Levels[(int)type] += 10;
-        }
-        else
-        {
-            Levels[(int)type] += 1;
-        }
-    }
-
-    public int HealthLevel { get; private set; }
 }

@@ -35,7 +35,7 @@ public class BuyMenu : MonoBehaviour
         _product.Invoke();
     }
 
-    public void StartTrade(int newCost, Action product)
+    public void Trade(int newCost, Action product)
     {
         _panelMagazine.SetActive(true);
         _costGameMoney = newCost;

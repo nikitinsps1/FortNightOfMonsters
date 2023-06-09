@@ -1,24 +1,17 @@
 ﻿using System.Collections.Generic;
 
-public class PlayerArsenalSave
+public class PlayerArsenalSave: SavedObject
 {
-    public Dictionary<int, bool> Weapons 
-    { get; private set; }
- 
-    public PlayerArsenalSave
-        (bool shootGun = false
-        ,bool riffle = false 
-        ,bool flamethrower = false)
+    public PlayerArsenalSave(
+         int shootGun = 0,
+         int riffle = 0,
+         int flamethrower = 0)
     {
-        Weapons = new Dictionary<int, bool>
+        ThisDictionary = new Dictionary<int, int>
         {
             {(int) TypeWeapons.ShootGun, shootGun },
             {(int) TypeWeapons.Riffle, riffle },
             {(int) TypeWeapons.Flamethrower, flamethrower }
         };
-    }
-    public void Add(TypeWeapons type)
-    {
-        Weapons[(int)type] = true;
     }
 }

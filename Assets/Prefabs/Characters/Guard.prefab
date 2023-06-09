@@ -2017,7 +2017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0109df0288d511741b26576d2c70ceb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedRotation: 0
+  _speedRotation: 400
   _assaultMediator: {fileID: 0}
 --- !u!114 &2362840285701933392
 MonoBehaviour:

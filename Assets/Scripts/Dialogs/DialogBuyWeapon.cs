@@ -5,19 +5,17 @@ using Zenject;
 public class DialogBuyWeapon : DialogAction
 {
     [SerializeField]
-    private TypeWeapons _weapon;
-
-    [SerializeField]
     private int _cost;
 
-    private ChangeWeaponPanel _changeWeapon;
+    [SerializeField]
+    private WeaponProduct _weapon;
+
     private BuyMenu _magazine;
     private SaveData _saveData;
 
     [Inject]
-    private void Construct(BuyMenu buyMenu,  ChangeWeaponPanel changeWeapon, SaveData saveData)
+    private void Construct(BuyMenu buyMenu, SaveData saveData)
     {
-        _changeWeapon = changeWeapon;
         _magazine = buyMenu;
         _saveData = saveData;
     }
@@ -27,13 +25,12 @@ public class DialogBuyWeapon : DialogAction
         HaveNewTask = false;
 
         Action upgrade = delegate
-        {_saveData.Armoury.Add(_weapon);};
+        {_saveData.Weapons.Save((int)_weapon.Type);};
 
-         upgrade += delegate
-        {_changeWeapon.OnBuyWeapon(_weapon);};
+         upgrade +=_weapon.Upgrade;
 
         Action purchase = delegate 
-        {_magazine.StartTrade(_cost, upgrade);};
+        {_magazine.Trade(_cost, upgrade);};
 
         return purchase;
     }
