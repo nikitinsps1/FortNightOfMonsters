@@ -23,7 +23,6 @@ public class InitLevel : MonoBehaviour
     private SaveData _saveData;
     private LoadSave _loadSave;
 
-
     [Inject]
     private void Construct(
         InfoPanel infoPanel,
@@ -61,8 +60,7 @@ public class InitLevel : MonoBehaviour
         SetNumberDay();
         FormPools();
 
-        _info
-            .ShowMessage(_levelSettings.DescriptionMissions);
+        _info.ShowMessage(_levelSettings.DescriptionMissions);
 
         _saveData.SendServer();
         _audio.PlayMusic(_levelSettings.Music);

@@ -8,13 +8,10 @@ using UnityEngine.AI;
 public class NavigationEnemy : MonoBehaviour
 {
     [SerializeField]
-    private NavMeshAgent _agent;
-
-    [SerializeField]
-    private NavMeshObstacle _obstacle;
-
-    [SerializeField]
     private float _distanceAttack;
+
+    private NavMeshAgent _agent;
+    private NavMeshObstacle _obstacle;
 
     private Transform _transform;
 

@@ -58,12 +58,10 @@ public class DialogMenu : MonoBehaviour
         button.onClick.AddListener(() => ResultDialog(setting));
     }
 
-
     private void ChangeText(string newText)
     {
         _tmpDialog.text = newText;
     }
-
 
     public void ResultDialog(DialogButtonSetting setting)
     {

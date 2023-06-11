@@ -27,5 +27,4 @@ public class BootInstaller : MonoInstaller
             .FromComponentInNewPrefab(_audioContainer)
             .AsSingle();
     }
-
 }

@@ -24,7 +24,6 @@ public class LevelSettings : MonoBehaviour
 
     private WaveEnemies _enemiesStartPool;
 
-
     public Dictionary<int, WaveEnemies[]> InvasionsSettings
     { get; private set; }
     public Dialog ThisDialog => _dialog;
