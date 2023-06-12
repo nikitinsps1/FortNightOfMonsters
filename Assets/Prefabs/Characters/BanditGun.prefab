@@ -31,6 +31,37 @@ Transform:
   m_Father: {fileID: 7862983475577855877}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &322447379002123145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556929488164542501}
+  m_Layer: 0
+  m_Name: ShootPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556929488164542501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322447379002123145}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8238774679155155360}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7862983475577619361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,8 +2138,8 @@ GameObject:
   - component: {fileID: 2021402848914223995}
   - component: {fileID: 1953687998511354122}
   - component: {fileID: 6067035451525095313}
-  - component: {fileID: 8463119758638460962}
   - component: {fileID: 7865964311813064198}
+  - component: {fileID: 455667126462282179}
   m_Layer: 0
   m_Name: BanditGun
   m_TagString: Untagged
@@ -2132,6 +2163,7 @@ Transform:
   - {fileID: 8238774677509441026}
   - {fileID: 7732657279766148838}
   - {fileID: 7531667731013624145}
+  - {fileID: 1556929488164542501}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2255,10 +2287,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedRotation: 350
-  _shootPoint: {fileID: 8238774679155155360}
+  _shootPoint: {fileID: 1556929488164542501}
   _typeBullets: 1
   _shootingSound: 5
-  _shootVolume: 0.08
+  _shootVolume: 0.1
 --- !u!114 &1953687998511354122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2292,21 +2324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 2244056673465445483}
-  _obstacle: {fileID: 3136375867651730841}
   _distanceAttack: 10
---- !u!114 &8463119758638460962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8238774679155155361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7865964311813064198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,6 +2335,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d3bf53497371747abf6a558cc0dd7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &455667126462282179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238774679155155361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8238774679155341624

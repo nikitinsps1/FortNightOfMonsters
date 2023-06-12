@@ -47,7 +47,6 @@ public class OptionsMenu : MonoBehaviour
         {
             QualitySettings.SetQualityLevel(0);
         }
-
     }
 
     public void ChangeSoundsVolume(float value)

@@ -15,7 +15,6 @@ public class InfoPanel : MonoBehaviour
 
     private Tween _tween;
 
-
     public void ShowMessage(string newText)
     {
         _panel.SetActive(true);

@@ -1,8 +1,7 @@
 ﻿using System;
-using UnityEngine;
 using YG;
 
-public class SaveData : MonoBehaviour
+public class SaveData 
 {
     public CharacteristicsSave Characteristics
     { get; private set; }

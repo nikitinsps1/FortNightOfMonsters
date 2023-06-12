@@ -1298,10 +1298,10 @@ GameObject:
   - component: {fileID: -5051438389502764660}
   - component: {fileID: 6471240280890808007}
   - component: {fileID: 8901169102608785201}
-  - component: {fileID: 614269898720905313}
-  - component: {fileID: 1317746556189021002}
   - component: {fileID: 1104650844050611029}
+  - component: {fileID: 3678306236036260425}
   - component: {fileID: 9140383538092711550}
+  - component: {fileID: 8635394251839211668}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -1450,33 +1450,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedRotation: 122
   _meleeDamage: {fileID: 1390871175211233435}
---- !u!114 &614269898720905313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5771570705302240486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1317746556189021002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5771570705302240486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _agent: {fileID: 5771570705750089636}
-  _obstacle: {fileID: 450547956693800389}
-  _distanceAttack: 1.2
 --- !u!114 &1104650844050611029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,6 +1471,19 @@ MonoBehaviour:
   _health: 2
   _deadVolume: 0.2
   _damageVolume: 0.1
+--- !u!114 &3678306236036260425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771570705302240486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceAttack: 1.2
 --- !u!114 &9140383538092711550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,6 +1494,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d3bf53497371747abf6a558cc0dd7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8635394251839211668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771570705302240486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5771570705302240488

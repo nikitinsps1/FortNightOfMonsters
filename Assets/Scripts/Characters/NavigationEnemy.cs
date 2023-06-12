@@ -39,7 +39,6 @@ public class NavigationEnemy : MonoBehaviour
     public Vector3 TargetPosition
     { get; private set; }
 
-
     private void Awake()
     {
         Init();

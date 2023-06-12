@@ -25,10 +25,10 @@ public class ObserverVideoIntro : MonoBehaviour
         _speedCameraAfterCrush;
 
     private AudioContainer _audio;
-    private SceneChanger _sceneChanger;
+    private SceneLoader _sceneChanger;
 
     [Inject]
-    private void Construct(SceneChanger sceneChanger, AudioContainer audio)
+    private void Construct(SceneLoader sceneChanger, AudioContainer audio)
     {
         _audio = audio;
         _sceneChanger = sceneChanger;
@@ -60,8 +60,9 @@ public class ObserverVideoIntro : MonoBehaviour
         _audio.PlaySound(TypeSound.HitBuilding, 0.5f);
         _camera.Move();
 
-        _camera.Look(
-            _fort, _speedCameraAfterCrush).OnComplete(() => _uiVideoIntro.FadeLogo());
+        _camera.Look(_fort, _speedCameraAfterCrush)
+            .OnComplete(() => _uiVideoIntro
+            .FadeLogo());
     }
 
     private void OnFadedLogo()

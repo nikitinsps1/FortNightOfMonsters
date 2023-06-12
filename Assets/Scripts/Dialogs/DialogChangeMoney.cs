@@ -1,25 +1,17 @@
 ﻿using System;
 using UnityEngine;
-using Zenject;
 
+[CreateAssetMenu(fileName = "ChangeMoney", menuName = "Level/Dialog/Create new Change Money")]
 public class DialogChangeMoney : DialogAction
 {
     [SerializeField]
     private int _value;
 
-    private SaveData _saveData;
-
-    [Inject]
-    private void Construct(SaveData saveData)
-    {
-        _saveData = saveData;
-    }
-
-    public override Action GetAction()
+    public override Action GetAction(DialogActionMediator mediator)
     {
         IsHaveNewTask = false;
 
         return delegate
-        { _saveData.RefreshAmountMoney(_value); };
+        { mediator.SaveData.RefreshAmountMoney(_value); };
     }
 }

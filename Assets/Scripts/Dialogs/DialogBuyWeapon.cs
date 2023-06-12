@@ -1,36 +1,26 @@
 ﻿using System;
 using UnityEngine;
-using Zenject;
 
+[CreateAssetMenu(fileName = "BuyWeapon", menuName = "Level/Dialog/Create new Buy Weapon")]
 public class DialogBuyWeapon : DialogAction
 {
     [SerializeField]
     private int _cost;
 
     [SerializeField]
-    private WeaponProduct _weapon;
+    private TypeWeapons _weapon;
 
-    private BuyMenu _magazine;
-    private SaveData _saveData;
-
-    [Inject]
-    private void Construct(BuyMenu buyMenu, SaveData saveData)
-    {
-        _magazine = buyMenu;
-        _saveData = saveData;
-    }
-
-    public override Action GetAction()
+    public override Action GetAction(DialogActionMediator mediator)
     {
         IsHaveNewTask = false;
 
         Action upgrade = delegate
         {
-            _saveData.Weapons.Save((int)_weapon.Type);
-            _weapon.Upgrade();
+            mediator.SaveData.Weapons.Save((int)_weapon);
+            mediator.Weapons.Upgraders[((int)_weapon)].Upgrade();
         };
 
         return delegate
-        { _magazine.Trade(_cost, upgrade); };
+        { mediator.BuyMenu.Trade(_cost, upgrade); };
     }
 }

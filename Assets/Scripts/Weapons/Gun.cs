@@ -59,7 +59,6 @@ public class Gun : Weapon
             numberBullet++;
         }
 
-
         for (; numberBullet < _bulletsOneShoot; numberBullet++)
         {
             if (numberBullet <= _bulletsOneShoot / 2)

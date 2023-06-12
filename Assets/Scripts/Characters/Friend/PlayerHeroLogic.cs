@@ -87,7 +87,12 @@ public class PlayerHeroLogic : CharacterLogic
 
     public override void StopAttack()
     {
-        base.StopAttack();
+        ThisCharacterAnimator.StopAttack();
         ThisArsenal.StopAttack();
+    }
+
+    public override void Attack()
+    {
+        ThisCharacterAnimator.StartAttack();
     }
 }

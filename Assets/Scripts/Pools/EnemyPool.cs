@@ -23,9 +23,7 @@ public class EnemyPool : Pool
     public override ObjectPool CreateObject()
     {
         ObjectPool newObject = base.CreateObject();
-
         EnemyLogic enemy = newObject.GetComponent<EnemyLogic>();
-
 
         if (enemy.TryGetComponent(out EnemyRangeLogic enemyFire))
         {
@@ -44,7 +42,6 @@ public class EnemyPool : Pool
         }
 
         enemy.ThisDamageable.Construct(_particles, _audio);
-
         return newObject;
     }
 }

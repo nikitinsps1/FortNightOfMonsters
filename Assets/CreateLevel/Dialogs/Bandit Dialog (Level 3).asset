@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8f28089896cfa46ab0060990c98dad, type: 3}
+  m_Name: Bandit Dialog (Level 3)
+  m_EditorClassIdentifier: 
+  _startSpeech: "\u0423 \u043C\u0435\u043D\u044F \u043A \u0442\u0435\u0431\u0435
+    \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435. \u0422\u044B
+    \u043F\u043B\u0430\u0442\u0438\u0448\u044C \u043C\u043D\u0435 50 \u043C\u043E\u043D\u0435\u0442,
+    \u0430 \u043C\u044B \u0432\u0430\u0441 \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0435\u043C.
+    \u0418\u0434\u0435\u0442?"
+  _character: {fileID: 5655391264478873518, guid: 5a0989a000b130744bfeec0437d57923,
+    type: 3}
+  _requiredCharisma: 1
+  _confirm:
+    <TextAfter>k__BackingField: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446. \u0420\u0430\u0437\u0443\u043C\u043D\u043E\u0435
+      \u0440\u0435\u0448\u0435\u043D\u0438\u0435. \u0423\u0434\u0430\u0447\u0438
+      \u0432 \u043E\u0431\u043E\u0440\u043E\u043D\u0435 \u043E\u0442 \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432.
+      \u0425\u0430."
+    <DialogAction>k__BackingField: {fileID: 11400000, guid: 34ebbd53508ab2346b96d3bac2efd1cc,
+      type: 2}
+  _cancel:
+    <TextAfter>k__BackingField: "\u041D\u0443 \u0434\u0435\u0440\u0436\u0438\u0441\u044C
+      (\u0431\u0435\u0433\u0438\u0442\u0435 \u043A \u0431\u0430\u0440\u0440\u0438\u043A\u0430\u0434\u0430\u043C,
+      \u0431\u0430\u043D\u0434\u0438\u0442\u044B \u0430\u0442\u0430\u043A\u0443\u044E\u0442!)"
+    <DialogAction>k__BackingField: {fileID: 11400000, guid: 55572a37535a71e4691d6db79cee90a9,
+      type: 2}
+  _charisma:
+    <TextAfter>k__BackingField: "\u0413\u043E\u0432\u043E\u0440\u0438\u0448\u044C
+      \u0434\u0435\u043D\u0435\u0433 \u043D\u0435\u0442? \u041D\u0443 \u043B\u0430\u0434\u043D\u043E. 
+      \u041F\u0440\u0438\u0434\u0435\u043C \u0447\u0435\u0440\u0435\u0437 \u043F\u0430\u0440\u0443
+      \u0434\u043D\u0435\u0439"
+    <DialogAction>k__BackingField: {fileID: 0}

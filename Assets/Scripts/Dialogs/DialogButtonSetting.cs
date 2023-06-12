@@ -8,7 +8,6 @@ public struct DialogButtonSetting
     public string TextAfter
     { get; private set; }
 
-
     [field: SerializeField]
     public DialogAction DialogAction
     { get; private set; }

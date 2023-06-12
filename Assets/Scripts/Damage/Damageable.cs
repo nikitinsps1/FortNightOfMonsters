@@ -57,6 +57,7 @@ public class Damageable : MonoBehaviour
         _defaultHealth = _health;
         _gameObject = gameObject;
     }
+
     private void OnEnable()
     {
         IsAlive = true;

@@ -62,5 +62,6 @@ public class EndLevelPanel : MonoBehaviour
         }
         Time.timeScale = 1;
         _scaleImage.Kill();
+        _scaleImage = null;
     }
 }

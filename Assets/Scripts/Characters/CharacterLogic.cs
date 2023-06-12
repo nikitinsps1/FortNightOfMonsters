@@ -25,8 +25,8 @@ public abstract class CharacterLogic : MonoBehaviour
     protected virtual void Init()
     {
         ThisTransform = transform;
-        ThisDamageable = GetComponent<Damageable>();
         ThisCharacterAnimator = GetComponent<CharacterAnimator>();
+        ThisDamageable = GetComponent<Damageable>();
     }
 
     protected virtual void OnEnable()
@@ -55,13 +55,6 @@ public abstract class CharacterLogic : MonoBehaviour
             SpeedRotation * Time.deltaTime);
     }
 
-    public virtual void Attack()
-    {
-        ThisCharacterAnimator.StartAttack();
-    }
-
-    public virtual void StopAttack()
-    {
-        ThisCharacterAnimator.StopAttack();
-    }
+    public abstract void Attack();
+    public abstract void StopAttack();
 }

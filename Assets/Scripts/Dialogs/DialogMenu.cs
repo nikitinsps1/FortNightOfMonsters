@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
+[RequireComponent(typeof(DialogActionMediator))]
 public class DialogMenu : MonoBehaviour
 {
     [SerializeField]
@@ -15,7 +16,9 @@ public class DialogMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _tmpDialog;
 
-    private Dialog _dialog;
+    private DialogActionMediator _mediator;
+
+    private DialogSO _dialog;
     private SaveData _data;
     private LevelProgress _levelProgress;
 
@@ -52,8 +55,7 @@ public class DialogMenu : MonoBehaviour
 
     private void InitializeButton(int indexButton, Button button)
     {
-        DialogButtonSetting setting =
-            _dialog.Settings[indexButton];
+        DialogButtonSetting setting = _dialog.Settings[indexButton];
 
         button.onClick.AddListener(() => ResultDialog(setting));
     }
@@ -68,14 +70,15 @@ public class DialogMenu : MonoBehaviour
         ChangeText(setting.TextAfter);
 
         if (setting.DialogAction != null)
-            setting.DialogAction.GetAction().Invoke();
+            setting.DialogAction.GetAction(_mediator).Invoke();
 
         if (setting.HaveNewTask == false)
             _levelProgress.ReadyInvasion();
     }
 
-    public void Init(Dialog dialog)
+    public void Init(DialogSO dialog)
     {
+        _mediator = GetComponent<DialogActionMediator>();
         _dialog = dialog;
         _dialog.Init();
 

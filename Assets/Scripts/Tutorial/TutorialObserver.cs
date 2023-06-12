@@ -6,12 +6,12 @@ public class TutorialObserver : MonoBehaviour
     [SerializeField]
     private TutorialStage[] _stages;
 
-    private SceneChanger _sceneChanger;
+    private SceneLoader _sceneChanger;
 
     private int _stageCounter = 0 ;
 
     [Inject]
-    private void Construct(SceneChanger sceneChanger)
+    private void Construct(SceneLoader sceneChanger)
     {
         _sceneChanger = sceneChanger;
     }

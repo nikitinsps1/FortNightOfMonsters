@@ -6,7 +6,7 @@ public abstract class Upgrader : MonoBehaviour
     private int[] _costs;
 
     public int Level
-    { get; private set; }
+    {get; private set;}
 
     public int MaxLevel => _costs.Length;
 

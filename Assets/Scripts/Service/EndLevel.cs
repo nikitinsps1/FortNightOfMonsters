@@ -13,10 +13,10 @@ public class EndLevel : MonoBehaviour
 
     private Dictionary<int, EndLevelPanel> _panels;
 
-    private SceneChanger _levelChanger;
+    private SceneLoader _levelChanger;
 
     [Inject]
-    private void Construct(SceneChanger levelChanger)
+    private void Construct(SceneLoader levelChanger)
     {
         _levelChanger = levelChanger;
     }

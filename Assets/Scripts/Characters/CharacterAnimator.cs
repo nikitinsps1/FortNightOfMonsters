@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Animator))]
-
-public class CharacterAnimator : MonoBehaviour
-{
+public class CharacterAnimator: MonoBehaviour
+{ 
     private Animator _animator;
 
     public event Action
@@ -16,9 +16,9 @@ public class CharacterAnimator : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    protected void OnEnable()
+    private void OnEnable()
     {
-        _animator.Play(0, 0, UnityEngine.Random.value);
+        _animator.Play(0, 0, Random.value);
     }
 
     public void StartAttack()

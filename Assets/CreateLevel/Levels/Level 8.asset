@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f3667bfa71d6044a77dce46e6b7c02, type: 3}
+  m_Name: Level 8
+  m_EditorClassIdentifier: 
+  _description: "\u0411\u0430\u043D\u0434\u0438\u0442\u044B \u0432\u0435\u0440\u043D\u0443\u043B\u0438\u0441\u044C.
+    \u0418 \u0438\u0445 \u0442\u0435\u043F\u0435\u0440\u044C \u0431\u043E\u043B\u044C\u0448\u0435. 
+    \u0411\u0443\u0434\u044C\u0442\u0435 \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u044B."
+  _leftBarrierWaves:
+  - _zombies: 12
+    _kamikazes: 2
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 2
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 15
+    _kamikazes: 2
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 2
+    _spiders: 5
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 2
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 11
+    _kamikazes: 1
+    _spiders: 5
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _rightBarrierWaves:
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 6
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 1
+    _spiders: 3
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  - _zombies: 12
+    _kamikazes: 2
+    _spiders: 5
+    _cyborgs: 0
+    _banditGun: 0
+    _banditMelee: 0
+  _music: 3
+  _reward: 75
+  _dialog: {fileID: 11400000, guid: 407f68f2a490d164890b3755b72c61b2, type: 2}

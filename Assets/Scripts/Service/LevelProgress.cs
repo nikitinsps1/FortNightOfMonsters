@@ -23,7 +23,7 @@ public class LevelProgress : MonoBehaviour
 
     private PlayerHeroLogic _player;
     private SaveData _saveData;
-    private LevelSettings _setting;
+    private LevelSettingSO _setting;
     private MainHouse _mainHouse;
 
     private int
@@ -73,7 +73,7 @@ public class LevelProgress : MonoBehaviour
         _mainHouse.ThisDamageable.OnDead -= Fail;
     }
 
-    public void Init(LevelSettings levelSettings, int amountLevels)
+    public void Init(LevelSettingSO levelSettings, int amountLevels)
     {
         _setting = levelSettings;
         _amountLevels = amountLevels;

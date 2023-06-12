@@ -47,10 +47,10 @@ GameObject:
   - component: {fileID: 7207483503565755905}
   - component: {fileID: 8859141376388399882}
   - component: {fileID: 7122654102620766262}
-  - component: {fileID: 4210901506635820041}
   - component: {fileID: 6560471031516446629}
   - component: {fileID: 5245312606657571642}
   - component: {fileID: 7875534452607523138}
+  - component: {fileID: 157941730557220229}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -202,18 +202,6 @@ MonoBehaviour:
   _typeBullets: 0
   _shootingSound: 8
   _shootVolume: 0.05
---- !u!114 &4210901506635820041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207483503558468995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6560471031516446629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 7207483503565755905}
-  _obstacle: {fileID: 8859141376388399882}
   _distanceAttack: 10
 --- !u!114 &5245312606657571642
 MonoBehaviour:
@@ -260,6 +246,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d3bf53497371747abf6a558cc0dd7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157941730557220229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7207483503558468995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7207483503558469001

@@ -948,10 +948,10 @@ GameObject:
   - component: {fileID: 7858748185669565688}
   - component: {fileID: 1661492367}
   - component: {fileID: 8641956757893957635}
-  - component: {fileID: 3833606397244131308}
   - component: {fileID: 7696365482052412235}
   - component: {fileID: 2082943690905821681}
   - component: {fileID: 3704003260255351970}
+  - component: {fileID: 4183213578963364838}
   m_Layer: 0
   m_Name: Kamikaze
   m_TagString: Untagged
@@ -1102,18 +1102,6 @@ MonoBehaviour:
   _typeBullets: 2
   _shootingSound: 6
   _shootVolume: 0.5
---- !u!114 &3833606397244131308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7858748184154841018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7696365482052412235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,8 +1114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9f7e6e72acce74eb09b4bcc2818e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 7858748185669565688}
-  _obstacle: {fileID: 1661492367}
   _distanceAttack: 1
 --- !u!114 &2082943690905821681
 MonoBehaviour:
@@ -1160,6 +1146,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d3bf53497371747abf6a558cc0dd7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4183213578963364838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858748184154841018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604f727720e756b479fc7507f2850e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7858748184154841020

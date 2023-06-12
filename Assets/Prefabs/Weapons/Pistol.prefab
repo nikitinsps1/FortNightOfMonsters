@@ -144,9 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 2100000, guid: 03a623bbb29212846bbd02ec75f2f2f7, type: 2}
+  - {fileID: 2100000, guid: 4c0eced2c927b4746b05aaf29d338057, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,12 +213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a7c2691bc1fcc44911a8d976dba8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isAutomatick: 0
-  _soundShoot: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
-  <_weaponType>k__BackingField: 1
+  _type: 0
+  _typeSound: 0
+  gunLine: []
+  _attackParticle: {fileID: 0}
+  _firePosition: {fileID: 0}
   _damage: 1
-  _bulletsOneShoot: 1
   _spread: 1
+  _bulletsOneShoot: 1
 --- !u!1001 &5410791886042043144
 PrefabInstance:
   m_ObjectHideFlags: 0

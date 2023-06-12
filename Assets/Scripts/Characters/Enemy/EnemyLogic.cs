@@ -94,7 +94,7 @@ public abstract class EnemyLogic : CharacterLogic
         if (_isAttack == false)
         {
             _isAttack = true;
-            base.Attack();
+            ThisCharacterAnimator.StartAttack();
         }
 
         RotateTarget(_navigation.TargetPosition);
@@ -105,7 +105,7 @@ public abstract class EnemyLogic : CharacterLogic
         if (_isAttack)
         {
             _isAttack = false;
-            base.StopAttack();
+            ThisCharacterAnimator.StopAttack();
         }
     }
 }

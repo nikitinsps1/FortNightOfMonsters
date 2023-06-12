@@ -9319,8 +9319,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 2100000, guid: 4aed7a410c69b5d4da6ed89bc6c7339b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9391,9 +9389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b0dc020fdf61d439e4d562229a4055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isAutomatick: 0
-  _soundShoot: {fileID: 8300000, guid: a816c62143b455b42988a916add5a674, type: 3}
-  <_weaponType>k__BackingField: 4
+  _type: 0
+  _typeSound: 0
+  _meleeDamage: {fileID: 0}
+  _attackParticle: {fileID: 0}
 --- !u!1 &5512045720963193878
 GameObject:
   m_ObjectHideFlags: 0
@@ -9455,10 +9454,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 2100000, guid: 4a0f2f88e330af148aba1d7f0701f18b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9548,6 +9543,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _relations: 0
-  _numberTargets: 1
-  _damage: 122
   _collider: {fileID: 0}
+  _damage: 122

@@ -10,11 +10,11 @@ public class ChangeSceneButton : MonoBehaviour
     [SerializeField]
     private Button _button;
 
-    private SceneChanger _changer;
+    private SceneLoader _changer;
     private SaveData _saveData;
 
     [Inject]
-    private void Construct(SceneChanger sceneChanger, SaveData saveData)
+    private void Construct(SceneLoader sceneChanger, SaveData saveData)
     {
         _changer = sceneChanger;
         _saveData = saveData;

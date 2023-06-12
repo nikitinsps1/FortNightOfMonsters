@@ -5,11 +5,11 @@ using Zenject;
 public class LoadYandex : MonoBehaviour
 {
     private SaveData _saveData;
-    private SceneChanger _sceneChanger;
+    private SceneLoader _sceneChanger;
     private AudioContainer _audio;
 
     [Inject]
-    private void Construct(SaveData saveData, SceneChanger sceneChanger, AudioContainer audio)
+    private void Construct(SaveData saveData, SceneLoader sceneChanger, AudioContainer audio)
     {
         _saveData = saveData;
         _sceneChanger = sceneChanger;

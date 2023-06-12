@@ -17,13 +17,13 @@ public class UIVideoIntro : MonoBehaviour
         _exitButton,
         _returnButton;
 
-    private SceneChanger _sceneChanger;
+    private SceneLoader _sceneChanger;
     private Tweener _fadingLogo;
 
     public event Action OnLogoFaded;
 
     [Inject]
-    private void Construct(SceneChanger sceneChanger)
+    private void Construct(SceneLoader sceneChanger)
     {
         _sceneChanger = sceneChanger;
     }

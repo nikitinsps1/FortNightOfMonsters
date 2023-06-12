@@ -113,13 +113,13 @@ public class GuardLogic : CharacterLogic
     {
         _target = _assaultMediator.GetTarget(TypeRelations.Enemy);
 
-        base.Attack();
+        ThisCharacterAnimator.StartAttack();
         _isAlarm = true;
     }
 
     public override void StopAttack()
     {
-        base.StopAttack();
+        ThisCharacterAnimator.StopAttack();
         _isAlarm = false;
     }
 }

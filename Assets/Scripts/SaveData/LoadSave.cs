@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-using Zenject;
-
-public class LoadSave : MonoBehaviour
+﻿public class LoadSave
 {
-    [SerializeField]
+    private SaveData _saveData;
+
     private UpgradersContainer
         _guards,
         _barricades,
@@ -11,11 +9,19 @@ public class LoadSave : MonoBehaviour
         _weapons,
         _fort;
 
-    private SaveData _saveData;
-
-    [Inject]
-    private void Construct(SaveData saveData)
+    public LoadSave(
+        UpgradersContainer guards, 
+        UpgradersContainer barricades,
+        UpgradersContainer characteristics,
+        UpgradersContainer weapons,
+        UpgradersContainer fort,
+        SaveData saveData) 
     {
+        _guards = guards;
+        _barricades = barricades;
+        _characteristics = characteristics;
+        _weapons = weapons;
+        _fort = fort;
         _saveData = saveData;
     }
 

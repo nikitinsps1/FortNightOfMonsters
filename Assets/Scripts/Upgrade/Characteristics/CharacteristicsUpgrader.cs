@@ -11,7 +11,6 @@ public class CharacteristicsUpgrader : Upgrader
 
     private PlayerHeroLogic _player;
 
-
     [Inject]
     private void Construct(PlayerHeroLogic player)
     {
